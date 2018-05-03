@@ -90,7 +90,7 @@
 <meta property="og:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://lixiuyu.cc/2018/05/02/interesting-determinant-question/determinant_3d.png">
-<meta property="og:updated_time" content="2018-05-03T09:14:27.132Z">
+<meta property="og:updated_time" content="2018-05-03T10:00:00.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道有趣的行列式习题的探究">
 <meta name="twitter:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,534字
+                  2,579字
                 </span>
               
 
@@ -482,7 +482,7 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
 <p>其中 $\boldsymbol{a}_j$ 代表矩阵 $A$ 的列向量，$||\boldsymbol{a}_j||^2=\sum\limits_{i=1}^n|a_{ij}|^2$。这个不等式被称为 <a href="https://www.wikiwand.com/en/Hadamard&#39;s_inequality" target="_blank" rel="noopener"><strong>Hadamard 不等式</strong></a>。我们继续沿用只给矩阵的元素取-1和1的方法。假设 $n$ 阶行列式的展开式可以所有项同时为正，那么行列式最大值为 $n!$（展开式一共有 $n!$ 项），也即$n \times n$矩阵表示的平行多面体体积最大值为 $n!$。而当每个元素都为1或-1时，易得 $||\boldsymbol{a}_j||^2=\sum\limits_{i=1}^n|a_{ij}|^2=n$。由此可得 $||\boldsymbol{a}_j||=\sqrt{n}=n^\frac{1}{2}$，$\prod\limits_{j=1}^{n}||\boldsymbol{a}_j||=n^\frac{n}{2}$。因此根据 Hadamard 不等式，$n\times n$ 矩阵表示的平行多面体体积最大值为 $n^\frac{n}{2}$。我们可以证明当 $n&gt;2$ 时，$n^\frac{n}{2} &lt; n!$（证明略；可以通过数学归纳法或证明 $\lim\limits_{n\to\infty}\frac{n^\frac{n}{2}}{n!}$ 收敛），所以在 $n&gt;2$ 时，$n\times n$ 矩阵所表示的平行多面体体积必定小于 $n!$，即 $n$ 阶行列式的展开式不可能同时为正。</p>
 <p>通过关于行列式的几何意义的方法，我们不仅证明了三阶行列式的展开式不可能同时为正，也推广到了当 $n&gt;2$ 时，$n$ 阶行列式的展开式不可能同时为正。</p>
 <hr>
-<p>这篇文章虽然讨论的问题和涉及的方法都比较 trvial，但我个人觉得这个问题还是挺有趣的。很久没有更文了（接近荒废），就暂时先这样水一篇吧。近期时间逐渐变得充裕，应该会开始稍微频繁一点写blog（如果没有就是我又继续咸鱼了qaq）。</p>
+<p>这篇文章虽然讨论的问题和涉及的方法都比较 trivial，但我个人觉得这个问题还是挺有趣的，如果各位有新的方法或者对本文的内容有什么不清楚的地方还请在评论区或通过其他方式与我多多交流。很久没有更文了（接近荒废），就暂时先这样水一篇吧。近期时间逐渐变得充裕，应该会开始稍微频繁一点写blog（如果没有就是我又继续咸鱼了qaq）。</p>
 
       
     </div>
