@@ -873,10 +873,22 @@
 
 
 
-      
-      
-       
-    
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '80ab5f57f8c6723017d1',
+          clientSecret: '84291f207e7d735e1f57d6bb5bdc30231bcdd8a1',
+          repo: 'lxywizard.github.io',
+          owner: 'lxywizard',
+          admin: ['lxywizard'], 
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
 
 
   
