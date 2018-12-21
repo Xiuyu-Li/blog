@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CS 2112,Compilers," />
+  <meta name="keywords" content="Java,Compilers," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证（扎实的话就不会写了），但感觉还是挺有意思的，所以简单分享下。">
-<meta name="keywords" content="CS 2112,Compilers">
+<meta name="description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
+<meta name="keywords" content="Java,Compilers">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于的 Java String 类参数传递的小发现">
+<meta property="og:title" content="浅谈 Java String 类参数传递">
 <meta property="og:url" content="http://lixiuyu.cc/2018/09/02/simple-java-fact/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证（扎实的话就不会写了），但感觉还是挺有意思的，所以简单分享下。">
+<meta property="og:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-09T06:04:19.543Z">
+<meta property="og:updated_time" content="2018-12-19T13:15:00.686Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于的 Java String 类参数传递的小发现">
-<meta name="twitter:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证（扎实的话就不会写了），但感觉还是挺有意思的，所以简单分享下。">
+<meta name="twitter:title" content="浅谈 Java String 类参数传递">
+<meta name="twitter:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>关于的 Java String 类参数传递的小发现 | Olórin's Blog</title>
+  <title>浅谈 Java String 类参数传递 | Olórin's Blog</title>
   
 
 
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于的 Java String 类参数传递的小发现</h1>
+          <h1 class="post-title" itemprop="name headline">浅谈 Java String 类参数传递</h1>
         
 
         <div class="post-meta">
@@ -304,7 +304,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T01:02:41-04:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T13:02:41+08:00">
                 2018-09-02
               </time>
             
@@ -344,7 +344,7 @@
 
           
           
-             <span id="/2018/09/02/simple-java-fact/" class="leancloud_visitors" data-flag-title="关于的 Java String 类参数传递的小发现">
+             <span id="/2018/09/02/simple-java-fact/" class="leancloud_visitors" data-flag-title="浅谈 Java String 类参数传递">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,024
+                  1,015
                 </span>
               
 
@@ -394,7 +394,7 @@
       
 
       
-        <p>最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证（扎实的话就不会写了），但感觉还是挺有意思的，所以简单分享下。<br><a id="more"></a></p>
+        <p>最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。<br><a id="more"></a></p>
 <p>观察以下代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String a = <span class="string">"Hello"</span>;</span><br><span class="line">        String b = <span class="string">"Hello"</span>;</span><br><span class="line">        String a1 = <span class="keyword">new</span> String (<span class="string">"Hello"</span>);</span><br><span class="line">        String b1 = <span class="keyword">new</span> String (<span class="string">"Hello"</span>);</span><br><span class="line">        String c = a + <span class="string">"World"</span>;</span><br><span class="line">        String d = a + <span class="string">"World"</span>;</span><br><span class="line">        String e = <span class="string">"Hello"</span> + <span class="string">"World"</span>;</span><br><span class="line">        String f = <span class="string">"Hello"</span> + <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(a == b);</span><br><span class="line">        System.out.println(a1 == b1);</span><br><span class="line">        System.out.println(c == d);</span><br><span class="line">        System.out.println(e == f);</span><br></pre></td></tr></table></figure>
 <p>大家觉得输出的结果应该是什么呢？很显然 <code>a1 == b1</code> 的结果应该是 <code>false</code>，由于是使用 <code>new</code> 创建的 <code>String</code>，a 和 b 是的地址是指向堆（<em>heap</em>）中对常量池（<em>constant pool</em>）的对象 “Hello” 的不同的拷贝对象地址。<code>a == b</code> 则应该是 <code>true</code>，因为它们是直接指向常量池中的同一个地址的（JVM 对于 String 的存储采用了常量池的机制，在这里不过多介绍）。</p>
@@ -431,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://lixiuyu.cc/2018/09/02/simple-java-fact/" title="关于的 Java String 类参数传递的小发现">http://lixiuyu.cc/2018/09/02/simple-java-fact/</a>
+    <a href="http://lixiuyu.cc/2018/09/02/simple-java-fact/" title="浅谈 Java String 类参数传递">http://lixiuyu.cc/2018/09/02/simple-java-fact/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -446,7 +446,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CS-2112/" rel="tag"><i class="fa fa-tag"></i> CS 2112</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
             <a href="/tags/Compilers/" rel="tag"><i class="fa fa-tag"></i> Compilers</a>
           
@@ -485,6 +485,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/19/java-unsound/" rel="prev" title="Java wildcard capture 及相关问题">
+                Java wildcard capture 及相关问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -562,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -852,7 +856,7 @@
           repo: 'lxywizard.github.io',
           owner: 'lxywizard',
           admin: ['lxywizard'], 
-          id: location.pathname,
+          id: decodeURI(location.pathname),
           distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')           

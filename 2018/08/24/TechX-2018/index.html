@@ -307,7 +307,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-24T11:00:00-04:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-24T23:00:00+08:00">
                 2018-08-24
               </time>
             
@@ -485,8 +485,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/02/simple-java-fact/" rel="prev" title="关于的 Java String 类参数传递的小发现">
-                关于的 Java String 类参数传递的小发现 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/02/simple-java-fact/" rel="prev" title="浅谈 Java String 类参数传递">
+                浅谈 Java String 类参数传递 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -880,7 +880,7 @@
           repo: 'lxywizard.github.io',
           owner: 'lxywizard',
           admin: ['lxywizard'], 
-          id: location.pathname,
+          id: decodeURI(location.pathname),
           distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')           
