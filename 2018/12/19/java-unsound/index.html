@@ -90,7 +90,7 @@
 <meta property="og:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
-<meta property="og:updated_time" content="2018-12-21T13:23:26.503Z">
+<meta property="og:updated_time" content="2018-12-23T13:31:20.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java wildcard capture 及相关问题">
 <meta name="twitter:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
@@ -244,6 +244,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-quotes">
+          <a href="/quotes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
+            
+            Quotes
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -371,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,589
+                  2,591
                 </span>
               
 
@@ -397,8 +407,8 @@
 
       
         <p>之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了<a href="https://dl.acm.org/citation.cfm?id=2984004" target="_blank" rel="noopener">一篇论文</a>。<a id="more"></a>出于学期中学业繁重，我并未能及时阅读，但一直没有忘记这回事，在回国的飞机上通读了一下（然而大部分并没有看懂），确实挺有意思。本篇文章即是对 Java generics 的 wildcard capture 特性以及为什么其会导致 Java type system unsound 的一个简单介绍，大部分内容来自该论文和 Ross Tate 所写的<a href="https://hackernoon.com/java-is-unsound-28c84cb2b3f" target="_blank" rel="noopener">相关博客</a>。</p>
-<h2 id="Wildcard-Capture"><a href="#Wildcard-Capture" class="headerlink" title="Wildcard Capture"></a>Wildcard Capture</h2><p>在2004年发布的 Java 5 引入了泛型（generics），即“参数多态（parametric polymorphism）”，使得一个方法可以接受不同类型的参数。比方说，<code>List&lt;E&gt;</code> 代表一个元素都为 type E 的 List。 而通配符 （wildcard），用符号 <code>?</code> 表示，作为泛型方法参数时可以代表某种任意类型（具体类型无法在 compile time 判断，甚至有时在 run time 也无法判断）。例如 <code>List&lt;? extends Number&gt;</code> 表示一个元素可以是 Number 的任意子类的 List 。 </p>
-<p>出于每一个 wildcard 可以表示某种类型，也可以是不同的类型，Java 使用了一种叫做 wildcard capture 的方式来对 wildcard 进行类型检测。通过引入一个 fresh type variable 来表示任意 wildcard 所描述的 unknown type，再对这个新的 type 进行类型检测，Java 可以实现对 wildcard 的类型检测。举个例子，对于方法 <code>&lt;E&gt; List&lt;E&gt; reverse(List&lt;E&gt; list) {...}</code>，开头的 <code>&lt;E&gt;</code> 表示这个方法可以应用于任意类型 E 。当 <code>ns</code> 为 <code>? extends Number</code> 类型时，  Java 会对 <code>reverse(ns)</code> 进行以下几步类型检测：</p>
+<h2 id="Wildcard-Capture"><a href="#Wildcard-Capture" class="headerlink" title="Wildcard Capture"></a>Wildcard Capture</h2><p>在2004年发布的 Java 5 引入了<strong>泛型（generics）</strong>，即“<strong>参数多态（parametric polymorphism）</strong>”，使得一个方法可以接受不同类型的参数。比方说，<code>List&lt;E&gt;</code> 代表一个元素都为 type E 的 List。 而<strong>通配符 （wildcard）</strong>，用符号 <code>?</code> 表示，作为泛型方法参数时可以代表某种任意类型（具体类型无法在 compile time 判断，甚至有时在 run time 也无法判断）。例如 <code>List&lt;? extends Number&gt;</code> 表示一个元素可以是 Number 的任意子类的 List 。 </p>
+<p>出于每一个 wildcard 可以表示某种类型，也可以是不同的类型，Java 使用了一种叫做 <strong>wildcard capture</strong> 的方式来对 wildcard 进行类型检测。通过引入一个 <strong>fresh type variable</strong> 来表示任意 wildcard 所描述的 unknown type，再对这个新的 type 进行类型检测，Java 可以实现对 wildcard 的类型检测。举个例子，对于方法 <code>&lt;E&gt; List&lt;E&gt; reverse(List&lt;E&gt; list) {...}</code>，开头的 <code>&lt;E&gt;</code> 表示这个方法可以应用于任意类型 E 。当 <code>ns</code> 为 <code>? extends Number</code> 类型时，  Java 会对 <code>reverse(ns)</code> 进行以下几步类型检测：</p>
 <ol>
 <li>判断 ns 是 <code>List&lt;? extends Number&gt;</code> 类型</li>
 <li>因为这个类型有一个 wildcard 参数，引入一个 fresh type variable，X，来表示 wildcard</li>
@@ -420,7 +430,7 @@
 <p>显然，Java 的 type system 会拒绝这段代码的执行（丢出一个 exception），因为 Java 的 type system 会保证如果一个方法要求的参数类型是 Integer，那么它接受的参数类型永远只能是 Integer，而不是 String 。在某些其他例子中，情况会稍微复杂一些：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; ints = Arrays.asList(<span class="number">1</span>);</span><br><span class="line">List raw = ints;</span><br><span class="line">List&lt;String&gt; strs = raw;</span><br><span class="line">String one = strs.get(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 <p>这段代码也是不应该被允许的，因为一个指定元素类型为 String 的 List 不应该可以得到一个类型为 Integer 的元素。然而，Java 在 compile time 并不会对这一段代码报错（本人也使用了 Intellij Java 10进行验证）。这是因为尽管在这个例子中这种情况显然是不好的，但在很多其他例子中，这样的一种“包容性”其实是有益处的。毕竟，<strong>“untyped languages are all about allowing bad things to happen so that more cool things can happen as well”</strong> 。不过，Java 在 runtime 执行 <code>get()</code> 指令时会再一次检测 List 中的元素是否为 String，从而发现本例中的代码应当被拒绝执行，并丢出相应的 exception （此处为 <code>ClassCastException</code>），避免出现安全问题。</p>
-<h2 id="More-Unsoundness-in-Java"><a href="#More-Unsoundness-in-Java" class="headerlink" title="More Unsoundness in Java"></a>More Unsoundness in Java</h2><p>尽管在上例中 Java 在 runtime 成功发现了代码中的错误，没有在 type check 阶段就发现错误仍然是十分危险的。在 runtime 才丢出 Exception 只能说是运气好，因为如果历史变得稍有不同，比如 Java 在添加 generics 时不会检测类型的向后兼容性，或 Java 在第一次释出时就已经引入了 generics，那么这个 Exception 很有可能就不会被丢出，从而导致严重的安全隐患，例如在内存中访问了一个不存在的 field 。下面有一个更加复杂的例子来体现 Java 的 unsoundness：</p>
+<h2 id="More-Unsoundness-in-Java"><a href="#More-Unsoundness-in-Java" class="headerlink" title="More Unsoundness in Java"></a>More Unsoundness in Java</h2><p>尽管在上例中 Java 在 runtime 成功发现了代码中的错误，没有在 type check 阶段就发现错误仍然是十分危险的。在 runtime 才丢出 Exception 只能说是运气好，因为如果历史变得稍有不同，比如 Java 在添加 generics 时不会检测类型的向后兼容性，或 Java 在第一次释出时就已经引入了 generics，<strong>那么这个 Exception 很有可能就不会被丢出，从而导致严重的安全隐患，例如在内存中访问了一个不存在的 field</strong> 。下面有一个更加复杂的例子来体现 Java 的 unsoundness：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Unsound</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Constrain</span>&lt;<span class="title">A</span>, <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span>&gt; </span>&#123;&#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Bind</span>&lt;<span class="title">A</span>&gt; </span>&#123;</span><br><span class="line">    &lt;B extends A&gt;</span><br><span class="line">    <span class="function">A <span class="title">upcast</span><span class="params">(Constrain&lt;A,B&gt; constrain, B b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> b;  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> &lt;T,U&gt; <span class="function">U <span class="title">coerce</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">    Constrain&lt;U,? <span class="keyword">super</span> T&gt; constrain = <span class="keyword">null</span>;</span><br><span class="line">    Bind&lt;U&gt; bind = <span class="keyword">new</span> Bind&lt;U&gt;();</span><br><span class="line">    <span class="keyword">return</span> bind.upcast(constrain, t);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String zero = Unsound.&lt;Integer,String&gt;coerce(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>为了对以上代码进行 Type-argument inference ，Java 会先收集已知的假设和需要满足的要求，并根据这些限制条件来尝试决定是否存在一个合法的参数。在此例中，一共有以下的假设和需求：</p>
 <p><img src="/2018/12/19/java-unsound/example1.png" width="460" height="140" alt="Pittsburgh" align="center"></p>
@@ -430,10 +440,11 @@
 <blockquote>
 <p>Soundness is a security guarantee, not a usability concern. What matters is if <em>someone</em> can write this, because then that someone can get around the security measures that people have placed their confidence in and do whatever they would like to do. In the case of soundness, it’s the malicious programmer you should be worried, not just you and your friends.</p>
 </blockquote>
+<hr>
 <p><em>注 1</em> 在用 IntelliJ 测试时，编译器报了一个非常诡异的错误：Z 的范围不符合 <code>Constrain</code> 的要求，应当 extends U。然而，它又给出了 Z 的 upper bounds 和 lower bounds 分别是 U 和 T，的确是 U 的子类，令人十分费解。<br><em>注 2</em> 该可以通过所有三个编译器检测的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Unsound9</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Type</span>&lt;<span class="title">A</span>&gt; </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Constraint</span>&lt;<span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span>&gt; <span class="keyword">extends</span> <span class="title">Type</span>&lt;<span class="title">B</span>&gt; </span>&#123;&#125; </span><br><span class="line">    &lt;B&gt; Constraint&lt;? <span class="keyword">super</span> B&gt; bad() &#123; <span class="keyword">return</span> <span class="keyword">null</span>; &#125; </span><br><span class="line">    &lt;B&gt; <span class="function">A <span class="title">coerce</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> pair(<span class="keyword">this</span>.&lt;B&gt;bad(), b).value; </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Sum</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    Type&lt;T&gt; type;</span><br><span class="line">    T value;</span><br><span class="line">    Sum(Type&lt;T&gt; t, T v) &#123;</span><br><span class="line">      type = t;</span><br><span class="line">      value = v;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> &lt;T&gt; <span class="function">Sum&lt;T&gt; <span class="title">pair</span><span class="params">(Type&lt;T&gt; type, T value)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Sum&lt;T&gt;(type, value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> &lt;T,U&gt; <span class="function">U <span class="title">coerce</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">    Type&lt;U&gt; type = <span class="keyword">new</span> Type&lt;U&gt;();</span><br><span class="line">    <span class="keyword">return</span> type.&lt;T&gt;coerce(t); </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String zero = Unsound9.&lt;Integer,String&gt;coerce(<span class="number">0</span>);</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Nada Amin and Ross Tate. 2016. Java and scala’s type systems are unsound: the existential crisis of null pointers. <em>SIGPLAN Not.</em> 51, 10 (October 2016), 838-848. DOI: <a href="https://doi.org/10.1145/3022671.2984004" target="_blank" rel="noopener">https://doi.org/10.1145/3022671.2984004</a></p>
-<p>Tate, R. (2017, January 24). Java is Unsound: The Industry Perspective – Hacker Noon. Retrieved from <a href="https://hackernoon.com/java-is-unsound-28c84cb2b3f" target="_blank" rel="noopener">https://hackernoon.com/java-is-unsound-28c84cb2b3f</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]Nada Amin and Ross Tate. 2016. Java and scala’s type systems are unsound: the existential crisis of null pointers. <em>SIGPLAN Not.</em> 51, 10 (October 2016), 838-848. DOI: <a href="https://doi.org/10.1145/3022671.2984004" target="_blank" rel="noopener">https://doi.org/10.1145/3022671.2984004</a></p>
+<p>[2]Tate, R. (2017, January 24). Java is Unsound: The Industry Perspective – Hacker Noon. Retrieved from <a href="https://hackernoon.com/java-is-unsound-28c84cb2b3f" target="_blank" rel="noopener">https://hackernoon.com/java-is-unsound-28c84cb2b3f</a></p>
 
       
     </div>
@@ -506,6 +517,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/22/dijkstra-mst-proof/" rel="prev" title="Dijkstra's algorithm 和最小生成树算法证明">
+                Dijkstra's algorithm 和最小生成树算法证明 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -592,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -614,7 +629,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

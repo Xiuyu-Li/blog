@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linear Algebra," />
+  <meta name="keywords" content="Algorithm,Graph Theory," />
 
 
 
@@ -81,20 +81,24 @@
 
 
 
-<meta name="description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
-<meta name="keywords" content="Linear Algebra">
+<meta name="description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
+<meta name="keywords" content="Algorithm,Graph Theory">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一道有趣的行列式习题的探究">
-<meta property="og:url" content="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/index.html">
+<meta property="og:title" content="Dijkstra&#39;s algorithm 和最小生成树算法证明">
+<meta property="og:url" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
+<meta property="og:description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/determinant_3d.png">
-<meta property="og:updated_time" content="2018-09-08T21:27:55.603Z">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/dijkstra.png">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/mst_example.png">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_red.png">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_blue.png">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/prim.png">
+<meta property="og:updated_time" content="2018-12-23T08:28:58.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一道有趣的行列式习题的探究">
-<meta name="twitter:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
-<meta name="twitter:image" content="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/determinant_3d.png">
+<meta name="twitter:title" content="Dijkstra&#39;s algorithm 和最小生成树算法证明">
+<meta name="twitter:description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
+<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/dijkstra.png">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/"/>
+  <link rel="canonical" href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/"/>
 
 
 
 
 
-  <title>一道有趣的行列式习题的探究 | Olórin's Blog</title>
+  <title>Dijkstra's algorithm 和最小生成树算法证明 | Olórin's Blog</title>
   
 
 
@@ -287,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/">
+    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Olórin">
@@ -304,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一道有趣的行列式习题的探究</h1>
+          <h1 class="post-title" itemprop="name headline">Dijkstra's algorithm 和最小生成树算法证明</h1>
         
 
         <div class="post-meta">
@@ -316,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T23:22:44+08:00">
-                2018-05-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-22T00:57:58+08:00">
+                2018-12-21
               </time>
             
 
@@ -339,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math/" itemprop="url" rel="index">
-                    <span itemprop="name">Math</span>
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
                   </a>
                 </span>
 
@@ -356,7 +360,7 @@
 
           
           
-             <span id="/2018/05/01/interesting-determinant-question/" class="leancloud_visitors" data-flag-title="一道有趣的行列式习题的探究">
+             <span id="/2018/12/22/dijkstra-mst-proof/" class="leancloud_visitors" data-flag-title="Dijkstra's algorithm 和最小生成树算法证明">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,579
+                  1,903
                 </span>
               
 
@@ -406,93 +410,98 @@
       
 
       
-        <p>上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题：</p>
-<p><strong>证明在三阶行列式展开式中的六项不可能同时为正。</strong></p>
-<p>当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。<a id="more"></a></p>
-<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>首先我还是想继续直观地暴力枚举，试图寻找一些可行的分类方法来降低复杂度。我先从一个三阶行列式 $\det A$ 的计算公式中观察规律：</p>
-<p>\begin{align}<br>\det A &amp;=<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>= a(ei - fh) - b(di - fg) + c(dh - eg) = aei + bfg + cdh - afh - bdi - ceg<br>\end{align}</p>
-<p>此时我发现可以通过假设存在全部6项为正的情况，讨论 $a，b，c$ 三项正负性的所有情况，并根据 $a，b，c$ 求出其他项的正负性，继而可得除 $a，b，c$ 外其他元素的同异号关系。如果不论 $a，b，c$ 正负性如何，均存在同异号矛盾则命题得证。由于其他项仅由两个元素相乘，判断同异号关系较为容易。$a，b，c$ 所有正负性情况也只有$2^3 = 8$种情况，而且其中4种情况与剩下4种情况正负性完全相反，根据对称性，在这4种情况中若余下元素的同异号关系产生矛盾，则剩下4种情况同样会出现矛盾。因此，我们只需要讨论4种情况即可，其结果如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:center">$ei$</th>
-<th style="text-align:center">$fg$</th>
-<th style="text-align:center">$dh$</th>
-<th style="text-align:center">$fh$</th>
-<th style="text-align:center">$di$</th>
-<th style="text-align:center">$eg$</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$a,b,c&gt;0$</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-</tr>
-<tr>
-<td>$a,b&gt;0$, $c&lt;0$</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-</tr>
-<tr>
-<td>$a&gt;0$, $b,c&lt;0$</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">+</td>
-</tr>
-<tr>
-<td>$a,c&gt;0$, $b&lt;0$</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-<td style="text-align:center">+</td>
-<td style="text-align:center">-</td>
-</tr>
-</tbody>
-</table>
-<p><center><font color="#A9A9A9" size="2">Conditions when all 6 terms are positive</font></center><br>通过观察表格可以发现，在所有4种情况中除 $a, b, c$ 外的元素的同异号关系均产生矛盾，具体如下：</p>
+        <p>Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。<a id="more"></a></p>
+<h2 id="Dijkstra’s-algorithm"><a href="#Dijkstra’s-algorithm" class="headerlink" title="Dijkstra’s algorithm"></a>Dijkstra’s algorithm</h2><p>Dijkstra’s algorithm 是一个可以解决 <strong>single-source shortest path</strong> 问题的经典算法，本质上是对广度优先搜索（BFS）的一个推广，只是把 BFS 维护的 <strong>stack</strong> 换成了 <strong>priority queue</strong> 。鉴于这个算法知名度太高，大家对其都已十分熟悉，就不多说废话，直接上基于数学归纳法的证明。</p>
+<p>我们规定 $G$ 为算法所应用的图，$s$ 是源点，$l(u, v)$ 是从点 $u$ 到 $v$ 的边的长度，$V$ 是图中所有的点的集合，那么 Dijkstra’s algorithm 的过程如下所示：</p>
+<p><img src="/2018/12/22/dijkstra-mst-proof/dijkstra.png" width="820" height="400" alt="Pittsburgh" align="center"></p>
+<center><font color="#A9A9A9" size="2.5">Dijkstra’s algorithm</font></center>
+
+<p>将算法找到的距离记为 $d(v)$ ，从 $s$ 到 $v$ 的实际最短距离记为 $\delta(v)$ ，我们需要证明对任意 $v \in V$ ，当算法结束时都有 $d(v) = \delta(v)$ 。这等同于证明 $\forall x \in R$ ， $d(x) = \delta(x)$ 。</p>
+<h3 id="Proof-By-Induction"><a href="#Proof-By-Induction" class="headerlink" title="Proof By Induction"></a>Proof By Induction</h3><p><em>Base case ($|R| = 1$)</em>:  因为 $R$ 的大小会不断增大，只有当 $R = {s}$ 时 $|R| = 1$ ，此时 $d(x) = 0 = \delta(x)$ ，正确。</p>
+<p><em>Induction step</em>: 令 $u$ 为最后一个加进 $R$ 的顶点，记 $R^{‘} = R \cup {u}$ ，则 $\forall x \in R^{‘}$ ， $d(x) = \delta(x)$ 。</p>
+<p>根据 <em>induction step</em> 中的条件，$\forall x \in R^{‘}$ 且 $x \neq u $ ，$d(x) = \delta(x)$ 。因此，我们只需要证明 $d(u) = \delta(u)$ 。Suppose for the sake of contradiction ，存在一从 $s$ 到 $u$ 的最短路径 $Q$ ，使得</p>
+<center>$l(Q) &lt; d(u)$</center> 
+
+<p>我们可以知道 $Q$ 一定不在 $R^{‘}$ 内结束，同时部分组成 $Q$ 的顶点在 $R^{‘}$ 中。令 $xy$ 为第一个在 $Q$ 中离开 $R^{‘}$ 的路径，$Q_x$ 为在顶点 $x$ 结束的 $Q$ 的子路径，则有</p>
+<center>$l(Q_x) + l(xy) \leq l(Q)$</center>
+
+<p>同时，因为 $y$ 与 $x$ 相邻，根据 Dijkstra’s algorithm ，$d(y) \leq d(x) + l(xy)$ ，所以</p>
+<center>$d(y) \leq l(Q)$</center>
+
+<p>因为 $x \in R^{‘}$ ，而最后一个被加进 $R^{‘}$ 的顶点是 $u$ ，$y$ 则并没有被加进 $R^{‘}$ ，我们可以得到</p>
+<center>$d(u) &lt; d(y)$</center>
+
+<p>而又由于 $l(Q) &lt; d(u)$ ，我们发现 $l(Q) &lt; d(u) &lt; d(y) &lt; l(Q)$ ，矛盾。所以 $d(u) = \delta(u)$ ，<em>induction step</em> 成立，证毕。</p>
+<h3 id="Another-Proof"><a href="#Another-Proof" class="headerlink" title="Another Proof"></a>Another Proof</h3><p>在我村 CS 2112 的 course note 里还有一个通过 loop invariant 的<a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/lecture.html?id=ssp" target="_blank" rel="noopener">证明</a>，各位有兴趣的话可以点击链接查看，在此就不展开了。</p>
+<h2 id="Minimum-Spanning-Tree"><a href="#Minimum-Spanning-Tree" class="headerlink" title="Minimum Spanning Tree"></a>Minimum Spanning Tree</h2><p>最小生成树指的是一副联通加权无向图中权值最小的一棵生成树，而寻找最小生成树（MST）也是图论中非常经典的问题。</p>
+<p><img src="/2018/12/22/dijkstra-mst-proof/mst_example.png" width="430" height="270" alt="Pittsburgh" align="center"></p>
+<center><font color="#A9A9A9" size="2.5">A minimum spanning tree of a graph</font></center>
+
+<p>其中最有名的两个寻找 MST 的算法就是 Kruskal’s algorithm 和 Prim’s algorithm，思想分别为：</p>
 <ul>
-<li>当 $a,b,c&gt;0$ 时，$i$ 和 $g$ 异号，$g$ 和 $h$ 异号，$h$ 和 $i$ 异号，矛盾</li>
-<li>当 $a,b&gt;0$，$c&lt;0$ 时，$g$ 和 $h$ 异号，$h$ 和 $i$ 同号，$i$ 和 $g$ 同号，矛盾</li>
-<li>当 $a&gt;0$，$b,c&lt;0$ 时，$f$ 和 $e$ 异号，$e$ 和 $d$ 同号，$d$ 和 $f$ 同号，矛盾</li>
-<li>当 $a,c&gt;0$，$b&lt;0$ 时，$d$ 和 $f$ 异号，$f$ 和 $e$ 同号，$e$ 和 $d$ 同号，矛盾</li>
+<li><strong>Kruskal’s algorithm:</strong> 找到一条权值最小的边，如果其与之前选择过的边形成了一个圈（cycle），丢弃这条边，否则留下。</li>
+<li><strong>Prim’s algorithm:</strong> 从任意顶点出发，选择与该顶点所在的连通分支（connected component）相连的不会形成圈的权值最小的边。</li>
 </ul>
-<p>由此可得，三阶行列式展开式中的六项不可能同时为正。为了验证我们的结果，我又写了一个程序来重新暴力枚举一遍所有情况。出于512这个总数对于计算机而言还算小，我就直接无脑写了一个时间复杂度 $\mathcal{O}(n^9)$ 的嵌套循环来达到我们的目的（当然如果有效率更高或可以拓展到 $n$ 阶的代码欢迎各位读者提出）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算三阶行列式的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">determinant3</span><span class="params">(a, b, c, d, e, f, g, h, i)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a * e * i + b * f * g + c * d * h - a * f * h - b * d * i - c * e * g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举并判断是否存在六项全部为正的情况的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">whetherAllPostive</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 每个元素只取-1和1来表示正负</span></span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">        <span class="keyword">for</span> b <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                <span class="keyword">for</span> d <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                    <span class="keyword">for</span> e <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                        <span class="keyword">for</span> f <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                            <span class="keyword">for</span> g <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                                <span class="keyword">for</span> h <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                                    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>):</span><br><span class="line">                                        <span class="comment"># 当且仅当六项全部为正的情况下，三阶行列式值为6；若存在该情况，返回六个元素的值并判定存在</span></span><br><span class="line">                                        <span class="keyword">if</span> determinant3(a, b, c, d, e, f, g, h, i) == <span class="number">6</span>:</span><br><span class="line">                                            <span class="keyword">return</span> <span class="string">"There exists %d %d %d %d %d %d %d %d %d so that all terms are positive."</span>%(a, b, c, d, e, f, g, h, i)</span><br><span class="line">    <span class="comment"># 否则判定不存在</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Such condition does not exist."</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用该函数并输出结果</span></span><br><span class="line"><span class="keyword">print</span> (whetherAllPostive())</span><br></pre></td></tr></table></figure>
-<p>而最后的输出结果也的确是不存在六项全为正的情况。然而，在我进一步分别把从-6到5的整数都代入到<code>determinant3(a, b, c, d, e, f, g, h, i)</code>相等的条件中，发现当每个元素为-1或1时，<strong>三阶行列式的值只能是-4，0，4</strong>。这是怎么回事呢？想要解释这一点，有必要进一步拓展到$n$阶的情况下进行代数证明。</p>
-<h2 id="代数"><a href="#代数" class="headerlink" title="代数"></a>代数</h2><p>一个 $n$ 阶行列式 $\det A$ 的值是由其中一行的 $n$ 个元素分别乘上它们的代数余子式再相加得到。因此，我们从二阶行列式往上推，很容易可以通过数学归纳法得到 $n$ 阶行列式的展开式有 $n!$ 项，同时每一项由 $n$ 个元素相乘得到，具体推导就不在这里展开。如果我们把展开式的每一项乘起来，就会得到一个有 $n\cdot n!$ 项相乘的式子。这个式子还要乘上一个因子$(-1)^\frac{n!}{2}$，因为根据代数余子式的定义（$i$ 行 $j$ 列对应的项的代数余子式要乘一个系数$(-1)^{i + j}$），有一半的项带有一个系数$-1$。</p>
-<p>实际上，$n$ 阶行列式的每一个元素在其展开式中出现了 $(n-1)!$ 次，因为若取某任意一个元素，其对应要乘上的代数余子式都有 $(n-1)!$ 项。而我们可以取任意一行或一列来求代数余子式计算 $n$ 阶行列式，最后得出的展开式不变。由此可得，在 $n$ 阶行列式的展开式中，原行列式每一个元素都出现了 $(n-1)!$ 次。从这种角度看，原来的 $n\cdot n!$ 项可被表示为 $n\cdot n\cdot (n-1)!$ 项，而展开式的所有项的乘积也可以得出：</p>
+<p>事实上，包括以上两个经典算法，寻找 MST 的算法都可以被泛化为一个应用 <strong>Red rule</strong> 和 <strong>Blue rule</strong> 的 <strong>贪心算法</strong>：</p>
+<ul>
+<li><strong>Red rule:</strong> 记 $C$ 为一个没有红色边的圈，选择一个在 $C$ 中权值最大且未染色的边，将其染成红色。</li>
+<li><strong>Blue rule:</strong> 记 $D$ 为一个没有蓝色边的割（cut），选择一个在 $D$ 中权值最小且未染色的边，将其染成蓝色。</li>
+<li><strong>Greedy algorithm:</strong> 应用 red 和 blue rules 直到所有边都被染色，所有蓝色的边则组成了一个 MST</li>
+</ul>
+<p>首先，这个算法显然是会终止的，因为任何一个未被染色的边都会和已有的被染过色的集合形成圈或者连通分支，所以其必定落入 red rule 和 blue rule 其中一个的范围中。该算法的正确性（即算法终止时所有蓝色边形成的确实是所在图的最小生成树）同样可以通过数学归纳法来证明。</p>
+<h3 id="Proof-by-Induction"><a href="#Proof-by-Induction" class="headerlink" title="Proof by Induction"></a>Proof by Induction</h3><p><em>Color invariant:</em> 存在一个 MST $T^{*}$ ，使得 $T^*$ 包含所有的蓝色边且不包含任何红色边。</p>
+<p><em>Base case</em>: 当没有任何一条边被染色时，显然 $T^*$ 满足条件，因为不存在任何蓝色边和红色边。</p>
+<p><em>Induction step 1</em>: 假设在应用 blue rule 之前，<em>color invariant</em> 是正确的。</p>
+<p>此时令 $D$ 为被选定的割，$f$ 为被染成蓝色的边，则有以下两种情况：</p>
+<ul>
+<li><p>$f \in T^*$ ，$T^*$ 满足 invariant。</p>
+</li>
+<li><p>$f \notin T^*$ ，记 $f$ 与 $T^*$ 形成的圈为 $C$ （因为 $T^*$ 为图 $G$ 的一棵生成树，$f$ 与 $T^*$ 同在 $G$ 内，$T^* \cup f$ 必形成圈），$e$ 为 $C \cap D$ 除 $f$ 外的另一条边，则 $e \in T^*$。因此，我们可以得到以下两条结论：</p>
+<ul>
+<li>$e$ 不在任何一个圈中，$e$ 不为红色</li>
+<li>$e$ 与 $f$ 在同一割中而在应用 blue rule 后被染成蓝色的是 $f$ ，$e$ 不为蓝色且 $w_e \geq w_f$  </li>
+</ul>
+<p>所以 $e$ 没有被染色，且 $w_e \geq w_f$ ，因此 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST（权值更小），故 $f \in T^*$。</p>
+</li>
+</ul>
+<p><em>Induction step 2:</em> 假设在应用 red rule 之前，<em>color invariant</em> 是正确的。</p>
+<p>此时令 $C$ 为被选定的圈，$e$ 为被染成红色的边，则有以下两种情况：</p>
+<ul>
+<li><p>$e \notin T^*$ ，$T^*$ 满足 invariant。</p>
+</li>
+<li>$e \in T^*$ ，记 $T^*$ 在去掉 $e$ 后形成的割为 $D$ ，$f$ 为 $C \cap D$ 中的另一条边且  $f \notin T^*$（因为一个圈中的顶点都可以互相连通，故其中必有一条边不在所在图的生成树中）。因此，我们可以得到以下两条结论：<br><br>- $f \notin T^*$ ，$f$ 不为蓝色<br>- $f$ 与 $e$ 在同一圈中而在应用 red rule 后被染成红色的是 $e$ ，$f$ 不为红色且 $w_f \leq w_e$<br><br>所以 $f$ 没有被染色，且 $w_f \leq w_e$ ，故 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST，因此我们证明了 $e \notin T^*$ 。
+</li>
+</ul>
+<p>因此，根据算法必定终止且终止时所有边皆会被染色，染成蓝色的边一定属于 $T^*$，染成红色的边一定不属于 $T^*$ ，我们证明了 <em>color invariant</em> 成立。所以所有蓝色的边组成了其所在图的 MST ，证毕。</p>
+<h3 id="再探-Kruskal-和-Prim"><a href="#再探-Kruskal-和-Prim" class="headerlink" title="再探 Kruskal 和 Prim"></a>再探 Kruskal 和 Prim</h3><p>在引入了 red rule 和 blue rule 之后，我们可以发现 Kruskal’s algorithm 和 Prim’s algorithm 其实是这个推广的贪心算法的两个特例。Kruskal’s algorithm 和 Prim’s algorithm 可以分别被改写成如下形式：</p>
+<h4 id="Kruskal’s-algorithm"><a href="#Kruskal’s-algorithm" class="headerlink" title="Kruskal’s algorithm"></a>Kruskal’s algorithm</h4><ul>
+<li><p>查找未染色的权值最小的边，记为 $e$</p>
+</li>
+<li><p><em>Case 1:</em> 如果 $e$ 的两个顶点都在同一颗 blue tree 中，对某个 $e$ 所在的圈应用 red rule ，使得 $e$ 被染为红色</p>
+<p><img src="/2018/12/22/dijkstra-mst-proof/kruskal_red.png" width="350" height="230" alt="Pittsburgh" align="center"></p>
+<center><font color="#A9A9A9" size="2.5">Case 1</font></center>
+</li>
+<li><p><em>Case 2:</em> 否则应用 blue rule 到一个由所有 blue tree 顶点的形成的割中，使得 $e$ 被染成蓝色 </p>
+<p><img src="/2018/12/22/dijkstra-mst-proof/kruskal_blue.png" width="350" height="230" alt="Pittsburgh" align="center"></p>
+<center><font color="#A9A9A9" size="2.5">Case 2</font></center> 
 
-\begin{align}
-Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot\ldots\cdot a_{nn}^{(n-1)!}\cdot (-1)^\frac{n!}{2}\\\\
-&=(a_{11}\cdot a_{12}\cdot\ldots\cdot a_{nn})^{(n-1)!}\cdot (-1)^\frac{n!}{2}
-\end{align}
+</li>
+</ul>
+<h4 id="Prim’s-algorithm"><a href="#Prim’s-algorithm" class="headerlink" title="Prim’s algorithm"></a>Prim’s algorithm</h4><ul>
+<li><p>记 $S$ 为由蓝色的边连接成的树中的顶点的集合</p>
+</li>
+<li><p>$S$ 可初始化为任意顶点</p>
+</li>
+<li><p>对由 $S$ 形成的割应用 blue rule</p>
+<p><img src="/2018/12/22/dijkstra-mst-proof/prim.png" width="350" height="230" alt="Pittsburgh" align="center"></p>
+<center><font color="#A9A9A9" size="2.5">Prim’s algorithm</font></center> 
 
-<p>因为当 $n\geq2$ 时，$(n-1)!$ 永远是偶数，$(a_{11}\cdot a_{12}\cdot\ldots\cdot a_{nn})^{(n-1)!}$ 的值恒为正。所以展开式所有项乘积的正负性由$(-1)^{\frac{n!}{2}}$决定。当 $n=3$ 时（即三阶行列式的情况），$(-1)^\frac{n!}{2}=-1$，展开式所有项乘积小于0。因此，在三阶行列式的展开式中负数项的个数只能是奇数。出于三阶行列式展开式共有六项，负数项个数只可以取1，3，5。当行列式每个元素只取-1和1时，对应的行列式的值则分别为4，0，-4。因此只存在<code>determinant3(a, b, c, d, e, f, g, h, i)</code>等于4，0，-4时的情况。</p>
-<h2 id="几何"><a href="#几何" class="headerlink" title="几何"></a>几何</h2><p>除了用枚举和代数推导，实际上还可以通过行列式的几何意义来证明为什么三阶行列式展开式的六项不能同时为正。不过本人对这一方面涉猎不多，所需背景知识也相对较多，本文只简单拓展一下。此部分内容主要参考<a href="https://ccjou.wordpress.com/2013/09/12/%e9%98%bf%e9%81%94%e9%a6%ac%e7%9a%84%e6%9c%80%e5%a4%a7%e8%a1%8c%e5%88%97%e5%bc%8f%e5%95%8f%e9%a1%8c/" target="_blank" rel="noopener">阿達馬的最大行列式問題</a>这篇文章。</p>
-<p>对于 $n\times n$ 阶矩阵 $A$，$|\det A|$ 等于 <strong>$A$ 的列向量（或行向量）于 $\mathbb{C}^n$ 空间所张开的平行（超）多面体体积</strong>。这就是行列式的几何意义，本篇文章不在这里进行证明。</p>
-<p><img src="/2018/05/01/interesting-determinant-question/determinant_3d.png" alt=""></p>
-<p><center><font color="#A9A9A9" size="2">$3\times 3矩阵列向量所张开的多面体$</font></center><br>我们把每一个列向量当做平行多面体的边，可以发现当所有列向量两两正交时，平行多面体体积最大，为各方向边长的乘积（这一点在二维的情况下可以直观地看出，当平行四边形是矩形时，也就是两边垂直（代表边的向量正交）时，面积最大，为两个不同方向的边长的乘积。推广到高维同样适用）。这一几何性质可以用一个不等式描述:</p>
-
-<center>$|\det A|\leq\prod\limits_{j=1}^{n}||\boldsymbol{a}_j||$</center>
-
-<p>其中 $\boldsymbol{a}_j$ 代表矩阵 $A$ 的列向量，$||\boldsymbol{a}_j||^2=\sum\limits_{i=1}^n|a_{ij}|^2$。这个不等式被称为 <a href="https://www.wikiwand.com/en/Hadamard&#39;s_inequality" target="_blank" rel="noopener"><strong>Hadamard 不等式</strong></a>。我们继续沿用只给矩阵的元素取-1和1的方法。假设 $n$ 阶行列式的展开式可以所有项同时为正，那么行列式最大值为 $n!$（展开式一共有 $n!$ 项），也即$n \times n$矩阵表示的平行多面体体积最大值为 $n!$。而当每个元素都为1或-1时，易得 $||\boldsymbol{a}_j||^2=\sum\limits_{i=1}^n|a_{ij}|^2=n$。由此可得 $||\boldsymbol{a}_j||=\sqrt{n}=n^\frac{1}{2}$，$\prod\limits_{j=1}^{n}||\boldsymbol{a}_j||=n^\frac{n}{2}$。因此根据 Hadamard 不等式，$n\times n$ 矩阵表示的平行多面体体积最大值为 $n^\frac{n}{2}$。我们可以证明当 $n&gt;2$ 时，$n^\frac{n}{2} &lt; n!$（证明略；可以通过数学归纳法或证明 $\lim\limits_{n\to\infty}\frac{n^\frac{n}{2}}{n!}$ 收敛），所以在 $n&gt;2$ 时，$n\times n$ 矩阵所表示的平行多面体体积必定小于 $n!$，即 $n$ 阶行列式的展开式不可能同时为正。</p>
-<p>通过关于行列式的几何意义的方法，我们不仅证明了三阶行列式的展开式不可能同时为正，也推广到了当 $n&gt;2$ 时，$n$ 阶行列式的展开式不可能同时为正。</p>
+</li>
+</ul>
 <hr>
-<p>这篇文章虽然讨论的问题和涉及的方法都比较 trivial，但我个人觉得这个问题还是挺有趣的，如果各位有新的方法或者对本文的内容有什么不清楚的地方还请在评论区或通过其他方式与我多多交流。很久没有更文了（接近荒废），就暂时先这样水一篇吧。近期时间逐渐变得充裕，应该会开始稍微频繁一点写blog（如果没有就是我又继续咸鱼了qaq）。</p>
+<p>以上就是对 Dijkstra’s algorithm 和最小生成树相关算法的全部证明。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]Cornell University CS 2112 Course Notes. Retrieved from <a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/recitations/13mst/rec13-18fa-mst.pdf" target="_blank" rel="noopener">http://www.cs.cornell.edu/courses/cs2112/2018fa/recitations/13mst/rec13-18fa-mst.pdf</a></p>
+<p>[2]Princeton University COS 423 Lecture Notes. Retrieved from <a href="http://www.cs.princeton.edu/courses/archive/spr05/cos423/lectures/04mst.pdf" target="_blank" rel="noopener">http://www.cs.princeton.edu/courses/archive/spr05/cos423/lectures/04mst.pdf</a></p>
 
       
     </div>
@@ -513,7 +522,7 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/" title="一道有趣的行列式习题的探究">http://lixiuyu.cc/2018/05/01/interesting-determinant-question/</a>
+    <a href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/" title="Dijkstra's algorithm 和最小生成树算法证明">http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -528,7 +537,9 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
       
         <div class="post-tags">
           
-            <a href="/tags/Linear-Algebra/" rel="tag"><i class="fa fa-tag"></i> Linear Algebra</a>
+            <a href="/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/tags/Graph-Theory/" rel="tag"><i class="fa fa-tag"></i> Graph Theory</a>
           
         </div>
       
@@ -556,8 +567,8 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/stat/" rel="next" title="AP统计中几个知识点的解释">
-                <i class="fa fa-chevron-left"></i> AP统计中几个知识点的解释
+              <a href="/2018/12/19/java-unsound/" rel="next" title="Java wildcard capture 及相关问题">
+                <i class="fa fa-chevron-left"></i> Java wildcard capture 及相关问题
               </a>
             
           </div>
@@ -565,10 +576,6 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/24/TechX-2018/" rel="prev" title="TechX 2018总结">
-                TechX 2018总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -745,7 +752,7 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举"><span class="nav-number">1.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代数"><span class="nav-number">2.</span> <span class="nav-text">代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几何"><span class="nav-number">3.</span> <span class="nav-text">几何</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dijkstra’s-algorithm"><span class="nav-number">1.</span> <span class="nav-text">Dijkstra’s algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-By-Induction"><span class="nav-number">1.1.</span> <span class="nav-text">Proof By Induction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Another-Proof"><span class="nav-number">1.2.</span> <span class="nav-text">Another Proof</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Spanning-Tree"><span class="nav-number">2.</span> <span class="nav-text">Minimum Spanning Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-by-Induction"><span class="nav-number">2.1.</span> <span class="nav-text">Proof by Induction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再探-Kruskal-和-Prim"><span class="nav-number">2.2.</span> <span class="nav-text">再探 Kruskal 和 Prim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Kruskal’s-algorithm"><span class="nav-number">2.2.1.</span> <span class="nav-text">Kruskal’s algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prim’s-algorithm"><span class="nav-number">2.2.2.</span> <span class="nav-text">Prim’s algorithm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
