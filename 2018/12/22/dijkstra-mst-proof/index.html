@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_red.png">
 <meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_blue.png">
 <meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/prim.png">
-<meta property="og:updated_time" content="2018-12-23T08:28:58.042Z">
+<meta property="og:updated_time" content="2018-12-24T13:03:13.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dijkstra&#39;s algorithm 和最小生成树算法证明">
 <meta name="twitter:description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,903
+                  1,933
                 </span>
               
 
@@ -416,7 +416,7 @@
 <p><img src="/2018/12/22/dijkstra-mst-proof/dijkstra.png" width="820" height="400" alt="Pittsburgh" align="center"></p>
 <center><font color="#A9A9A9" size="2.5">Dijkstra’s algorithm</font></center>
 
-<p>将算法找到的距离记为 $d(v)$ ，从 $s$ 到 $v$ 的实际最短距离记为 $\delta(v)$ ，我们需要证明对任意 $v \in V$ ，当算法结束时都有 $d(v) = \delta(v)$ 。这等同于证明 $\forall x \in R$ ， $d(x) = \delta(x)$ 。</p>
+<p>将算法找到的距离记为 $d(v)$ ，从 $s$ 到 $v$ 的实际最短距离记为 $\delta(v)$ ，我们需要证明对任意 $v \in V$ ，在当前轮递推结束时都有 $d(v) = \delta(v)$ 。这等同于证明 $\forall x \in R$ ， $d(x) = \delta(x)$ 。</p>
 <h3 id="Proof-By-Induction"><a href="#Proof-By-Induction" class="headerlink" title="Proof By Induction"></a>Proof By Induction</h3><p><em>Base case ($|R| = 1$)</em>:  因为 $R$ 的大小会不断增大，只有当 $R = {s}$ 时 $|R| = 1$ ，此时 $d(x) = 0 = \delta(x)$ ，正确。</p>
 <p><em>Induction step</em>: 令 $u$ 为最后一个加进 $R$ 的顶点，记 $R^{‘} = R \cup {u}$ ，则 $\forall x \in R^{‘}$ ， $d(x) = \delta(x)$ 。</p>
 <p>根据 <em>induction step</em> 中的条件，$\forall x \in R^{‘}$ 且 $x \neq u $ ，$d(x) = \delta(x)$ 。因此，我们只需要证明 $d(u) = \delta(u)$ 。Suppose for the sake of contradiction ，存在一从 $s$ 到 $u$ 的最短路径 $Q$ ，使得</p>
@@ -425,13 +425,13 @@
 <p>我们可以知道 $Q$ 一定不在 $R^{‘}$ 内结束，同时部分组成 $Q$ 的顶点在 $R^{‘}$ 中。令 $xy$ 为第一个在 $Q$ 中离开 $R^{‘}$ 的路径，$Q_x$ 为在顶点 $x$ 结束的 $Q$ 的子路径，则有</p>
 <center>$l(Q_x) + l(xy) \leq l(Q)$</center>
 
-<p>同时，因为 $y$ 与 $x$ 相邻，根据 Dijkstra’s algorithm ，$d(y) \leq d(x) + l(xy)$ ，所以</p>
+<p>同时，因为 $y$ 与 $x$ 相邻，而结束时最后一个更新的顶点是 $u$ ，故 $y$ 一定被算法更新过。根据 Dijkstra’s algorithm ，$d(y) \leq d(x) + l(xy)$ ，所以</p>
 <center>$d(y) \leq l(Q)$</center>
 
-<p>因为 $x \in R^{‘}$ ，而最后一个被加进 $R^{‘}$ 的顶点是 $u$ ，$y$ 则并没有被加进 $R^{‘}$ ，我们可以得到</p>
-<center>$d(u) &lt; d(y)$</center>
+<p>因为 $x \in R^{‘}$ ，最后一个被加进 $R^{‘}$ 的顶点是 $u$ ，$y$ 则并没有被加进 $R^{‘}$ ，我们可以得到</p>
+<center>$d(u) \leq d(y)$</center>
 
-<p>而又由于 $l(Q) &lt; d(u)$ ，我们发现 $l(Q) &lt; d(u) &lt; d(y) &lt; l(Q)$ ，矛盾。所以 $d(u) = \delta(u)$ ，<em>induction step</em> 成立，证毕。</p>
+<p>而又由于 $l(Q) &lt; d(u)$ ，我们发现 $l(Q) &lt; d(u) \leq d(y) \leq l(Q)$ ，矛盾。所以 $d(u) = \delta(u)$ ，<em>induction step</em> 成立，证毕。</p>
 <h3 id="Another-Proof"><a href="#Another-Proof" class="headerlink" title="Another Proof"></a>Another Proof</h3><p>在我村 CS 2112 的 course note 里还有一个通过 loop invariant 的<a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/lecture.html?id=ssp" target="_blank" rel="noopener">证明</a>，各位有兴趣的话可以点击链接查看，在此就不展开了。</p>
 <h2 id="Minimum-Spanning-Tree"><a href="#Minimum-Spanning-Tree" class="headerlink" title="Minimum Spanning Tree"></a>Minimum Spanning Tree</h2><p>最小生成树指的是一副联通加权无向图中权值最小的一棵生成树，而寻找最小生成树（MST）也是图论中非常经典的问题。</p>
 <p><img src="/2018/12/22/dijkstra-mst-proof/mst_example.png" width="430" height="270" alt="Pittsburgh" align="center"></p>
@@ -458,8 +458,10 @@
 </li>
 <li><p>$f \notin T^*$ ，记 $f$ 与 $T^*$ 形成的圈为 $C$ （因为 $T^*$ 为图 $G$ 的一棵生成树，$f$ 与 $T^*$ 同在 $G$ 内，$T^* \cup f$ 必形成圈），$e$ 为 $C \cap D$ 除 $f$ 外的另一条边，则 $e \in T^*$。因此，我们可以得到以下两条结论：</p>
 <ul>
-<li>$e$ 不在任何一个圈中，$e$ 不为红色</li>
-<li>$e$ 与 $f$ 在同一割中而在应用 blue rule 后被染成蓝色的是 $f$ ，$e$ 不为蓝色且 $w_e \geq w_f$  </li>
+<li><p>$e$ 不在任何一个圈中，$e$ 不为红色</p>
+</li>
+<li><p>$e$ 与 $f$ 在同一割中而在应用 blue rule 后被染成蓝色的是 $f$ ，$e$ 不为蓝色且 $w_e \geq w_f$  </p>
+</li>
 </ul>
 <p>所以 $e$ 没有被染色，且 $w_e \geq w_f$ ，因此 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST（权值更小），故 $f \in T^*$。</p>
 </li>
@@ -469,7 +471,7 @@
 <ul>
 <li><p>$e \notin T^*$ ，$T^*$ 满足 invariant。</p>
 </li>
-<li>$e \in T^*$ ，记 $T^*$ 在去掉 $e$ 后形成的割为 $D$ ，$f$ 为 $C \cap D$ 中的另一条边且  $f \notin T^*$（因为一个圈中的顶点都可以互相连通，故其中必有一条边不在所在图的生成树中）。因此，我们可以得到以下两条结论：<br><br>- $f \notin T^*$ ，$f$ 不为蓝色<br>- $f$ 与 $e$ 在同一圈中而在应用 red rule 后被染成红色的是 $e$ ，$f$ 不为红色且 $w_f \leq w_e$<br><br>所以 $f$ 没有被染色，且 $w_f \leq w_e$ ，故 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST，因此我们证明了 $e \notin T^*$ 。
+<li>$e \in T^*$ ，记 $T^*$ 在去掉 $e$ 后形成的割为 $D$ ，$f$ 为 $C \cap D$ 中的另一条边且  $f \notin T^*$（因为一个圈中的顶点都可以互相连通，故其中必有一条边不在所在图的生成树中）。因此，我们可以得到以下两条结论：<br><br>- $f \notin T^*$ ，$f$ 不为蓝色<br><br>- $f$ 与 $e$ 在同一圈中而在应用 red rule 后被染成红色的是 $e$ ，$f$ 不为红色且 $w_f \leq w_e$<br><br>所以 $f$ 没有被染色，且 $w_f \leq w_e$ ，故 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST，因此我们证明了 $e \notin T^*$ 。
 </li>
 </ul>
 <p>因此，根据算法必定终止且终止时所有边皆会被染色，染成蓝色的边一定属于 $T^*$，染成红色的边一定不属于 $T^*$ ，我们证明了 <em>color invariant</em> 成立。所以所有蓝色的边组成了其所在图的 MST ，证毕。</p>
