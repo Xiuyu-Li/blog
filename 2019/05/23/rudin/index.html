@@ -85,11 +85,11 @@
 <meta name="keywords" content="Cornell,Analysis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Baby Rudin Chapter 1-6 总结">
-<meta property="og:url" content="http://lixiuyu.cc/2019/05/09/rudin/index.html">
+<meta property="og:url" content="http://lixiuyu.cc/2019/05/23/rudin/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-25T04:19:15.098Z">
+<meta property="og:updated_time" content="2019-05-25T07:41:58.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Baby Rudin Chapter 1-6 总结">
 <meta name="twitter:description" content="在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://lixiuyu.cc/2019/05/09/rudin/">
+  <link rel="canonical" href="http://lixiuyu.cc/2019/05/23/rudin/">
 
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2019/05/09/rudin/">
+    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2019/05/23/rudin/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Olórin">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T12:37:23+08:00">
-                2019-05-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-23T12:37:23+08:00">
+                2019-05-23
               </time>
             
 
@@ -363,7 +363,7 @@
 
           
           
-             <span id="/2019/05/09/rudin/" class="leancloud_visitors" data-flag-title="Baby Rudin Chapter 1-6 总结">
+             <span id="/2019/05/23/rudin/" class="leancloud_visitors" data-flag-title="Baby Rudin Chapter 1-6 总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,7 +388,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  4,328
+                  4,349
                 </span>
               
 
@@ -468,9 +468,9 @@
 <h3 id="Selected-Definitions-and-Theorems-2"><a href="#Selected-Definitions-and-Theorems-2" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
 <li><strong>3.2 Theorem</strong> Let $(X, d)$ be metric space, $E \subseteq X$, $p \in X$, $p$ is a limit point of $X$ iff there is a sequence $p_n \in E$ s.t. $\lim_{n \to \infty} p_n \rightarrow  p$ and $p_n \neq p$ for all $n$.</li>
 <li><strong>3.8 Definition</strong> A sequence {$p_n$} in a metric space $(X, d) $ is said to be a <strong>Cauchy sequence</strong> if for every $\epsilon &gt; 0$ there is an integer $N$ such that $d(p_n , p_m) &lt; \epsilon$ if $n &gt; N$ and $m &gt; N$.</li>
-<li><strong>3.9 Definition</strong> For $E \subseteq X$, $(X, d)$ a metric space, $Diam(E) = \sup {d(x, y)|x, y \in E}$.</li>
+<li><strong>3.9 Definition</strong> For $E \subseteq X$, $(X, d)$ a metric space, $Diam(E) = \sup \{d(x, y)|x, y \in E\}$. </li>
 </ul>
-<h2 id="Chapter-4-Continuity"><a href="#Chapter-4-Continuity" class="headerlink" title="Chapter 4 Continuity"></a>Chapter 4 Continuity</h2><p>本章开始进入连续性的讨论，这一章的内容是重中之重。本章的前半部分围绕着函数的极限进行了一系列的讨论，与序列的极限十分相似，只是把 $p_n$ 换成了 $f(x)$。虽然说不同之处在于函数的定义域不仅限于整数，但核心思想都是 $\delta-\epsilon$ 法则，很容易可以触类旁通。</p>
+<h2 id="Chapter-4-Continuity"><a href="#Chapter-4-Continuity" class="headerlink" title="Chapter 4 Continuity"></a>Chapter 4 Continuity</h2><h3 id="Summary-3"><a href="#Summary-3" class="headerlink" title="Summary"></a>Summary</h3><p>本章开始进入连续性的讨论，这一章的内容是重中之重。本章的前半部分围绕着函数的极限进行了一系列的讨论，与序列的极限十分相似，只是把 $p_n$ 换成了 $f(x)$。虽然说不同之处在于函数的定义域不仅限于整数，但核心思想都是 $\delta-\epsilon$ 法则，很容易可以触类旁通。</p>
 <p>4.5之后的内容则是本章的重点——连续性了。其实连续性定义的核心也是 $\delta - \epsilon$ 法则，一系列相关的性质也可以从这一点着手进行证明，比如连续函数的加减乘除和复合都是连续的。从4.5到4.12都是这些基础性质的讨论。4.13开始将连续性和紧致性联系起来，是本章的点睛之笔。其实在之前的定理4.8就已经介绍了从集合的角度如何定义连续性，从而无需涉及极限，使许多集合上诸如紧致性等一些很好的性质得以利用起来。4.13之后的一系列定理则正是这一点的具体示例，例如4.14说明定义域是紧致集的连续函数的值域也是紧致集; 4.18定义了一致连续，介绍了一个更加苛刻的连续性定义；4.19通过紧致性把连续和一致连续建立了联系，定义域是紧致集的连续函数一致连续。这一部分的内容非常精彩，应当反复研读并认真完成对应习题。</p>
 <p>接下来对连通性和间断点的讨论结论都可以通过对之前内容的运用得到，不难理解。本章最后引入正无穷和负无穷到极限系统中，与第一章最后实数域的完备相对应，都是使整个系统更加完备。</p>
 <p>这一章由于涉及的概念比较多，并且可以互相联系，习题相对较难，建议花费更多时间做更多练习，并且要注意总结方法。关于连续性和紧致性的概念和定理都要熟记，尤其要注意一直连续和连续的区别。</p>
@@ -480,27 +480,27 @@
 <li><strong>4.18 Definition</strong> For $f: X \rightarrow Y$, we say that $f$ is <strong>uniformly continuous</strong> on $X$ if for every $\epsilon &gt; 0$ there exists $\delta &gt; 0$ s.t. $d_Y(f(p), f(q)) &lt; \epsilon$ for all $p$, $q$ in $X$ for which $d_X(p, q) &lt; \delta$.</li>
 <li><strong>4.19 Theorem</strong> For $f: X \rightarrow Y$ continuous, $X$ compact then $f(X)$ is uniformly continuous.  </li>
 </ul>
-<h2 id="Chapter-5-Differentiation"><a href="#Chapter-5-Differentiation" class="headerlink" title="Chapter 5 Differentiation"></a>Chapter 5 Differentiation</h2><h3 id="Summary-3"><a href="#Summary-3" class="headerlink" title="Summary"></a>Summary</h3><p>这一章的内容基本与高数大同小异，介绍了导数的定义，可导性的判断，以及各种微分重要定理(微分中值定理，介值定理，洛必达法则，泰勒公式)。定理的证明不算抽象，但证明方法都比较有代表性，比如洛必达法则证明中的放缩和泰勒公式证明中的归纳法，值得仔细研读。</p>
+<h2 id="Chapter-5-Differentiation"><a href="#Chapter-5-Differentiation" class="headerlink" title="Chapter 5 Differentiation"></a>Chapter 5 Differentiation</h2><h3 id="Summary-4"><a href="#Summary-4" class="headerlink" title="Summary"></a>Summary</h3><p>这一章的内容基本与高数大同小异，介绍了导数的定义，可导性的判断，以及各种微分重要定理(微分中值定理，介值定理，洛必达法则，泰勒公式)。定理的证明不算抽象，但证明方法都比较有代表性，比如洛必达法则证明中的放缩和泰勒公式证明中的归纳法，值得仔细研读。</p>
 <p>最后讨论了从一元函数拓展到了向量值函数，讨论了诸多关于一元函数中的微分定理在向量值函数的情况下未必成立，会有所不同。</p>
 <h3 id="Selected-Definitions-and-Theorems-4"><a href="#Selected-Definitions-and-Theorems-4" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><p>关于导数和微分方面的知识与定理大家在之前的学习中都已经十分熟悉，就不再赘述，只简单列一个向量值函数的微分中值定理：</p>
 <p><strong>5.19 Theorem</strong> Suppose $f: [a, b] \rightarrow \mathbb{R}^k$ continuous, $f$ differentiable on $[a, b]$, then there exists $x \in [a, b]$ s.t. $|f(b) - f(a)| &lt; (b - a) |f’(x)|$ .</p>
-<h2 id="Chapter-6-The-Riemann-Stieltjes-Integral"><a href="#Chapter-6-The-Riemann-Stieltjes-Integral" class="headerlink" title="Chapter 6 The Riemann-Stieltjes Integral"></a>Chapter 6 The Riemann-Stieltjes Integral</h2><h3 id="Summary-4"><a href="#Summary-4" class="headerlink" title="Summary"></a>Summary</h3><p>在上一章讲了微分之后，这一章自然开始讨论积分。6.1到6.7基本都围绕这黎曼积分的定义进行讨论，这个定义比较有意思，大致是把一个区间 $[a,  b]$ 分割成有限个小区间，每个小区间内取该函数的最小上界和最大下界，假设这个区间的两个端点是 $x_{i-1}$ 和 $x_i$，有一个单调递增函数$\alpha: [a,b] \rightarrow \mathbb{R}$，则各个区间函数的最小上界与 $(\alpha(x_i) - \alpha(x_{i - 1}))$ 相乘之和就是上黎曼积分，最大下界则为下黎曼积分。从所有可能分割中取上黎曼积分的最大下界和下黎曼积分的最小上界，这两个值应该都趋近于同一个常数，即 $f$ 在 $[a,b]$ 上积分的值。可以看出黎曼积分的定义中包含着一种夹逼的思想，而在6.6又回归到采用收敛来定义，有对于任意 $\epsilon &gt; 0$，上黎曼积分与下黎曼积分之差必定小于 $\epsilon$。这使得黎曼积分的定义更加量化，便于证明很多其具有的性质。值得注意的是6.4中证明了对于给定分割的细分(refinement)，新的上黎曼积分一定不大于原分割上的上黎曼积分，新的下黎曼积分也不小于原下黎曼积分，这一定理对通过夹逼和收敛定义积分提供了依据，在之后的证明中也时常能够起到很大帮助。</p>
+<h2 id="Chapter-6-The-Riemann-Stieltjes-Integral"><a href="#Chapter-6-The-Riemann-Stieltjes-Integral" class="headerlink" title="Chapter 6 The Riemann-Stieltjes Integral"></a>Chapter 6 The Riemann-Stieltjes Integral</h2><h3 id="Summary-5"><a href="#Summary-5" class="headerlink" title="Summary"></a>Summary</h3><p>在上一章讲了微分之后，这一章自然开始讨论积分。6.1到6.7基本都围绕这黎曼积分的定义进行讨论，这个定义比较有意思，大致是把一个区间 $[a,  b]$ 分割成有限个小区间，每个小区间内取该函数的最小上界和最大下界，假设这个区间的两个端点是 $x_{i-1}$ 和 $x_i$，有一个单调递增函数$\alpha: [a,b] \rightarrow \mathbb{R}$，则各个区间函数的最小上界与 $(\alpha(x_i) - \alpha(x_{i - 1}))$ 相乘之和就是上黎曼积分，最大下界则为下黎曼积分。从所有可能分割中取上黎曼积分的最大下界和下黎曼积分的最小上界，这两个值应该都趋近于同一个常数，即 $f$ 在 $[a,b]$ 上积分的值。可以看出黎曼积分的定义中包含着一种夹逼的思想，而在6.6又回归到采用收敛来定义，有对于任意 $\epsilon &gt; 0$，上黎曼积分与下黎曼积分之差必定小于 $\epsilon$。这使得黎曼积分的定义更加量化，便于证明很多其具有的性质。值得注意的是6.4中证明了对于给定分割的细分(refinement)，新的上黎曼积分一定不大于原分割上的上黎曼积分，新的下黎曼积分也不小于原下黎曼积分，这一定理对通过夹逼和收敛定义积分提供了依据，在之后的证明中也时常能够起到很大帮助。</p>
 <p>6.8-6.11主要对可积性的判断进行讨论，6.12-6.19则都是关于黎曼积分性质的各种定理，但从6.8-6.19基本都是运用了黎曼积分的定义，尤其是6.4和6.6，进行证明。把这些证明弄懂对摸清本章习题的解题套路很有帮助，这些定理本身的内容也一定都要熟记。通过这一部分我们也可以发现函数的连续性和单调性(递增)对函数是否可积与黎曼积分的一些性质是否成立都相当重要，并且有些时候被积函数和积分变量可以相互转换。</p>
 <p>有了之前的铺垫，把积分和微分联系起来就十分自然了。6.20-6.22则讨论了这一点，通过黎曼积分定义了我们所熟悉的积分并推导了微积分基本定理和分部积分法，证明不难。6.23-6.25定义并简单讨论了向量值函数上的积分，与微分时的情况不同的是，向量值函数上的积分与一般情况下没有太大不同。最后一部分从数学上定义了曲线并介绍了如何用积分求曲线长度，比较应用</p>
 <h3 id="Selected-Definitions-and-Theorems-5"><a href="#Selected-Definitions-and-Theorems-5" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
-<li><strong>6.4 Theorem</strong> If $P^<em>$ is a refinement of $P$, then $L(P, f, a) \leq L(P^</em>, f, a)$, $U(P, f, a) \geq U(P^*, f, a)$.</li>
+<li><strong>6.4 Theorem</strong> If $P^*$ is a refinement of $P$, then $L(P, f, a) \leq L(P^*, f, a)$, $U(P, f, a) \geq U(P^*, f, a)$. </li>
 <li><strong>6.6 Theorem</strong> $f \in R(\alpha) $ on $[a, b]$ iff $\forall \epsilon &gt; 0$ $\exists P$ a partition of $[a, b]$ s.t. $U(P,f,a) - L(P,f,a) &lt; \epsilon$.</li>
 <li><strong>6.8 Theorem</strong> If $f$ is continuous on $[a, b]$ then $f \in R(\alpha)$ on $[a, b]$.</li>
 <li><strong>6.17 Theorem</strong> $\alpha: [a, b] \rightarrow \mathbb{R}$ monotonically increasing and differentiable, $\alpha’ \in R$ on $[a, b]$, $f$ bounded on $[a,b]$. Then $f \in R(\alpha)$ iff $f\alpha’ \in R$ and $\int_{a}^{b}fd\alpha = \int_{a}^{b} f(x)\alpha’(x)dx$.</li>
 <li><strong>6.21 The fundamental theorem of calculus</strong> If $f \in R$ on $[a, b]$ and if there is a differentiable function $F$ on $[a,b]$ s.t. $F’ = f$, then $\int_{a}^{b}f(x)dx = F(b) - F(a)$.</li>
 </ul>
 <h2 id="一点小结"><a href="#一点小结" class="headerlink" title="一点小结"></a>一点小结</h2><p>到这里 MATH 4130 的内容就告一段落了。从这篇文章可以看出1至6章的内容呈一个递进的关系，每一章的定义和定理都为接下来更高层次的内容打下了铺垫，因此在学习的过程中时常会感到每一点的内容都不是割裂的， 没有哪一个定义或定理是多余的，整一个体系十分连贯。这就是数学分析的美妙之处，是离散数学与基础数理统计不具有的（🐶）。</p>
-<p>同时这一点也说明了要学好数学分析必须做到各个定义与定理之间的融会贯通，而想做到这一点十分不易，必须花费大量的时间进行复习，思考，以及习题练习。对于像我一样的资质平平的人而言，如果未能做到这一点，即使在考试中取得了不错的成绩，也很可能并没有真正学懂数分的精髓。这也是我本学期选课的一大失误之处，学分过多导致没有足够的时间花在数分上，我是认为自己并没有学懂的，只掌握了一点皮毛。这也让我认为学校要求过于宽松的 CS + 数学双专业实际上有些毒瘤，让人分心从而哪一科都无法学精，不过这不是本文的重点，暂且按下不表，未来如有机会可能会撰文细细讨论。</p>
+<p>同时这一点也说明了要学好数学分析必须做到各个定义与定理之间的融会贯通，而想做到这一点十分不易，必须花费大量的时间进行复习，思考，以及习题练习。对于像我一样资质平平的人而言，如果未能下足够功夫在数分上，即使在考试中取得了不错的成绩，也很可能并没有真正学懂数分的精髓。这也是我本学期选课的一大失误之处，学分过多导致没有足够的时间花在数分上，我是认为自己并没有学懂的，只掌握了一点皮毛。这也让我认为学校要求过于宽松的 CS + 数学双专业实际上有些毒瘤，让人分心从而哪一科都无法学精。不过这并不是本文的重点，暂且按下不表，未来如有机会可能会撰文细细讨论。</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[^1]:Rudin:《数学分析原理》第1～7章小结. <a href="http://blog.renren.com/share/242480694/12441429452/1" target="_blank" rel="noopener">http://blog.renren.com/share/242480694/12441429452/1</a>.</p>
 <h2 id="Appendix-A"><a href="#Appendix-A" class="headerlink" title="Appendix A"></a>Appendix A</h2><p>这是我 MATH 4130 的笔记，字迹比较潦草，除我之外的人可能较难看懂，但仍附上以供感兴趣的人参考。</p>
 <p><a href="http://lxywizard.github.io/files/MATH4130_notes.pdf" target="_blank" rel="noopener">note.pdf</a></p>
 <h2 id="Appendix-B"><a href="#Appendix-B" class="headerlink" title="Appendix B"></a>Appendix B</h2><p>以下我在学习过程中发现的一些可能会有帮助的资源：</p>
-<p>CH1:</p>
+<p>Ch1:</p>
 <ol>
 <li><a href="https://www.wikiwand.com/zh-hant/%E5%AF%A6%E6%95%B8%E7%9A%84%E6%A7%8B%E9%80%A0" target="_blank" rel="noopener">實數的構造</a> </li>
 </ol>
@@ -519,6 +519,10 @@
 <li><a href="https://math.stackexchange.com/questions/716380/prove-that-if-f-is-bounded-and-nondecreasing-on-a-b-then-lim-fx-as-x" target="_blank" rel="noopener">Prove that if $f$ is bounded and nondecreasing on $[a,b]$ then $\lim f(x)$ as $x$ approaches $b$ from the left exists.</a></li>
 <li><a href="https://math.stackexchange.com/questions/2327671/show-that-exists-a-continuous-function-in-e-that-is-not-bounded" target="_blank" rel="noopener">Show that exists a continuous function in $E$ that is not bounded</a></li>
 <li><a href="https://math.stackexchange.com/questions/263606/prove-that-the-number-of-jump-discontinuities-is-countable-for-any-function" target="_blank" rel="noopener">Prove that the number of jump discontinuities is countable for any function</a></li>
+</ol>
+<p>综合:</p>
+<ol>
+<li><a href="http://blog.renren.com/share/242480694/12441429452" target="_blank" rel="noopener">Rudin:《数学分析原理》第1～7章小结</a></li>
 </ol>
 
       
@@ -540,7 +544,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://lixiuyu.cc/2019/05/09/rudin/" title="Baby Rudin Chapter 1-6 总结">http://lixiuyu.cc/2019/05/09/rudin/</a>
+    <a href="http://lixiuyu.cc/2019/05/23/rudin/" title="Baby Rudin Chapter 1-6 总结">http://lixiuyu.cc/2019/05/23/rudin/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -768,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1-The-Real-and-Complex-Number-Systems"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1 The Real and Complex Number Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems"><span class="nav-number">1.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2-Basic-Topology"><span class="nav-number">2.</span> <span class="nav-text">Chapter 2 Basic Topology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-1"><span class="nav-number">2.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-1"><span class="nav-number">2.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-3-Numerical-Sequences-and-Series"><span class="nav-number">3.</span> <span class="nav-text">Chapter 3 Numerical Sequences and Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-2"><span class="nav-number">3.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-2"><span class="nav-number">3.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-4-Continuity"><span class="nav-number">4.</span> <span class="nav-text">Chapter 4 Continuity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-3"><span class="nav-number">4.1.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-5-Differentiation"><span class="nav-number">5.</span> <span class="nav-text">Chapter 5 Differentiation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-3"><span class="nav-number">5.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-4"><span class="nav-number">5.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-6-The-Riemann-Stieltjes-Integral"><span class="nav-number">6.</span> <span class="nav-text">Chapter 6 The Riemann-Stieltjes Integral</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-4"><span class="nav-number">6.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-5"><span class="nav-number">6.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一点小结"><span class="nav-number">7.</span> <span class="nav-text">一点小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-A"><span class="nav-number">9.</span> <span class="nav-text">Appendix A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-B"><span class="nav-number">10.</span> <span class="nav-text">Appendix B</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1-The-Real-and-Complex-Number-Systems"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1 The Real and Complex Number Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems"><span class="nav-number">1.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2-Basic-Topology"><span class="nav-number">2.</span> <span class="nav-text">Chapter 2 Basic Topology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-1"><span class="nav-number">2.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-1"><span class="nav-number">2.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-3-Numerical-Sequences-and-Series"><span class="nav-number">3.</span> <span class="nav-text">Chapter 3 Numerical Sequences and Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-2"><span class="nav-number">3.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-2"><span class="nav-number">3.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-4-Continuity"><span class="nav-number">4.</span> <span class="nav-text">Chapter 4 Continuity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-3"><span class="nav-number">4.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-3"><span class="nav-number">4.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-5-Differentiation"><span class="nav-number">5.</span> <span class="nav-text">Chapter 5 Differentiation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-4"><span class="nav-number">5.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-4"><span class="nav-number">5.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-6-The-Riemann-Stieltjes-Integral"><span class="nav-number">6.</span> <span class="nav-text">Chapter 6 The Riemann-Stieltjes Integral</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-5"><span class="nav-number">6.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-5"><span class="nav-number">6.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一点小结"><span class="nav-number">7.</span> <span class="nav-text">一点小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-A"><span class="nav-number">9.</span> <span class="nav-text">Appendix A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-B"><span class="nav-number">10.</span> <span class="nav-text">Appendix B</span></a></li></ol></div>
             
 
           </div>
