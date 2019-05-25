@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lixiuyu.cc/2019/05/09/rudin/</loc>
+    <lastmod>2019-05-25</lastmod>
+  </url>  <url>
     <loc>http://lixiuyu.cc/2018/12/27/CS2112/</loc>
-    <lastmod>2018-12-26T14:45:49.300Z</lastmod>
+    <lastmod>2019-05-25</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
-    <lastmod>2018-12-24T13:03:13.829Z</lastmod>
+    <lastmod>2018-12-24</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/12/19/java-unsound/</loc>
-    <lastmod>2018-12-23T13:31:20.466Z</lastmod>
+    <lastmod>2018-12-23</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/08/24/TechX-2018/</loc>
-    <lastmod>2018-12-23T02:54:56.996Z</lastmod>
+    <lastmod>2018-12-23</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/01/25/stat/</loc>
-    <lastmod>2018-12-23T02:49:45.240Z</lastmod>
+    <lastmod>2018-12-23</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/01/15/%E5%BA%8F-%E5%89%8D%E8%B7%AF%E6%9C%AA%E7%9F%A5/</loc>
-    <lastmod>2018-12-22T13:55:07.591Z</lastmod>
+    <lastmod>2018-12-22</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
-    <lastmod>2018-12-21T13:26:57.653Z</lastmod>
+    <lastmod>2018-12-21</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/05/01/interesting-determinant-question/</loc>
-    <lastmod>2018-09-08T21:27:55.603Z</lastmod>
+    <lastmod>2018-09-08</lastmod>
   </url>
 </urlset>

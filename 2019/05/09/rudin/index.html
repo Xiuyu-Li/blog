@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Cornell,Analysis,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Olórin's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。">
+<meta name="keywords" content="Cornell,Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Baby Rudin Chapter 1-6 总结">
+<meta property="og:url" content="http://lixiuyu.cc/2019/05/09/rudin/index.html">
+<meta property="og:site_name" content="Olórin&#39;s Blog">
+<meta property="og:description" content="在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-25T04:19:15.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Baby Rudin Chapter 1-6 总结">
+<meta name="twitter:description" content="在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lixiuyu.cc/2019/05/09/rudin/">
+
+
+
+
+
+  <title>Baby Rudin Chapter 1-6 总结 | Olórin's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131374046-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d4ddeafe77d9249bf08dc6ca26067396";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Olórin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-quotes">
+          <a href="/quotes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br>
+            
+            Quotes
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2019/05/09/rudin/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olórin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olórin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Baby Rudin Chapter 1-6 总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T12:37:23+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math/" itemprop="url" rel="index">
+                    <span itemprop="name">Math</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/05/09/rudin/" class="leancloud_visitors" data-flag-title="Baby Rudin Chapter 1-6 总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4,328
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在 Spring 2019 学期我在康村上了 MATH 4130: Honors Introduction to Analysis I，虽然最后成绩差强人意，但确实是我在该学期最有意思的一门课 (相对应的是，一些我不感兴趣也没花多少时间的课成绩反而很好…)。这门课采用著名数分课本 Baby Rudin 作为教材，讲述了其 Ch1-Ch6 的内容，以下是我个人对课程脉络的一个梳理。</p>
+<a id="more"></a>
+
+<p>附录有我的课程笔记和一些在上课过程中发现的有用的资源，感兴趣的读者也可以参阅。</p>
+<h2 id="Chapter-1-The-Real-and-Complex-Number-Systems"><a href="#Chapter-1-The-Real-and-Complex-Number-Systems" class="headerlink" title="Chapter 1 The Real and Complex Number Systems"></a>Chapter 1 The Real and Complex Number Systems</h2><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>本书的第一章主要定义了一般的域和有序域，以及讨论了一系列命题及证明，内容不多。按本人比较 engineering 的粗浅理解，这一章规范化了一套最底层的定义，并提供了一些比较基础的证明 tactics，诸如 Least Upper Bound Property (<strong>非常重要</strong>) 和 Archimedean Property、Schwarz 不等式等为之后引申出 coutability、continuity 等更加高层的定义提供了理论基础与数学工具。</p>
+<p>本章另外一个值得注意的地方就是讨论了从有理数到实数的扩张。附录介绍了 Dedekind Cut，通过有理数集 $\mathbb{Q}$ 找出了一个集合 $\mathbb{R}$，并论证了这个域在与有理数域的同时具有所有实数集的性质，因此完成了实数集的构建。</p>
+<p>复数 MATH 4130 并未涉及，故此文也并不讨论。</p>
+<h3 id="Selected-Definitions-and-Theorems"><a href="#Selected-Definitions-and-Theorems" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
+<li><strong>1.7 Definition</strong> $E$ is bounded above if there is $y \in S$ s.t $x \leq y$ for all $x \in E$. We say that $y \in S$ is an <strong>upper bound</strong> for $E$ if $x \leq y$ for all $S \in E$. </li>
+<li><strong>1.8 Definition</strong> Suppose S is an ordered set, $E \subset S$, and $E$ is bounded above. Suppose there exists an $\alpha \in S$ and $\alpha$ is the <strong>least upper bound</strong> if for each upper bound $y$ for $E$ we have $\alpha \leq y$ and $\alpha$ is an upper bound for $E$.</li>
+<li><strong>1.10 Definition</strong> A linear ordered set $S$ has the <strong>least upper bound property</strong> if for each $E \subset S$ s.t. $E$ is bounded above and is non empty, then $E$ has a least upper bound.</li>
+<li><strong>1.11 Theorem</strong> $S$ an ordered set with the least upper bound property. Let $B \subset S$, $B \neq \emptyset$ and bounded below. Let $L=$ all lower bounds of $B$. Then $L$ is bounded above, non empty and so $\alpha = \sup L$ exists and $\alpha$ is the greatest lower bound for $B$.</li>
+<li><strong>1.20 Theorem</strong><ul>
+<li><strong>Archimedean Property</strong> If $x, y \in \mathbb{R}$, $x &gt; 0$, then there exists a natural n s.t $nx &gt; y$</li>
+<li><strong>$\mathbb{Q}$ is dense in $\mathbb{R}$</strong>  if $x, y \in \mathbb{R}$, $x &lt; y$, then there exists $p \in \mathbb{Q}$ s.t. $x &lt; p &lt; y$</li>
+</ul>
+</li>
+<li><strong>1.37 Theorem (Schwarz Inequality)</strong> Suppose $x, y, z \in \mathbb{R}^k$, then $|x \cdot y| &lt; |x|\cdot|y|$ </li>
+</ul>
+<h2 id="Chapter-2-Basic-Topology"><a href="#Chapter-2-Basic-Topology" class="headerlink" title="Chapter 2 Basic Topology"></a>Chapter 2 Basic Topology</h2><h3 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h3><p>这是我本人最喜欢的一章，主要介绍了一些基础的拓扑学概念与定理，其实严格意义上来说并不能算是数学分析。这一章从可数与不可数的定义讲起，并从2.8到2.14介绍了一系列利用相关性质的定理，比如有理数集是可数的，都比较直观，证明不难。用来证明实数集不可数的对角论证法 (Diagonal Proof) 是一个比较有趣与有用的证明 technique。</p>
+<p>本章的第二部分介绍了<strong>度量空间 (Metric Spaces)</strong>。这是一个非常重要的概念，之后的一切内容都是在度量空间上定义的。接下来2.18到2.30介绍了在度量空间上的一些列定义，包括领域、limit point、interior point、开集、闭集、闭包等，以及相关定理，证明不算抽象，但也 nontrivial，证明方法值得学习。</p>
+<p>2.30-2.37围绕<strong>紧致性 (Compactness)</strong>这一概念进行讨论。从这里开始本章的内容开始变得抽象了起来，这出于紧致性本就是一个杜撰出来的概念，作用相当于平面几何中的辅助线[^1]. 但这个概念非常重要，他的作用相当于把有限和无限、开和闭联系了起来，通过引入这一概念能够得到一些非常好的性质，例如在度量空间 $X$ 上紧致的子集一定在 $X$ 上是闭集和一个有界的闭集一定紧致等等，在之后章节讨论映射和连续性的时候也可以反映这一点。</p>
+<p>2.38-2.42 将集合与区间对应起来，并把本章之前的内容从 $\mathbb{R}$ 推广到了 $\mathbb{R}^k$ 上。最后关于 Perfect Set 的内容 MATH 4130 没有涉及，故不再赘述。</p>
+<h3 id="Selected-Definitions-and-Theorems-1"><a href="#Selected-Definitions-and-Theorems-1" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
+<li><strong>2.4 Definition</strong> $J_n = {1,\ldots,n}$, $n \in \mathbb{N}$<ul>
+<li>$A$ finite if $A \sim J_n$ for some $n$</li>
+<li>$A$ infinite if $A$ is not finite</li>
+<li>$A$ countable if $A \sim \mathbb{N}$</li>
+<li>$A$ at most countable if $A$ countable or finite</li>
+<li>$A$ uncountable if $A$ is not at most countable</li>
+</ul>
+</li>
+<li><strong>2.15 Definition</strong> A metric space $(x, d)$ is a set $X$ and a function $d: X\times X \rightarrow \mathbb{R}$ s.t. <ul>
+<li>$d(p, q) &gt; 0$ if $p,q \in X$, $p \neq q$; $d(p, p) = 0$</li>
+<li>$d(p,q) = d(q, p)$</li>
+<li>$d(p, q) &lt; d(p, r) + d(r, q)$, for any $r \in X$</li>
+</ul>
+</li>
+<li><strong>2.18 Definition</strong> Let $X$ be a metric space<ul>
+<li>A <em>neighborhood</em> of a point $p$ is a set $Nr(p)$ consisting of all points $q$ such that $d(p, q) &lt; r$. The number $r$ is called the radius of $Nr(p)$</li>
+<li>A point $p$ is a limit point of the set $E$ if every neighborhood of $p$ contains a point $q \neq p$ such that $q \in E$</li>
+<li>$E$ is <em>closed</em> if every <em>limit</em> point of $E$ is a point of $E$</li>
+<li>A point $p$ is an <em>interior</em> point of $E$ if there is a neighborhood $N$ of $p$ such that $N \subset E$</li>
+<li>$E$ is <em>open</em> if every point of $E$ is an interior point of $E$ </li>
+</ul>
+</li>
+<li><strong>2.32 Definition</strong> A subset $K$ of a metric space $X$ is said to be <strong>compact</strong> if every open cover of $K$ contains a finite subcover.</li>
+</ul>
+<h2 id="Chapter-3-Numerical-Sequences-and-Series"><a href="#Chapter-3-Numerical-Sequences-and-Series" class="headerlink" title="Chapter 3 Numerical Sequences and Series"></a>Chapter 3 Numerical Sequences and Series</h2><h3 id="Summary-2"><a href="#Summary-2" class="headerlink" title="Summary"></a>Summary</h3><p>这一章主要讲了序列的极限和收敛性，与高数的内容有诸多重合之处，并没有太多新奇的地方。值得注意的是本章把在度量空间中集合的 limit point 与序列收敛建立了联系，每一个该集合的 limit point 都是一个该集合序列的极限。</p>
+<p>柯西序列是本章的一个重点。柯西序列的定义非常有意思，一定要结合相关定理仔细揣摩其背后的动机。通过柯西序列引出了一系列定义和定理，诸如 diameter，complete metric space，收敛序列一定是柯西序列，紧致空间上的柯西序列一定收敛于空间内的某一点等等，都应当仔细阅读。</p>
+<p>其他如 epsilon-delta，序列的单调性等定义都是基础中的基础，一定要熟记与掌握。子序列极限的最小上界和最小下界的定义相对本章其他内容较为抽象，但在涉及子序列的题目中会有用。一些重要的极限例如$\sqrt[n]{n}$应当记忆。</p>
+<p>后续关于判敛和级数 MATH 4130 没有涉及，本文也不讨论。</p>
+<h3 id="Selected-Definitions-and-Theorems-2"><a href="#Selected-Definitions-and-Theorems-2" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
+<li><strong>3.2 Theorem</strong> Let $(X, d)$ be metric space, $E \subseteq X$, $p \in X$, $p$ is a limit point of $X$ iff there is a sequence $p_n \in E$ s.t. $\lim_{n \to \infty} p_n \rightarrow  p$ and $p_n \neq p$ for all $n$.</li>
+<li><strong>3.8 Definition</strong> A sequence {$p_n$} in a metric space $(X, d) $ is said to be a <strong>Cauchy sequence</strong> if for every $\epsilon &gt; 0$ there is an integer $N$ such that $d(p_n , p_m) &lt; \epsilon$ if $n &gt; N$ and $m &gt; N$.</li>
+<li><strong>3.9 Definition</strong> For $E \subseteq X$, $(X, d)$ a metric space, $Diam(E) = \sup {d(x, y)|x, y \in E}$.</li>
+</ul>
+<h2 id="Chapter-4-Continuity"><a href="#Chapter-4-Continuity" class="headerlink" title="Chapter 4 Continuity"></a>Chapter 4 Continuity</h2><p>本章开始进入连续性的讨论，这一章的内容是重中之重。本章的前半部分围绕着函数的极限进行了一系列的讨论，与序列的极限十分相似，只是把 $p_n$ 换成了 $f(x)$。虽然说不同之处在于函数的定义域不仅限于整数，但核心思想都是 $\delta-\epsilon$ 法则，很容易可以触类旁通。</p>
+<p>4.5之后的内容则是本章的重点——连续性了。其实连续性定义的核心也是 $\delta - \epsilon$ 法则，一系列相关的性质也可以从这一点着手进行证明，比如连续函数的加减乘除和复合都是连续的。从4.5到4.12都是这些基础性质的讨论。4.13开始将连续性和紧致性联系起来，是本章的点睛之笔。其实在之前的定理4.8就已经介绍了从集合的角度如何定义连续性，从而无需涉及极限，使许多集合上诸如紧致性等一些很好的性质得以利用起来。4.13之后的一系列定理则正是这一点的具体示例，例如4.14说明定义域是紧致集的连续函数的值域也是紧致集; 4.18定义了一致连续，介绍了一个更加苛刻的连续性定义；4.19通过紧致性把连续和一致连续建立了联系，定义域是紧致集的连续函数一致连续。这一部分的内容非常精彩，应当反复研读并认真完成对应习题。</p>
+<p>接下来对连通性和间断点的讨论结论都可以通过对之前内容的运用得到，不难理解。本章最后引入正无穷和负无穷到极限系统中，与第一章最后实数域的完备相对应，都是使整个系统更加完备。</p>
+<p>这一章由于涉及的概念比较多，并且可以互相联系，习题相对较难，建议花费更多时间做更多练习，并且要注意总结方法。关于连续性和紧致性的概念和定理都要熟记，尤其要注意一直连续和连续的区别。</p>
+<h3 id="Selected-Definitions-and-Theorems-3"><a href="#Selected-Definitions-and-Theorems-3" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
+<li><strong>4.8 Theorem</strong> For $f: X \rightarrow Y$, $f$ is continuous iff $f^{-1}(V)$ is open for each $V \subseteq Y$ open.</li>
+<li><strong>4.14 Theorem</strong> For $f: X \rightarrow Y$ continuous, $X$ compact then $f(X)$ is compact. </li>
+<li><strong>4.18 Definition</strong> For $f: X \rightarrow Y$, we say that $f$ is <strong>uniformly continuous</strong> on $X$ if for every $\epsilon &gt; 0$ there exists $\delta &gt; 0$ s.t. $d_Y(f(p), f(q)) &lt; \epsilon$ for all $p$, $q$ in $X$ for which $d_X(p, q) &lt; \delta$.</li>
+<li><strong>4.19 Theorem</strong> For $f: X \rightarrow Y$ continuous, $X$ compact then $f(X)$ is uniformly continuous.  </li>
+</ul>
+<h2 id="Chapter-5-Differentiation"><a href="#Chapter-5-Differentiation" class="headerlink" title="Chapter 5 Differentiation"></a>Chapter 5 Differentiation</h2><h3 id="Summary-3"><a href="#Summary-3" class="headerlink" title="Summary"></a>Summary</h3><p>这一章的内容基本与高数大同小异，介绍了导数的定义，可导性的判断，以及各种微分重要定理(微分中值定理，介值定理，洛必达法则，泰勒公式)。定理的证明不算抽象，但证明方法都比较有代表性，比如洛必达法则证明中的放缩和泰勒公式证明中的归纳法，值得仔细研读。</p>
+<p>最后讨论了从一元函数拓展到了向量值函数，讨论了诸多关于一元函数中的微分定理在向量值函数的情况下未必成立，会有所不同。</p>
+<h3 id="Selected-Definitions-and-Theorems-4"><a href="#Selected-Definitions-and-Theorems-4" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><p>关于导数和微分方面的知识与定理大家在之前的学习中都已经十分熟悉，就不再赘述，只简单列一个向量值函数的微分中值定理：</p>
+<p><strong>5.19 Theorem</strong> Suppose $f: [a, b] \rightarrow \mathbb{R}^k$ continuous, $f$ differentiable on $[a, b]$, then there exists $x \in [a, b]$ s.t. $|f(b) - f(a)| &lt; (b - a) |f’(x)|$ .</p>
+<h2 id="Chapter-6-The-Riemann-Stieltjes-Integral"><a href="#Chapter-6-The-Riemann-Stieltjes-Integral" class="headerlink" title="Chapter 6 The Riemann-Stieltjes Integral"></a>Chapter 6 The Riemann-Stieltjes Integral</h2><h3 id="Summary-4"><a href="#Summary-4" class="headerlink" title="Summary"></a>Summary</h3><p>在上一章讲了微分之后，这一章自然开始讨论积分。6.1到6.7基本都围绕这黎曼积分的定义进行讨论，这个定义比较有意思，大致是把一个区间 $[a,  b]$ 分割成有限个小区间，每个小区间内取该函数的最小上界和最大下界，假设这个区间的两个端点是 $x_{i-1}$ 和 $x_i$，有一个单调递增函数$\alpha: [a,b] \rightarrow \mathbb{R}$，则各个区间函数的最小上界与 $(\alpha(x_i) - \alpha(x_{i - 1}))$ 相乘之和就是上黎曼积分，最大下界则为下黎曼积分。从所有可能分割中取上黎曼积分的最大下界和下黎曼积分的最小上界，这两个值应该都趋近于同一个常数，即 $f$ 在 $[a,b]$ 上积分的值。可以看出黎曼积分的定义中包含着一种夹逼的思想，而在6.6又回归到采用收敛来定义，有对于任意 $\epsilon &gt; 0$，上黎曼积分与下黎曼积分之差必定小于 $\epsilon$。这使得黎曼积分的定义更加量化，便于证明很多其具有的性质。值得注意的是6.4中证明了对于给定分割的细分(refinement)，新的上黎曼积分一定不大于原分割上的上黎曼积分，新的下黎曼积分也不小于原下黎曼积分，这一定理对通过夹逼和收敛定义积分提供了依据，在之后的证明中也时常能够起到很大帮助。</p>
+<p>6.8-6.11主要对可积性的判断进行讨论，6.12-6.19则都是关于黎曼积分性质的各种定理，但从6.8-6.19基本都是运用了黎曼积分的定义，尤其是6.4和6.6，进行证明。把这些证明弄懂对摸清本章习题的解题套路很有帮助，这些定理本身的内容也一定都要熟记。通过这一部分我们也可以发现函数的连续性和单调性(递增)对函数是否可积与黎曼积分的一些性质是否成立都相当重要，并且有些时候被积函数和积分变量可以相互转换。</p>
+<p>有了之前的铺垫，把积分和微分联系起来就十分自然了。6.20-6.22则讨论了这一点，通过黎曼积分定义了我们所熟悉的积分并推导了微积分基本定理和分部积分法，证明不难。6.23-6.25定义并简单讨论了向量值函数上的积分，与微分时的情况不同的是，向量值函数上的积分与一般情况下没有太大不同。最后一部分从数学上定义了曲线并介绍了如何用积分求曲线长度，比较应用</p>
+<h3 id="Selected-Definitions-and-Theorems-5"><a href="#Selected-Definitions-and-Theorems-5" class="headerlink" title="Selected Definitions and Theorems"></a>Selected Definitions and Theorems</h3><ul>
+<li><strong>6.4 Theorem</strong> If $P^<em>$ is a refinement of $P$, then $L(P, f, a) \leq L(P^</em>, f, a)$, $U(P, f, a) \geq U(P^*, f, a)$.</li>
+<li><strong>6.6 Theorem</strong> $f \in R(\alpha) $ on $[a, b]$ iff $\forall \epsilon &gt; 0$ $\exists P$ a partition of $[a, b]$ s.t. $U(P,f,a) - L(P,f,a) &lt; \epsilon$.</li>
+<li><strong>6.8 Theorem</strong> If $f$ is continuous on $[a, b]$ then $f \in R(\alpha)$ on $[a, b]$.</li>
+<li><strong>6.17 Theorem</strong> $\alpha: [a, b] \rightarrow \mathbb{R}$ monotonically increasing and differentiable, $\alpha’ \in R$ on $[a, b]$, $f$ bounded on $[a,b]$. Then $f \in R(\alpha)$ iff $f\alpha’ \in R$ and $\int_{a}^{b}fd\alpha = \int_{a}^{b} f(x)\alpha’(x)dx$.</li>
+<li><strong>6.21 The fundamental theorem of calculus</strong> If $f \in R$ on $[a, b]$ and if there is a differentiable function $F$ on $[a,b]$ s.t. $F’ = f$, then $\int_{a}^{b}f(x)dx = F(b) - F(a)$.</li>
+</ul>
+<h2 id="一点小结"><a href="#一点小结" class="headerlink" title="一点小结"></a>一点小结</h2><p>到这里 MATH 4130 的内容就告一段落了。从这篇文章可以看出1至6章的内容呈一个递进的关系，每一章的定义和定理都为接下来更高层次的内容打下了铺垫，因此在学习的过程中时常会感到每一点的内容都不是割裂的， 没有哪一个定义或定理是多余的，整一个体系十分连贯。这就是数学分析的美妙之处，是离散数学与基础数理统计不具有的（🐶）。</p>
+<p>同时这一点也说明了要学好数学分析必须做到各个定义与定理之间的融会贯通，而想做到这一点十分不易，必须花费大量的时间进行复习，思考，以及习题练习。对于像我一样的资质平平的人而言，如果未能做到这一点，即使在考试中取得了不错的成绩，也很可能并没有真正学懂数分的精髓。这也是我本学期选课的一大失误之处，学分过多导致没有足够的时间花在数分上，我是认为自己并没有学懂的，只掌握了一点皮毛。这也让我认为学校要求过于宽松的 CS + 数学双专业实际上有些毒瘤，让人分心从而哪一科都无法学精，不过这不是本文的重点，暂且按下不表，未来如有机会可能会撰文细细讨论。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[^1]:Rudin:《数学分析原理》第1～7章小结. <a href="http://blog.renren.com/share/242480694/12441429452/1" target="_blank" rel="noopener">http://blog.renren.com/share/242480694/12441429452/1</a>.</p>
+<h2 id="Appendix-A"><a href="#Appendix-A" class="headerlink" title="Appendix A"></a>Appendix A</h2><p>这是我 MATH 4130 的笔记，字迹比较潦草，除我之外的人可能较难看懂，但仍附上以供感兴趣的人参考。</p>
+<p><a href="http://lxywizard.github.io/files/MATH4130_notes.pdf" target="_blank" rel="noopener">note.pdf</a></p>
+<h2 id="Appendix-B"><a href="#Appendix-B" class="headerlink" title="Appendix B"></a>Appendix B</h2><p>以下我在学习过程中发现的一些可能会有帮助的资源：</p>
+<p>CH1:</p>
+<ol>
+<li><a href="https://www.wikiwand.com/zh-hant/%E5%AF%A6%E6%95%B8%E7%9A%84%E6%A7%8B%E9%80%A0" target="_blank" rel="noopener">實數的構造</a> </li>
+</ol>
+<p>Ch2:   </p>
+<ol>
+<li><a href="https://www.zhihu.com/question/31734712/answer/72390708" target="_blank" rel="noopener">如何直观地解释「紧致性」？ - 包遵信的回答 - 知乎</a></li>
+<li><a href="https://math.stackexchange.com/questions/2659151/if-f-subset-mathbbr-and-bounded-then-sup-f-in-barf" target="_blank" rel="noopener">If $F\in \mathbb{R}$ and bounded, then sup $F \in \bar F$</a></li>
+<li><a href="https://math.stackexchange.com/questions/368108/how-to-prove-every-closed-interval-in-r-is-compact" target="_blank" rel="noopener">How to prove every closed interval in $\mathbb{R} $ is compact?</a></li>
+<li><a href="https://math.stackexchange.com/questions/456773/every-bounded-subset-of-rk-lies-in-a-compact-subset-of-rk" target="_blank" rel="noopener">Every bounded subset of $\mathbb{R}^k$ lies in a compact subset of $\mathbb{R}^k $</a></li>
+<li><a href="https://math.stackexchange.com/questions/194201/show-that-in-a-discrete-metric-space-every-subset-is-both-open-and-closed" target="_blank" rel="noopener">Show that in a discrete metric space, every subset is both open and closed.</a></li>
+<li><a href="https://math.stackexchange.com/questions/17649/are-singleton-sets-in-mathbbr-both-closed-and-open" target="_blank" rel="noopener">Are Singleton sets in $\mathbb{R}$ both closed and open?</a></li>
+</ol>
+<p>Ch4:</p>
+<ol>
+<li><a href="https://math.stackexchange.com/questions/668905/if-every-real-valued-continuous-function-is-bounded-on-x-metric-space-then" target="_blank" rel="noopener">If every real-valued continuous function is bounded on $X$ (metric space), then $X$ is compact.</a></li>
+<li><a href="https://math.stackexchange.com/questions/716380/prove-that-if-f-is-bounded-and-nondecreasing-on-a-b-then-lim-fx-as-x" target="_blank" rel="noopener">Prove that if $f$ is bounded and nondecreasing on $[a,b]$ then $\lim f(x)$ as $x$ approaches $b$ from the left exists.</a></li>
+<li><a href="https://math.stackexchange.com/questions/2327671/show-that-exists-a-continuous-function-in-e-that-is-not-bounded" target="_blank" rel="noopener">Show that exists a continuous function in $E$ that is not bounded</a></li>
+<li><a href="https://math.stackexchange.com/questions/263606/prove-that-the-number-of-jump-discontinuities-is-countable-for-any-function" target="_blank" rel="noopener">Prove that the number of jump discontinuities is countable for any function</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Olórin
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://lixiuyu.cc/2019/05/09/rudin/" title="Baby Rudin Chapter 1-6 总结">http://lixiuyu.cc/2019/05/09/rudin/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Cornell/" rel="tag"><i class="fa fa-tag"></i> Cornell</a>
+          
+            <a href="/tags/Analysis/" rel="tag"><i class="fa fa-tag"></i> Analysis</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/27/CS2112/" rel="next" title="康村 CS 2112 Review">
+                <i class="fa fa-chevron-left"></i> 康村 CS 2112 Review
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+  <div id="gitalk-container">
+  </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Olórin">
+            
+              <p class="site-author-name" itemprop="name">Olórin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lxywizard@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/skywalker-41/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-book"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/william.cosmos.3" target="_blank" title="Facabook">
+                      
+                        <i class="fa fa-fw fa-facebook-square"></i>Facabook</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.instagram.com/lxywizard/" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1-The-Real-and-Complex-Number-Systems"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1 The Real and Complex Number Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems"><span class="nav-number">1.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2-Basic-Topology"><span class="nav-number">2.</span> <span class="nav-text">Chapter 2 Basic Topology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-1"><span class="nav-number">2.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-1"><span class="nav-number">2.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-3-Numerical-Sequences-and-Series"><span class="nav-number">3.</span> <span class="nav-text">Chapter 3 Numerical Sequences and Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-2"><span class="nav-number">3.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-2"><span class="nav-number">3.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-4-Continuity"><span class="nav-number">4.</span> <span class="nav-text">Chapter 4 Continuity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-3"><span class="nav-number">4.1.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-5-Differentiation"><span class="nav-number">5.</span> <span class="nav-text">Chapter 5 Differentiation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-3"><span class="nav-number">5.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-4"><span class="nav-number">5.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-6-The-Riemann-Stieltjes-Integral"><span class="nav-number">6.</span> <span class="nav-text">Chapter 6 The Riemann-Stieltjes Integral</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-4"><span class="nav-number">6.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selected-Definitions-and-Theorems-5"><span class="nav-number">6.2.</span> <span class="nav-text">Selected Definitions and Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一点小结"><span class="nav-number">7.</span> <span class="nav-text">一点小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">8.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-A"><span class="nav-number">9.</span> <span class="nav-text">Appendix A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appendix-B"><span class="nav-number">10.</span> <span class="nav-text">Appendix B</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Olórin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '80ab5f57f8c6723017d1',
+          clientSecret: '84291f207e7d735e1f57d6bb5bdc30231bcdd8a1',
+          repo: 'lxywizard.github.io',
+          owner: 'lxywizard',
+          admin: ['lxywizard'], 
+          id: decodeURI(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("YLTYlyS6S4h47nyf8mIi9bz1-gzGzoHsz", "W7l3VQNRFIaGqqa02CxLR7nD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
