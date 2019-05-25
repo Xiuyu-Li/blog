@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,19 +18,14 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +44,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 
@@ -48,70 +52,42 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.1.1">
 
 
-  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.1.1">
 
 
-
-
-
-  <meta name="keywords" content="Java,">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Olórin's Blog" type="application/atom+xml">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 
 
 
 
 
 
-<meta name="description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
-<meta name="keywords" content="Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java wildcard capture 及相关问题">
-<meta property="og:url" content="http://lixiuyu.cc/2018/12/19/java-unsound/index.html">
-<meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
-<meta property="og:locale" content="en">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
-<meta property="og:updated_time" content="2018-12-23T13:31:20.466Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java wildcard capture 及相关问题">
-<meta name="twitter:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
-<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
 
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":true},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: true,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -123,12 +99,43 @@
 </script>
 
 
+  
 
+
+
+
+  <meta name="description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java wildcard capture 及相关问题">
+<meta property="og:url" content="http://lixiuyu.cc/2018/12/19/java-unsound/index.html">
+<meta property="og:site_name" content="Olórin&#39;s Blog">
+<meta property="og:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
+<meta property="og:updated_time" content="2019-05-25T09:59:27.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java wildcard capture 及相关问题">
+<meta name="twitter:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
+<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Olórin's Blog" type="application/atom+xml">
+
+
+
+  
+  
   <link rel="canonical" href="http://lixiuyu.cc/2018/12/19/java-unsound/">
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Java wildcard capture 及相关问题 | Olórin's Blog</title>
   
@@ -136,17 +143,20 @@
 
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-131374046-1', 'auto');
-  ga('send', 'pageview');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131374046-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131374046-1');
+    }
+  </script>
 
 
-  <script type="text/javascript">
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -158,6 +168,34 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -173,7 +211,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -183,13 +221,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -197,75 +234,123 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            About
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            Archives
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-quotes">
-          <a href="/quotes/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br>
-            
-            Quotes
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-quotes">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/quotes/" rel="section"><i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br>Quotes</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -273,12 +358,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/lxywizard" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -289,6 +389,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -313,11 +415,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java wildcard capture 及相关问题</h1>
+          <h1 class="post-title" itemprop="name headline">Java wildcard capture 及相关问题
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -325,13 +436,30 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-19T01:23:03+08:00">
-                2018-12-18
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-18 12:23:03" itemprop="dateCreated datePublished" datetime="2018-12-18T12:23:03-05:00">2018-12-18</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-25 05:59:27" itemprop="dateModified" datetime="2019-05-25T05:59:27-04:00">2019-05-25</time>
+              
             
           </span>
 
@@ -347,11 +475,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
-                    <span itemprop="name">Computer Science</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
 
                 
                 
@@ -361,37 +485,37 @@
 
           
             
+            
           
 
           
           
-             <span id="/2018/12/19/java-unsound/" class="leancloud_visitors" data-flag-title="Java wildcard capture 及相关问题">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
+            <span id="/2018/12/19/java-unsound/" class="leancloud_visitors" data-flag-title="Java wildcard capture 及相关问题">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
               
-                
+                <span class="post-meta-item-text">Views: </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                  <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Words count in article">
-                  2,591
-                </span>
+                <span title="Symbols count in article">7.3k</span>
               
 
               
@@ -446,7 +570,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Unsound</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Constrain</span>&lt;<span class="title">A</span>, <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span>&gt; </span>&#123;&#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Bind</span>&lt;<span class="title">A</span>&gt; </span>&#123;</span><br><span class="line">    &lt;B extends A&gt;</span><br><span class="line">    <span class="function">A <span class="title">upcast</span><span class="params">(Constrain&lt;A,B&gt; constrain, B b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> b;  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> &lt;T,U&gt; <span class="function">U <span class="title">coerce</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">    Constrain&lt;U,? <span class="keyword">super</span> T&gt; constrain = <span class="keyword">null</span>;</span><br><span class="line">    Bind&lt;U&gt; bind = <span class="keyword">new</span> Bind&lt;U&gt;();</span><br><span class="line">    <span class="keyword">return</span> bind.upcast(constrain, t);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String zero = Unsound.&lt;Integer,String&gt;coerce(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>为了对以上代码进行 Type-argument inference ，Java 会先收集已知的假设和需要满足的要求，并根据这些限制条件来尝试决定是否存在一个合法的参数。在此例中，一共有以下的假设和需求：</p>
-<img src="/2018/12/19/java-unsound/example1.png" width="460" height="140" alt="Pittsburgh" align="center">
+<img src="/2018/12/19/java-unsound/example1.png" width="460" height="140" align="center">
 
 <p>首先 <code>Constrain&lt;U, ? super T&gt;</code> 中有一个 wildcard 参数，所以通过 wildcard capture，Java 引入了一个 fresh type variable，Z 。显然，这个 wildcard 有个 explicit constraint，即 T 是 Z 的子类。同时根据 <code>Constraint</code> 的定义 <code>Constrain&lt;A, B extends A&gt;</code> ，这里还有一个 implicit constraint，即 Z 是 U 的子类。由此可得 Assumption a) 和 b) 。接下来 Java 对 <code>bind.upcast(constrain, t)</code> 进行类型检测，此处的 <code>constrain</code> 为 <code>Constrain&lt;U, Z&gt;</code> ，类似地，由 <code>upcast</code>  的定义我们可以知道 B 在句法上等价于 Z ，同时 B 是 U 的子类，得到 c) 和 e) 。同样因为 <code>upcast</code> 的定义，<code>t</code> 的类型应当是 B 的子类，所以 T 是 B 的子类，得到 d) 。</p>
 <p> 由于 c) 的存在，我们可以直接从 a) 和 b) 推出 d) 和 e) 成立。即，explicit constraint 告诉了我们 <code>t</code> 是一个合法参数，而 implicit constraint 使得 <code>bind.upcast</code> 满足要求。因此，使得 <code>coerce</code> 合法的关键在于找到一个具体的 Z ，其满足 <code>Constrain&lt;U, ? super T&gt;</code> 。然而，当 T 不是 U 的子类时，是不可能创造出这样的 <code>Constraint</code> 实例的（本例即是这种情况，Integer 显然 不可能是 String 的子类）。论文在这里引入了一个概念 <em>implicit null</em>，即 “in Java null inhabits <em>every</em> reference type”。所以，尽管不可能实例化 <code>Constrain&lt;U, ? super T&gt;</code> ，某些 “unsound” 的代码仍然可以通过 null 来通过 type check 的 assumption（因为本人对 type theory 知之甚少，也并不是特别理解这个解释，更无法进一步展开，还望各位读者在评论区指教）。因此理论上这段明显 “unsound” 的程序是满足所有需求的，也的确可以通过 javac, version 1.8.0_25 的编译。但其未能通过 Eclipse Compiler for Java, ecj version 3.11.1.v20150902-1521 和 Java 9, javac build 108 的编译，因为这两个更新的编译器首先考虑了 Requirements d) 和 e) ，并未建立 c)，并发现 t 的类型并不是 U 的子类，参数不合法$^1$。</p>
@@ -463,29 +587,41 @@
 
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
       <div>
-        <ul class="post-copyright">
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>Post author:</strong>
-    Olórin
-  </li>
+    <strong>Post author:  </strong>Olórin</li>
   <li class="post-copyright-link">
-    <strong>Post link:</strong>
+    <strong>Post link: </strong>
+    
     <a href="http://lixiuyu.cc/2018/12/19/java-unsound/" title="Java wildcard capture 及相关问题">http://lixiuyu.cc/2018/12/19/java-unsound/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
-  </li>
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
 </ul>
 
       </div>
@@ -495,7 +631,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -509,10 +645,16 @@
 
         
           
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
           </div>
         
         </div>
@@ -551,22 +693,15 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
-
-          
-
   
-  <div id="gitalk-container">
-  </div>
+    <div class="comments" id="gitalk-container">
+    </div>
 
   
 
@@ -585,9 +720,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
-    
     <div class="sidebar-inner">
 
       
@@ -603,52 +735,94 @@
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Olórin">
             
               <p class="site-author-name" itemprop="name">Olórin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">categories</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
             <div class="feed-link motion-element">
@@ -660,53 +834,78 @@
           
 
           
+
+          
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:lxywizard@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/skywalker-41/activities" target="_blank" title="知乎">
-                      
-                        <i class="fa fa-fw fa-book"></i>知乎</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.facebook.com/william.cosmos.3" target="_blank" title="Facabook">
-                      
-                        <i class="fa fa-fw fa-facebook-square"></i>Facabook</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.instagram.com/lxywizard/" target="_blank" title="Instagram">
-                      
-                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:lxywizard@gmail.com" title="E-Mail &rarr; mailto:lxywizard@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/skywalker-41/activities" title="知乎 &rarr; https://www.zhihu.com/people/skywalker-41/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/william.cosmos.3" title="Facabook &rarr; https://www.facebook.com/william.cosmos.3" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook-square"></i>Facabook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.instagram.com/lxywizard/" title="Instagram &rarr; https://www.instagram.com/lxywizard/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
             </div>
           
 
           
-          
 
           
           
 
+          
+            
+          
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -714,7 +913,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -722,6 +921,9 @@
 
     </div>
   </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
 
 
         
@@ -731,16 +933,27 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Olórin</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Symbols count total: </span>
+    
+    <span title="Symbols count total">42k</span>
+  
+
+  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -748,31 +961,38 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
 
 
 
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -796,11 +1016,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -814,92 +1037,6 @@
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
 
 
 
@@ -916,6 +1053,62 @@
 
 
 
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -933,117 +1126,76 @@
        </script>
 
 
+  
+
 
   
 
 
 
 
-
   
-
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("YLTYlyS6S4h47nyf8mIi9bz1-gzGzoHsz", "W7l3VQNRFIaGqqa02CxLR7nD");</script>
   <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
+    
     function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
+      var $visitors = $('.leancloud_visitors');
       var url = $visitors.attr('id').trim();
       var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
           if (results.length > 0) {
             var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
                 var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
     }
+    
 
     $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'YLTYlyS6S4h47nyf8mIi9bz1-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'YLTYlyS6S4h47nyf8mIi9bz1-gzGzoHsz',
+                'X-LC-Key': 'W7l3VQNRFIaGqqa02CxLR7nD',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
     });
   </script>
 
@@ -1052,58 +1204,51 @@
   
 
   
+  
 
   
   
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
   
   
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
-
   <script>
     
       pbOptions = {};
       
-          pbOptions.iconStyle = "box";
+        pbOptions.iconStyle = "box";
       
-          pbOptions.boxForm = "horizontal";
+        pbOptions.boxForm = "horizontal";
       
-          pbOptions.position = "bottomCenter";
+        pbOptions.position = "bottomCenter";
       
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
     
   </script>
 
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
 
   
 
