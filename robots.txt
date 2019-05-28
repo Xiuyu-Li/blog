@@ -11,6 +11,9 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /quotes/
+Disallow: /past_posts/
+Disallow: /_posts/cu-courses-review/
+Disallow: /_posts/cu-courses-review.md
 
 Sitemap: http://lixiuyu.cc/sitemap.xml
 Sitemap: http://lixiuyu.cc/baidusitemap.xml

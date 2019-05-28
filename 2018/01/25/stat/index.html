@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://lixiuyu.cc/2018/01/25/stat/%E5%9D%91%E7%88%B9.jpg">
 <meta property="og:image" content="http://lixiuyu.cc/2018/01/25/stat/%E7%BB%99%E5%8A%9B.jpg">
 <meta property="og:image" content="http://lixiuyu.cc/2018/01/25/stat/%E5%9D%91%E7%88%B9.jpg">
-<meta property="og:updated_time" content="2018-12-23T02:49:45.240Z">
+<meta property="og:updated_time" content="2019-05-26T13:25:20.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AP统计中几个知识点的解释">
 <meta name="twitter:description" content="去年在学习AP TI-84/NSPIRE艺术统计时，总有一些骚操作让人一头雾水。而每当询问Mr. Z时，他也只是会说“This is an AP level course. You only need to know how to press the calculator.” 本篇文章讨论了几个AP统计中涵盖的公式及比较有意思的知识点背后的原理。">
@@ -448,22 +448,6 @@
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-22 21:49:45" itemprop="dateModified" datetime="2018-12-22T21:49:45-05:00">2018-12-22</time>
-              
-            
           </span>
 
           
@@ -518,7 +502,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">6.8k</span>
+                <span title="Symbols count in article">6.7k</span>
               
 
               
@@ -582,7 +566,7 @@ E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
 <p>由此可得，当分母为$n$时，计算出的sample variance是真实方差的<em>biased estimator</em>，而将分母变回$n-1$时，$s_x^2$的期望则是</p>
 <center>$E[s_x^2]=\frac{1}{n-1}(nVar(X) - nVar(\bar{X}))=\frac{n}{n-1}\frac{(n-1)\sigma^2}{n}=\sigma^2$</center>
 
-<p>所以$ s_x^2=\frac{1}{n-1}\sum{(x_i-\bar{x})^2}$是对sample variance的<em>unbiased estimator</em>。将原来的$biased$的$E[s_x^{‘2}]$变为$unbiased$的$E[s_x^2]$所乘的系数$\frac{n}{n-1}$被称为<strong>Bessel’s correction</strong>。</p>
+<p>所以$ s_x^2=\frac{1}{n-1}\sum{(x_i-\bar{x})^2}$是对sample variance的<em>unbiased estimator</em>。将原来的<em>biased​</em>的$E[s_x^{‘2}]$变为<em>unbiased​</em>的$E[s_x^2]$所乘的系数$\frac{n}{n-1}$被称为<strong>Bessel’s correction</strong>。</p>
 <h2 id="Control-of-Type-II-Error"><a href="#Control-of-Type-II-Error" class="headerlink" title="Control of Type II Error"></a>Control of Type II Error</h2><p>做过AP统计significance test这一章选择题的各位都知道，如果想要减小假设检验发生Type II error (when it fails to reject a null hypothesis $H_0$ that really is false)的概率，可以使用增大样本容量（increase sample size）的方法。但书上和统计老师都并未对这样做的原理进行解释。本节将会提供两个对在<em>z test</em>中通过增大样本容量降低Type II error发生概率的解释。</p>
 <h3 id="Explanation-I"><a href="#Explanation-I" class="headerlink" title="Explanation I"></a>Explanation I</h3><p>第一个解释比较直观。举一个简单例子，现在要估算HFI学生在上一次统计考试中的平均成绩，我们的null hypothesis ($H_0$)是平均成绩为$\mu_1$，即上次考试中学生成绩符合正态分布（Normal distribution）$N(\mu_1, \sigma^2)$。而我们的alternative hypothesis ($H_1$)是平均成绩为大于$\mu_1$的某个值，设该值为$\mu_2$，也就是说学生成绩符合正态分布$N(\mu_2, \sigma^2)$。</p>
 <p>当我们随机选取$n$个学生计算他们的平均成绩$\bar{X}$，再通过$z = \frac{\bar{X}-\mu_1}{\sigma/\sqrt{n}}$计算出<em>z score</em>与对应的<em>P-value</em>，即可根据<em>P-value</em>推断学生的平均成绩是$\mu_1$还是$\mu_2$（即接受或拒绝$H_0$）。而由<em>z score</em>的计算公式可以得知，$\bar{X}$的位置决定抽样学生成绩属于正态分布$N(\mu_1, \frac{\sigma^2}{n})$还是$N(\mu_2, \frac{\sigma^2}{n})$。</p>
@@ -628,8 +612,7 @@ E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
 <center>$\beta(\mu)=\phi(z_{\alpha/2}-\lambda)+\phi(z_{\alpha/2}+\lambda)-1$</center>
 
 
-因为此时应该选择接受$H_1$，所以$\mu\neq\mu_0$。而$z_{\alpha/2}$是一个正值，由正态分布的图像及$\lambda=\frac{\mu-\mu_0}{\sigma/\sqrt{n}}$可得当$\lambda$增大时，$\phi(z_{\alpha/2}-\lambda)$的减小的数量会大于$\phi(z_{\alpha/2}+\lambda)$增加的数量。因此，我们可以知道$\beta(\mu)$相对于$|\lambda|$**单调递减**。而$|\lambda|$对$n$**单调递增**，由此可证*two-sided z test*增大样本容量可以减小Type II error发生的概率。
-
+<p>因为此时应该选择接受$H_1$，所以$\mu\neq\mu_0$。而$z_{\alpha/2}$是一个正值，由正态分布的图像及$\lambda=\frac{\mu-\mu_0}{\sigma/\sqrt{n}}$可得当$\lambda$增大时，$\phi(z_{\alpha/2}-\lambda)$的减小的数量会大于$\phi(z_{\alpha/2}+\lambda)$增加的数量。因此，我们可以知道$\beta(\mu)$相对于$|\lambda|$<strong>单调递减</strong>。而$|\lambda|$对$n$<strong>单调递增</strong>，由此可证<em>two-sided z test</em>增大样本容量可以减小Type II error发生的概率。</p>
 <p>此外，对于<em>t test</em>同样可以用相似的方法证明样本容量与Type II error发生概率的关系，不过推导过程更加复杂，本篇文章不作深入探讨。</p>
 <h2 id="Mean-and-Median-in-a-Skewed-Distribution"><a href="#Mean-and-Median-in-a-Skewed-Distribution" class="headerlink" title="Mean and Median in a Skewed Distribution"></a>Mean and Median in a Skewed Distribution</h2><p>最后这个问题比较有趣，而且并不是我自己发现的。今年学统计的H同（ju）学（lao）曾问过我统计书上所写的当一个分布<em>skewed to the left</em>时，均值小于中位数，反之则均值大于中位数的原因。我当时无法回答，但确实觉得这是一个很有意思的一点，原来一直以为理所当然，从来没有深究过背后的原理。但直觉总归是不可靠的，于是我去做了一些research。</p>
 <p>搞笑的是，“<em>skewness</em>”在历史上正是通过均值与中位数的大小关系定义的。。。</p>
@@ -810,7 +793,7 @@ E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -967,7 +950,7 @@ E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Variance-Formula"><span class="nav-number">1.</span> <span class="nav-text">Sample Variance Formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-of-Type-II-Error"><span class="nav-number">2.</span> <span class="nav-text">Control of Type II Error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-I"><span class="nav-number">2.1.</span> <span class="nav-text">Explanation I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-II"><span class="nav-number">2.2.</span> <span class="nav-text">Explanation II</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mean-and-Median-in-a-Skewed-Distribution"><span class="nav-number">3.</span> <span class="nav-text">Mean and Median in a Skewed Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">5.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Variance-Formula"><span class="nav-text">Sample Variance Formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-of-Type-II-Error"><span class="nav-text">Control of Type II Error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-I"><span class="nav-text">Explanation I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-II"><span class="nav-text">Explanation II</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mean-and-Median-in-a-Skewed-Distribution"><span class="nav-text">Mean and Median in a Skewed Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
@@ -1004,7 +987,7 @@ E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">42k</span>
+    <span title="Symbols count total">49k</span>
   
 
   
