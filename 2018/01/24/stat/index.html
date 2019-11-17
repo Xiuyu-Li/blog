@@ -104,24 +104,23 @@
 
 
 
-  <meta name="description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
-<meta name="keywords" content="Algorithm,Graph Theory">
+  <meta name="description" content="去年在学习AP TI-84/NSPIRE艺术统计时，总有一些骚操作让人一头雾水。而每当询问Mr. Z时，他也只是会说“This is an AP level course. You only need to know how to press the calculator.” 本篇文章讨论了几个AP统计中涵盖的公式及比较有意思的知识点背后的原理。">
+<meta name="keywords" content="Statistics,AP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dijkstra&#39;s algorithm 和最小生成树算法证明">
-<meta property="og:url" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/index.html">
+<meta property="og:title" content="AP统计中几个知识点的解释">
+<meta property="og:url" content="http://lixiuyu.cc/2018/01/24/stat/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
+<meta property="og:description" content="去年在学习AP TI-84/NSPIRE艺术统计时，总有一些骚操作让人一头雾水。而每当询问Mr. Z时，他也只是会说“This is an AP level course. You only need to know how to press the calculator.” 本篇文章讨论了几个AP统计中涵盖的公式及比较有意思的知识点背后的原理。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/dijkstra.png">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/mst_example.png">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_red.png">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/kruskal_blue.png">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/prim.png">
-<meta property="og:updated_time" content="2019-05-25T09:44:42.839Z">
+<meta property="og:image" content="http://lixiuyu.cc/2018/01/24/stat/mean.png">
+<meta property="og:image" content="http://lixiuyu.cc/2018/01/24/stat/%E5%9D%91%E7%88%B9.jpg">
+<meta property="og:image" content="http://lixiuyu.cc/2018/01/24/stat/%E7%BB%99%E5%8A%9B.jpg">
+<meta property="og:image" content="http://lixiuyu.cc/2018/01/24/stat/%E5%9D%91%E7%88%B9.jpg">
+<meta property="og:updated_time" content="2019-05-26T13:25:20.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dijkstra&#39;s algorithm 和最小生成树算法证明">
-<meta name="twitter:description" content="Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。">
-<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/dijkstra.png">
+<meta name="twitter:title" content="AP统计中几个知识点的解释">
+<meta name="twitter:description" content="去年在学习AP TI-84/NSPIRE艺术统计时，总有一些骚操作让人一头雾水。而每当询问Mr. Z时，他也只是会说“This is an AP level course. You only need to know how to press the calculator.” 本篇文章讨论了几个AP统计中涵盖的公式及比较有意思的知识点背后的原理。">
+<meta name="twitter:image" content="http://lixiuyu.cc/2018/01/24/stat/mean.png">
 
 
 
@@ -131,7 +130,7 @@
 
   
   
-  <link rel="canonical" href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/">
+  <link rel="canonical" href="http://lixiuyu.cc/2018/01/24/stat/">
 
 
 
@@ -141,7 +140,7 @@
   };
 </script>
 
-  <title>Dijkstra's algorithm 和最小生成树算法证明 | Olórin's Blog</title>
+  <title>AP统计中几个知识点的解释 | Olórin's Blog</title>
   
 
 
@@ -402,7 +401,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/">
+    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/01/24/stat/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Olórin">
@@ -419,7 +418,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Dijkstra's algorithm 和最小生成树算法证明
+          <h1 class="post-title" itemprop="name headline">AP统计中几个知识点的解释
 
               
             
@@ -445,7 +444,7 @@
                 
               
 
-              <time title="Created: 2018-12-21 11:57:58" itemprop="dateCreated datePublished" datetime="2018-12-21T11:57:58-05:00">2018-12-21</time>
+              <time title="Created: 2018-01-24 22:11:27" itemprop="dateCreated datePublished" datetime="2018-01-24T22:11:27-05:00">2018-01-24</time>
             
 
             
@@ -463,7 +462,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
 
                 
                 
@@ -478,7 +477,7 @@
 
           
           
-            <span id="/2018/12/22/dijkstra-mst-proof/" class="leancloud_visitors" data-flag-title="Dijkstra's algorithm 和最小生成树算法证明">
+            <span id="/2018/01/24/stat/" class="leancloud_visitors" data-flag-title="AP统计中几个知识点的解释">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -503,7 +502,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">4.4k</span>
+                <span title="Symbols count in article">6.7k</span>
               
 
               
@@ -527,115 +526,103 @@
       
 
       
-        <p>Dijkstra’s algorithm 和寻找 minimum spanning tree (MST) 的相关算法都是图论中十分常用而又简洁易懂的算法，但其具体为什么有效仍需要在数学上进行证明。本文即介绍了对这两个大一数据结构课必讲算法的证明，出于我没有接受过正规的算法分析训练，如有纰漏或不严谨之处还望斧正。<a id="more"></a></p>
-<h2 id="Dijkstra’s-algorithm"><a href="#Dijkstra’s-algorithm" class="headerlink" title="Dijkstra’s algorithm"></a>Dijkstra’s algorithm</h2><p>Dijkstra’s algorithm 是一个可以解决 <strong>single-source shortest path</strong> 问题的经典算法，本质上是对广度优先搜索（BFS）的一个推广，只是把 BFS 维护的 <strong>stack</strong> 换成了 <strong>priority queue</strong> 。鉴于这个算法知名度太高，大家对其都已十分熟悉，就不多说废话，直接上基于数学归纳法的证明。</p>
-<p>我们规定 $G$ 为算法所应用的图，$s$ 是源点，$l(u, v)$ 是从点 $u$ 到 $v$ 的边的长度，$V$ 是图中所有的点的集合，那么 Dijkstra’s algorithm 的过程如下所示：</p>
-<img src="/2018/12/22/dijkstra-mst-proof/dijkstra.png" width="820" height="400" align="center">
+        <p>去年在学习AP <del>TI-84/NSPIRE艺术</del>统计时，总有一些骚操作让人一头雾水。而每当询问Mr. Z时，他也只是会说“This is an AP level course. You only need to know how to press the calculator.” 本篇文章讨论了几个AP统计中涵盖的公式及比较有意思的知识点背后的原理。</p>
+<a id="more"></a>
 
-<center><font color="#A9A9A9" size="2.5">Dijkstra's algorithm</font></center>
+<p><em>注：本篇文章大部分专业词汇使用英文，以便于读者将它们与AP统计中所学的概念相对应，若对中英文夹杂感到不适还请见谅</em></p>
+<h2 id="Sample-Variance-Formula"><a href="#Sample-Variance-Formula" class="headerlink" title="Sample Variance Formula"></a>Sample Variance Formula</h2><p>在学习sample variance的时候，我对于其计算公式</p>
+<center>$$ s_x^2=\frac{1}{n-1}\sum{(x_i-\bar{x})^2}$$</center>
 
-<p>将算法找到的距离记为 $d(v)$ ，从 $s$ 到 $v$ 的实际最短距离记为 $\delta(v)$ ，我们需要证明对任意 $v \in V$ ，在当前轮递推结束时都有 $d(v) = \delta(v)$ 。这等同于证明 $\forall x \in R$ ， $d(x) = \delta(x)$ 。</p>
-<h3 id="Proof-By-Induction"><a href="#Proof-By-Induction" class="headerlink" title="Proof By Induction"></a>Proof By Induction</h3><p><em>Base case ($|R| = 1$)</em>:  因为 $R$ 的大小会不断增大，只有当 $R = {s}$ 时 $|R| = 1$ ，此时 $d(x) = 0 = \delta(x)$ ，正确。</p>
-<p><em>Induction step</em>: 令 $u$ 为最后一个加进 $R$ 的顶点，记 $R^{‘} = R \cup {u}$ ，则 $\forall x \in R^{‘}$ ， $d(x) = \delta(x)$ 。</p>
-<p>根据 <em>induction step</em> 中的条件，$\forall x \in R^{‘}$ 且 $x \neq u $ ，$d(x) = \delta(x)$ 。因此，我们只需要证明 $d(u) = \delta(u)$ 。Suppose for the sake of contradiction ，存在一从 $s$ 到 $u$ 的最短路径 $Q$ ，使得</p>
-<center>$l(Q) < d(u)$</center> 
+<p>中的$n-1$（而不是$n$）非常不解，而在课本<em>The Basic Practice of Statistics for AP</em> 431页单纯通过举例子计算的解释显然是一点帮助也没有。。。不过其提到的一个词<em>biased estimator</em>却的确是问题的关键：</p>
+<p><strong>当我们有一个参数为实数$\theta$的概率模型，构造关系$u$，若对任意观测数据$X$，都有</strong></p>
+<center>$E[u(X_1,X_2,\ldots,X_n)]=\theta$</center>
 
-<p>我们可以知道 $Q$ 一定不在 $R^{‘}$ 内结束，同时部分组成 $Q$ 的顶点在 $R^{‘}$ 中。令 $xy$ 为第一个在 $Q$ 中离开 $R^{‘}$ 的路径，$Q_x$ 为在顶点 $x$ 结束的 $Q$ 的子路径，则有</p>
-<center>$l(Q_x) + l(xy) \leq l(Q)$</center>
+<p><strong>则我们称 $u(X_1,X_2,\ldots,X_n)$ 是一个对 $\theta$ 的 _unbiased estimator_。否则，$u(X_1,X_2,\ldots,X_n)$ 是一个对 $\theta$ 的 <em>biased estimator</em></strong></p>
+<p>对于任意一个服从分布$F$的随机变量$X$，已知$X$的期望为$\mu$，则随机变量$X$或分布$F$的真实方差为</p>
+<center>$Var(X) = \sigma^2=E[(X-\mu)^2]$</center>
 
-<p>同时，因为 $y$ 与 $x$ 相邻，而结束时最后一个更新的顶点是 $u$ ，故 $y$ 一定被算法更新过。根据 Dijkstra’s algorithm ，$d(y) \leq d(x) + l(xy)$ ，所以</p>
-<center>$d(y) \leq l(Q)$</center>
+<p>由此可得</p>
+<center>$\displaystyle Var(X)=\sigma^2=E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \mu)^2]$</center>
 
-<p>因为 $x \in R^{‘}$ ，最后一个被加进 $R^{‘}$ 的顶点是 $u$ ，$y$ 则并没有被加进 $R^{‘}$ ，我们可以得到</p>
-<center>$d(u) \leq d(y)$</center>
+<p>这一个$E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \mu)^2]$就是对真实方差的一个<em>unbiased estimator</em>。而在计算sample variance中，当直接以$n$作为分母时，所得出的sample variance却是对$Var(X)$的一个<em>biased estimator</em>，并不是我们真正想要的方差。这是因为我们在计算时并不知道$X$的期望$\mu$，只能用样本均值$\bar{X}$代替（本质原因是样本均值$\bar{X}$是期望$\mu$的<strong>ordinary least squares</strong>，本篇文章不对此进行深入展开）。若以$n$为分母计算sample variance $s_x^{‘2}$，则会有</p>
 
-<p>而又由于 $l(Q) &lt; d(u)$ ，我们发现 $l(Q) &lt; d(u) \leq d(y) \leq l(Q)$ ，矛盾。所以 $d(u) = \delta(u)$ ，<em>induction step</em> 成立，证毕。</p>
-<h3 id="Another-Proof"><a href="#Another-Proof" class="headerlink" title="Another Proof"></a>Another Proof</h3><p>在我村 CS 2112 的 course note 里还有一个通过 loop invariant 的<a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/lecture.html?id=ssp" target="_blank" rel="noopener">证明</a>，各位有兴趣的话可以点击链接查看，在此就不展开了。</p>
-<h2 id="Minimum-Spanning-Tree"><a href="#Minimum-Spanning-Tree" class="headerlink" title="Minimum Spanning Tree"></a>Minimum Spanning Tree</h2><p>最小生成树指的是一副联通加权无向图中权值最小的一棵生成树，而寻找最小生成树（MST）也是图论中非常经典的问题。</p>
-<img src="/2018/12/22/dijkstra-mst-proof/mst_example.png" width="430" height="270" align="center">
+\begin{align} 
+E[s_x^{'2}] &= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2]\\\\
+&= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \mu + \mu - \bar{X})^2]\\\\
+&= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \mu - (\bar{X} - \mu))^2]\\\\
+&= E[\frac{1}{n}\sum_{i=1}^{n}((X_i - \mu)^2 - 2(X_i - \mu)(\bar{X}-\mu) + (\bar{X}-\mu)^2))]\\\\
+&= E[\frac{1}{n}(\sum_{i=1}^{n}(X_i - \mu)^2 - 2n(\bar{X} - \mu)(\bar{X}-\mu) + n(\bar{X}-\mu)^2)]\\\\
+&= E[\frac{1}{n}\sum_{i=1}^{n}(X_i - \mu)^2] - E[\frac{1}{n}*n(\bar{X}-\mu)^2]\\\\
+&= \frac{1}{n}E[\sum_{i=1}^{n}(X_i - \mu)^2] - \frac{1}{n}*nE[(\bar{X}-\mu)^2]\\\\
+&= \frac{1}{n}(nVar(X) - nVar(\bar{X}))\\\\
+&= Var(X) - Var(\bar{X})
+\end{align}
 
-<center><font color="#A9A9A9" size="2.5">A minimum spanning tree of a graph</font></center>
 
-<p>其中最有名的两个寻找 MST 的算法就是 Kruskal’s algorithm 和 Prim’s algorithm，思想分别为：</p>
-<ul>
-<li><strong>Kruskal’s algorithm:</strong> 找到一条权值最小的边，如果其与之前选择过的边形成了一个圈（cycle），丢弃这条边，否则留下。</li>
-<li><strong>Prim’s algorithm:</strong> 从任意顶点出发，选择与该顶点所在的连通分支（connected component）相连的不会形成圈的权值最小的边。</li>
-</ul>
-<p>事实上，包括以上两个经典算法，寻找 MST 的算法都可以被泛化为一个应用 <strong>Red rule</strong> 和 <strong>Blue rule</strong> 的 <strong>贪心算法</strong>：</p>
-<ul>
-<li><strong>Red rule:</strong> 记 $C$ 为一个没有红色边的圈，选择一个在 $C$ 中权值最大且未染色的边，将其染成红色。</li>
-<li><strong>Blue rule:</strong> 记 $D$ 为一个没有蓝色边的割（cut），选择一个在 $D$ 中权值最小且未染色的边，将其染成蓝色。</li>
-<li><strong>Greedy algorithm:</strong> 应用 red 和 blue rules 直到所有边都被染色，所有蓝色的边则组成了一个 MST</li>
-</ul>
-<p>首先，这个算法显然是会终止的，因为任何一个未被染色的边都会和已有的被染过色的集合形成圈或者连通分支，所以其必定落入 red rule 和 blue rule 其中一个的范围中。该算法的正确性（即算法终止时所有蓝色边形成的确实是所在图的最小生成树）同样可以通过数学归纳法来证明。</p>
-<h3 id="Proof-by-Induction"><a href="#Proof-by-Induction" class="headerlink" title="Proof by Induction"></a>Proof by Induction</h3><p><em>Color invariant:</em> 存在一个 MST $T^{*}$ ，使得 $T^*$ 包含所有的蓝色边且不包含任何红色边。</p>
-<p><em>Base case</em>: 当没有任何一条边被染色时，显然 $T^*$ 满足条件，因为不存在任何蓝色边和红色边。</p>
-<p><em>Induction step 1</em>: 假设在应用 blue rule 之前，<em>color invariant</em> 是正确的。</p>
-<p>此时令 $D$ 为被选定的割，$f$ 为被染成蓝色的边，则有以下两种情况：</p>
-<ul>
-<li>$f \in T^*$ ，$T^*$ 满足 invariant。
-</li>
-<li>$f \notin T^*$ ，记 $f$ 与 $T^*$ 形成的圈为 $C$ （因为 $T^*$ 为图 $G$ 的一棵生成树，$f$ 与 $T^*$ 同在 $G$ 内，$T^* \cup f$ 必形成圈），$e$ 为 $C \cap D$ 除 $f$ 外的另一条边，则 $e \in T^*$。因此，我们可以得到以下两条结论：
 
-<ul>
-<li><p>$e$ 不在任何一个圈中，$e$ 不为红色</p>
-</li>
-<li><p>$e$ 与 $f$ 在同一割中而在应用 blue rule 后被染成蓝色的是 $f$ ，$e$ 不为蓝色且 $w_e \geq w_f$  </p>
-</li>
-</ul>
-所以 $e$ 没有被染色，且 $w_e \geq w_f$ ，因此 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST（权值更小），故 $f \in T^*$。
+<p>而sample mean的方差为$\sigma_M^2=\frac{\sigma^2}{n}$（这个公式也可以从课本中的standard deviation of $\bar{X}$中推出）。因此，我们有</p>
+<center>$E[s_x^{'2}]=\sigma^2-\frac{\sigma^2}{n}=\frac{(n-1)\sigma^2}{n}$</center>
 
-</li>
-</ul>
-<p><em>Induction step 2:</em> 假设在应用 red rule 之前，<em>color invariant</em> 是正确的。</p>
-<p>此时令 $C$ 为被选定的圈，$e$ 为被染成红色的边，则有以下两种情况：</p>
-<ul>
-<li>$e \notin T^*$ ，$T^*$ 满足 invariant。
-</li>
-<li>$e \in T^*$ ，记 $T^*$ 在去掉 $e$ 后形成的割为 $D$ ，$f$ 为 $C \cap D$ 中的另一条边且  $f \notin T^*$（因为一个圈中的顶点都可以互相连通，故其中必有一条边不在所在图的生成树中）。因此，我们可以得到以下两条结论：
+<p>由此可得，当分母为$n$时，计算出的sample variance是真实方差的<em>biased estimator</em>，而将分母变回$n-1$时，$s_x^2$的期望则是</p>
+<center>$E[s_x^2]=\frac{1}{n-1}(nVar(X) - nVar(\bar{X}))=\frac{n}{n-1}\frac{(n-1)\sigma^2}{n}=\sigma^2$</center>
 
-<ul>
-<li><p>$f \notin T^*$ ，$f$ 不为蓝色</p>
-</li>
-<li><p>$f$ 与 $e$ 在同一圈中而在应用 red rule 后被染成红色的是 $e$ ，$f$ 不为红色且 $w_f \leq w_e$</p>
-</li>
-</ul>
-<p>所以 $f$ 没有被染色，且 $w_f \leq w_e$ ，故 $T^* \cup \{f\} \setminus \{e\}$  才应当是真实的 MST，因此我们证明了 $e \notin T^*$ 。</p>
-</li>
-</ul>
-<p>因此，根据算法必定终止且终止时所有边皆会被染色，染成蓝色的边一定属于 $T^*$，染成红色的边一定不属于 $T^*$ ，我们证明了 <em>color invariant</em> 成立。所以所有蓝色的边组成了其所在图的 MST ，证毕。</p>
-<h3 id="再探-Kruskal-和-Prim"><a href="#再探-Kruskal-和-Prim" class="headerlink" title="再探 Kruskal 和 Prim"></a>再探 Kruskal 和 Prim</h3><p>在引入了 red rule 和 blue rule 之后，我们可以发现 Kruskal’s algorithm 和 Prim’s algorithm 其实是这个推广的贪心算法的两个特例。Kruskal’s algorithm 和 Prim’s algorithm 可以分别被改写成如下形式：</p>
-<h4 id="Kruskal’s-algorithm"><a href="#Kruskal’s-algorithm" class="headerlink" title="Kruskal’s algorithm"></a>Kruskal’s algorithm</h4><ul>
-<li><p>查找未染色的权值最小的边，记为 $e$</p>
-</li>
-<li><p><em>Case 1:</em> 如果 $e$ 的两个顶点都在同一颗 blue tree 中，对某个 $e$ 所在的圈应用 red rule ，使得 $e$ 被染为红色</p>
-<img src="/2018/12/22/dijkstra-mst-proof/kruskal_red.png" width="350" height="230" align="center">
+<p>所以$ s_x^2=\frac{1}{n-1}\sum{(x_i-\bar{x})^2}$是对sample variance的<em>unbiased estimator</em>。将原来的<em>biased​</em>的$E[s_x^{‘2}]$变为<em>unbiased​</em>的$E[s_x^2]$所乘的系数$\frac{n}{n-1}$被称为<strong>Bessel’s correction</strong>。</p>
+<h2 id="Control-of-Type-II-Error"><a href="#Control-of-Type-II-Error" class="headerlink" title="Control of Type II Error"></a>Control of Type II Error</h2><p>做过AP统计significance test这一章选择题的各位都知道，如果想要减小假设检验发生Type II error (when it fails to reject a null hypothesis $H_0$ that really is false)的概率，可以使用增大样本容量（increase sample size）的方法。但书上和统计老师都并未对这样做的原理进行解释。本节将会提供两个对在<em>z test</em>中通过增大样本容量降低Type II error发生概率的解释。</p>
+<h3 id="Explanation-I"><a href="#Explanation-I" class="headerlink" title="Explanation I"></a>Explanation I</h3><p>第一个解释比较直观。举一个简单例子，现在要估算HFI学生在上一次统计考试中的平均成绩，我们的null hypothesis ($H_0$)是平均成绩为$\mu_1$，即上次考试中学生成绩符合正态分布（Normal distribution）$N(\mu_1, \sigma^2)$。而我们的alternative hypothesis ($H_1$)是平均成绩为大于$\mu_1$的某个值，设该值为$\mu_2$，也就是说学生成绩符合正态分布$N(\mu_2, \sigma^2)$。</p>
+<p>当我们随机选取$n$个学生计算他们的平均成绩$\bar{X}$，再通过$z = \frac{\bar{X}-\mu_1}{\sigma/\sqrt{n}}$计算出<em>z score</em>与对应的<em>P-value</em>，即可根据<em>P-value</em>推断学生的平均成绩是$\mu_1$还是$\mu_2$（即接受或拒绝$H_0$）。而由<em>z score</em>的计算公式可以得知，$\bar{X}$的位置决定抽样学生成绩属于正态分布$N(\mu_1, \frac{\sigma^2}{n})$还是$N(\mu_2, \frac{\sigma^2}{n})$。</p>
+<p>因此，若在下图中x轴上$\alpha$ (significance level)对应的<em>z score</em>处有一点$k$，则当$\bar{X}&lt; k$时接受$H_0$，当$\bar{X}&gt;k$时拒绝$H_0$（若相等则增大样本容量重新计算）。</p>
+<p><img src="/2018/01/24/stat/mean.png" alt=""></p>
+<p>这个时候可得Type II error的概率就是$P(N(\mu_2,\frac{\sigma^2}{n})&lt;k)$，即落在k左边的$N(\mu_2, \frac{\sigma^2}{n})$部分的面积。当样本容量（$n$）增大的时候，$\frac{\sigma^2}{n}$减小，因此$\mu_1$和$\mu_2$所在分布的range都会减小，也就是说两个分布的图像都会分别以$\mu_1$和$\mu_2$为中心“变窄”。此时对于同样的<em>z score</em>代表的$k$，$P(N(\mu_2,\frac{\sigma^2}{n})&lt;k)$会减小（因为面积减小），即Type II error减小。</p>
+<p>这就是一个对于增大本容量降低Type II error发生概率的解释。不过，用观察图像来解释原理实在是不够让人信服，连一个严谨的数学证明都没有</p>
+<p><img src="/2018/01/24/stat/%E5%9D%91%E7%88%B9.jpg" alt=""></p>
+<p>对于这一样本容量与Type II error发生概率的关系，是否可以通过数学公式证明呢？</p>
+<p><img src="/2018/01/24/stat/%E7%BB%99%E5%8A%9B.jpg" alt=""></p>
+<p>当然可以，下面就来看看第二个更为严谨的解释。</p>
+<h3 id="Explanation-II"><a href="#Explanation-II" class="headerlink" title="Explanation II"></a>Explanation II</h3><p>若要通过数学证明来解释样本容量与Type II error发生概率的关系，我们需引入施行特征函数：</p>
+<p><strong>若$C$是参数$\theta$的某检验问题的一个检验法，</strong></p>
+<p><strong><center>$\beta(\theta)=P_\theta(接受H_0)$</center></strong></p>
+<p><strong>称为检验法$C$的施行特征函数或<em>OC</em>函数</strong></p>
+<p>因此，当$\theta \in H_1$时，$\beta(\theta)$就是发生Type II error的概率。在这个时候$1 - \beta(\theta)$就是做出正确判断（拒绝$H_0$）的概率。函数$1 - \beta(\theta)$被称为检验法$C$的<strong>power function</strong>，在这里不深入探究。本文主要介绍通过<em>OC</em>函数来证明增大本容量可以降低Type II error的发生概率。</p>
+<p>我们假设有$H_0: \mu &lt; \mu_0$和$H_1:\mu&gt;\mu_0$，即对$H_0$和$H_1$进行一个<em>one-sided z test</em>。对此，我们有<em>OC</em>函数</p>
 
-<center><font color="#A9A9A9" size="2.5">Case 1</font></center>
-</li>
-<li><p><em>Case 2:</em> 否则应用 blue rule 到一个由所有 blue tree 顶点的形成的割中，使得 $e$ 被染成蓝色 </p>
-<img src="/2018/12/22/dijkstra-mst-proof/kruskal_blue.png" width="350" height="230" align="center">
+<center>$\beta(\mu) = P_\mu(接受H_0)=P_\mu(\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} < z_\alpha)=P_\mu(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} < z_\alpha-\frac{\mu-\mu_0}{\sigma/\sqrt{n}})$</center>
 
-<center><font color="#A9A9A9" size="2.5">Case 2</font></center> 
 
-</li>
-</ul>
-<h4 id="Prim’s-algorithm"><a href="#Prim’s-algorithm" class="headerlink" title="Prim’s algorithm"></a>Prim’s algorithm</h4><ul>
-<li><p>记 $S$ 为由蓝色的边连接成的树中的顶点的集合</p>
-</li>
-<li><p>$S$ 可初始化为任意顶点</p>
-</li>
-<li><p>对由 $S$ 形成的割应用 blue rule</p>
-<img src="/2018/12/22/dijkstra-mst-proof/prim.png" width="350" height="230" align="center">
+<p>此处$z_\alpha$即为$\alpha$ (significance level)对应的<em>z score</em>，而由于$\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} $正好是任意样本均值$\bar{X}$于正态分布$N(\mu,\frac{\sigma^2}{n})$的<em>z score</em>，可以得到</p>
+<center>$\beta(\mu)=\phi(z_\alpha - \lambda)$</center>
 
-<center><font color="#A9A9A9" size="2.5">Prim's algorithm</font></center> 
+<p>$\lambda$为$\frac{\mu-\mu_0}{\sigma/\sqrt{n}}$，而$\phi$则代表正态分布$N(\mu,\frac{\sigma^2}{n})$的<strong>分布函数（Cumulative Distribution Function, CDF）</strong>，即正态分布<strong>概率密度函数（Probability Density Function, PDF）的变上限积分</strong>。因此，我们有</p>
 
-</li>
-</ul>
-<hr>
-<p>以上就是对 Dijkstra’s algorithm 和最小生成树相关算法的全部证明。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]Cornell University CS 2112 Course Notes. Retrieved from <a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/recitations/13mst/rec13-18fa-mst.pdf" target="_blank" rel="noopener">http://www.cs.cornell.edu/courses/cs2112/2018fa/recitations/13mst/rec13-18fa-mst.pdf</a></p>
-<p>[2]Princeton University COS 423 Lecture Notes. Retrieved from <a href="http://www.cs.princeton.edu/courses/archive/spr05/cos423/lectures/04mst.pdf" target="_blank" rel="noopener">http://www.cs.princeton.edu/courses/archive/spr05/cos423/lectures/04mst.pdf</a></p>
+<center>$\beta(\mu) =\phi(z_\alpha - \lambda)=\frac{1} {\sqrt{2\pi}}\int_{-\infty}^{z_\alpha - \lambda}e^{-x ^{2}/2}dx$</center>
+
+
+<p>当$\beta(\mu)$代表发生Type II error的概率时，此时正确的应是$H_1$，也就是$\mu&gt;\mu_0$，所以$\mu-\mu_0&gt;0$，增大样本容量$n$会令$\frac{\mu-\mu_0}{\sigma/\sqrt{n}}$，也即$\lambda$增大。因此$\lambda$对$n$<strong>单调递增</strong>。而当$\lambda$增大时，积分上界$z_\alpha - \lambda$随之减小，所以$\beta(\mu)$对于$\lambda$<strong>单调递减</strong>。由此可证<em>one-sided z test</em>增大样本容量可以减小Type II error发生的概率。</p>
+<p>类似的，对于一个<em>two-sided z test</em>，若有$H_0: \mu = \mu_0$和$H_1:\mu\neq\mu_0$，我们可以求得<em>OC</em>函数</p>
+
+\begin{align}
+\beta(\mu) &= P_\mu(接受H_0)\\\\
+&= P_\mu(-z_{\alpha/2} < \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}} < z_{\alpha/2})\\\\
+&=P_\mu(-\lambda-z_{\alpha/2} < \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} < -\lambda+z_{\alpha/2})\\\\
+&=\phi(z_{\alpha/2}-\lambda)-\phi(-z_{\alpha/2}-\lambda)
+\end{align}
+
+
+<p>由正态分布图像的对称性可知$\phi(-x)=1-\phi(x)$，所以有</p>
+
+<center>$\beta(\mu)=\phi(z_{\alpha/2}-\lambda)+\phi(z_{\alpha/2}+\lambda)-1$</center>
+
+
+<p>因为此时应该选择接受$H_1$，所以$\mu\neq\mu_0$。而$z_{\alpha/2}$是一个正值，由正态分布的图像及$\lambda=\frac{\mu-\mu_0}{\sigma/\sqrt{n}}$可得当$\lambda$增大时，$\phi(z_{\alpha/2}-\lambda)$的减小的数量会大于$\phi(z_{\alpha/2}+\lambda)$增加的数量。因此，我们可以知道$\beta(\mu)$相对于$|\lambda|$<strong>单调递减</strong>。而$|\lambda|$对$n$<strong>单调递增</strong>，由此可证<em>two-sided z test</em>增大样本容量可以减小Type II error发生的概率。</p>
+<p>此外，对于<em>t test</em>同样可以用相似的方法证明样本容量与Type II error发生概率的关系，不过推导过程更加复杂，本篇文章不作深入探讨。</p>
+<h2 id="Mean-and-Median-in-a-Skewed-Distribution"><a href="#Mean-and-Median-in-a-Skewed-Distribution" class="headerlink" title="Mean and Median in a Skewed Distribution"></a>Mean and Median in a Skewed Distribution</h2><p>最后这个问题比较有趣，而且并不是我自己发现的。今年学统计的H同（ju）学（lao）曾问过我统计书上所写的当一个分布<em>skewed to the left</em>时，均值小于中位数，反之则均值大于中位数的原因。我当时无法回答，但确实觉得这是一个很有意思的一点，原来一直以为理所当然，从来没有深究过背后的原理。但直觉总归是不可靠的，于是我去做了一些research。</p>
+<p>搞笑的是，“<em>skewness</em>”在历史上正是通过均值与中位数的大小关系定义的。。。</p>
+<p><img src="/2018/01/24/stat/%E5%9D%91%E7%88%B9.jpg" alt=""></p>
+<p>不过现代的“<em>skewness</em>”已经改用三阶中心矩来定义了。</p>
+<p>如果各位读者想要更多了解这一点，可以去看看这一个<a href="https://www.zhihu.com/question/33636194" target="_blank" rel="noopener">知乎回答</a>，个人认为解释得还是非常好的。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>以上就是对于AP统计中我认为的几个主要的比较有意思的问题背后的原理。</p>
+<p>其实在学习HFI数理方面课程的时候，总是给人一种“不求甚解”的感觉，本来应该讲究数学推导，却学成了依靠背诵知识点过关的科目。下到统计，上到AC，无一例外。这对理解这一门学科所学的内容与将来的理科学习是相当不利的。尽管出于自身水平的限制，不能一一钻研自己感兴趣的所有学过而又不理解的知识点，但我始终觉得应当在学习的过程中有一种多问“为什么”的精神：起码这也能让自己学到这门科目的一点皮毛，<del>对得起这真tm贵的学费和AP考试费</del>，而不是在学完之后发现自己仅仅只是学会怎么操作一个工具而已。</p>
+<p>希望本文能给广大挣扎在AP统计中的出国党一点帮助，也激励自己和大家对于自己真正喜欢的学科不要仅仅满足于课程考试 <del>虽然不感兴趣的学科我经常这么干（大雾）</del>，永远保持一种“好求甚解”的习惯。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]盛骤, 谢式千, 潘承毅. 概率论与数理统计, 第四版[M]. 高等教育出版社, 2008.</p>
 
       
     </div>
@@ -670,7 +657,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/" title="Dijkstra's algorithm 和最小生成树算法证明">http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</a>
+    <a href="http://lixiuyu.cc/2018/01/24/stat/" title="AP统计中几个知识点的解释">http://lixiuyu.cc/2018/01/24/stat/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
@@ -683,9 +670,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            <a href="/tags/Statistics/" rel="tag"># Statistics</a>
           
-            <a href="/tags/Graph-Theory/" rel="tag"># Graph Theory</a>
+            <a href="/tags/AP/" rel="tag"># AP</a>
           
         </div>
       
@@ -719,8 +706,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/19/java-unsound/" rel="next" title="Java wildcard capture 及相关问题">
-                <i class="fa fa-chevron-left"></i> Java wildcard capture 及相关问题
+              <a href="/2018/01/15/序-前路未知/" rel="next" title="序-前路未知">
+                <i class="fa fa-chevron-left"></i> 序-前路未知
               </a>
             
           </div>
@@ -729,8 +716,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/27/CS2112/" rel="prev" title="Cornell CS 2112 Review">
-                Cornell CS 2112 Review <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/01/interesting-determinant-question/" rel="prev" title="一道有趣的行列式习题的探究">
+                一道有趣的行列式习题的探究 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -806,7 +793,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -963,7 +950,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dijkstra’s-algorithm"><span class="nav-text">Dijkstra’s algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-By-Induction"><span class="nav-text">Proof By Induction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Another-Proof"><span class="nav-text">Another Proof</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Spanning-Tree"><span class="nav-text">Minimum Spanning Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-by-Induction"><span class="nav-text">Proof by Induction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再探-Kruskal-和-Prim"><span class="nav-text">再探 Kruskal 和 Prim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Kruskal’s-algorithm"><span class="nav-text">Kruskal’s algorithm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prim’s-algorithm"><span class="nav-text">Prim’s algorithm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Variance-Formula"><span class="nav-text">Sample Variance Formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-of-Type-II-Error"><span class="nav-text">Control of Type II Error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-I"><span class="nav-text">Explanation I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Explanation-II"><span class="nav-text">Explanation II</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mean-and-Median-in-a-Skewed-Distribution"><span class="nav-text">Mean and Median in a Skewed Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
@@ -1000,7 +987,7 @@
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">49k</span>
+    <span title="Symbols count total">51k</span>
   
 
   

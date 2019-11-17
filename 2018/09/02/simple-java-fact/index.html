@@ -104,18 +104,18 @@
 
 
 
-  <meta name="description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
+  <meta name="description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证，但感觉还是挺有意思的，于是分享下。">
 <meta name="keywords" content="Java,Compilers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈 Java String 类参数传递">
 <meta property="og:url" content="http://lixiuyu.cc/2018/09/02/simple-java-fact/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
+<meta property="og:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证，但感觉还是挺有意思的，于是分享下。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-21T13:26:57.653Z">
+<meta property="og:updated_time" content="2019-11-17T22:55:54.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈 Java String 类参数传递">
-<meta name="twitter:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。">
+<meta name="twitter:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证，但感觉还是挺有意思的，于是分享下。">
 
 
 
@@ -497,7 +497,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">2.7k</span>
+                <span title="Symbols count in article">2.6k</span>
               
 
               
@@ -521,7 +521,7 @@
       
 
       
-        <p>最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文所要讲的一个小发现就是我基础不扎实的佐证，但感觉还是挺有意思的，所以简单分享下。</p>
+        <p>最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证，但感觉还是挺有意思的，于是分享下。</p>
 <a id="more"></a>
 
 <p>观察以下代码：</p>
@@ -541,7 +541,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"Hello"</span></span><br><span class="line">b = <span class="string">"Hello"</span></span><br><span class="line">c = a + <span class="string">"World"</span></span><br><span class="line">d = a + <span class="string">"World"</span></span><br><span class="line">e = <span class="string">"Hello"</span> + <span class="string">"World"</span></span><br><span class="line">f = <span class="string">"Hello"</span> + <span class="string">"World"</span></span><br><span class="line">print(a == b)</span><br><span class="line">print(c == d)</span><br><span class="line">print(e == f)</span><br></pre></td></tr></table></figure>
 
 <p><code>a == b</code> 显然正确，不多提。<code>e == f</code> 也是正确的，看来 Python 编译器也使用了 <code>constant folding</code> 进行优化。然而奇怪的是，<code>c == d</code> 居然也是正确的？难道 Python 对于 String 的储存机制有什么特别之处？但我在运行 <code>id(c)</code> 和 <code>id(d)</code> 之后发现 c 和 d 的地址并不相同。原来 Python 中对于 String 的 <code>==</code>  其实是比较两个 String 的值是否相同，相当于 Java 的 <code>.equals()</code>，实在是坑爹。在运行 <code>print(c is d)</code> 之后，果然得到了 <code>false</code> 的结果。</p>
-<p>这个文章可以说是非常 trivial 了，也暴露了自己学艺不精，权当茶余饭后巩固知识的小科普一篇。希望以后可以专注于一些更有趣的问题，产出一些高质量的文章。</p>
+<p>这个文章可以说是非常 trivial 了，也暴露了自己学艺不精，权当茶余饭后巩固知识的小科普一篇。</p>
 
       
     </div>
@@ -635,7 +635,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/19/java-unsound/" rel="prev" title="Java wildcard capture 及相关问题">
+              <a href="/2018/12/18/java-unsound/" rel="prev" title="Java wildcard capture 及相关问题">
                 Java wildcard capture 及相关问题 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -703,7 +703,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -880,7 +880,7 @@
     
       <span class="post-meta-item-text">Symbols count total: </span>
     
-    <span title="Symbols count total">49k</span>
+    <span title="Symbols count total">51k</span>
   
 
   

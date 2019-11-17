@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
-    <lastmod>2019-05-28</lastmod>
+    <loc>http://lixiuyu.cc/2019/11/17/drama-society/</loc>
+    <lastmod>2019-11-17</lastmod>
   </url>  <url>
-    <loc>http://lixiuyu.cc/2018/12/27/CS2112/</loc>
+    <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
+    <lastmod>2019-11-17</lastmod>
+  </url>  <url>
+    <loc>http://lixiuyu.cc/2019/05/26/cu-courses-review/</loc>
+    <lastmod>2019-11-17</lastmod>
+  </url>  <url>
+    <loc>http://lixiuyu.cc/2018/12/26/CS2112/</loc>
     <lastmod>2019-05-26</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2019/05/23/rudin/</loc>
     <lastmod>2019-05-26</lastmod>
   </url>  <url>
-    <loc>http://lixiuyu.cc/2018/01/25/stat/</loc>
+    <loc>http://lixiuyu.cc/2018/01/24/stat/</loc>
     <lastmod>2019-05-26</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/05/01/interesting-determinant-question/</loc>
@@ -22,13 +28,10 @@
     <loc>http://lixiuyu.cc/2018/08/24/TechX-2018/</loc>
     <lastmod>2019-05-25</lastmod>
   </url>  <url>
-    <loc>http://lixiuyu.cc/2018/12/19/java-unsound/</loc>
+    <loc>http://lixiuyu.cc/2018/12/18/java-unsound/</loc>
     <lastmod>2019-05-25</lastmod>
   </url>  <url>
-    <loc>http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
+    <loc>http://lixiuyu.cc/2018/12/21/dijkstra-mst-proof/</loc>
     <lastmod>2019-05-25</lastmod>
-  </url>  <url>
-    <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
-    <lastmod>2018-12-21</lastmod>
   </url>
 </urlset>
