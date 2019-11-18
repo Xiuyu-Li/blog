@@ -1,12 +1,13 @@
-html, body {
+html,
+body {
   overflow-x: hidden;
-  overflow-y: hidden; 
+  overflow-y: hidden;
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: white;
   /*background-image: url('http://imageshack.com/a/img905/2204/RaTH57.jpg');*/
-  background-repeat:repeat-x;
+  background-repeat: repeat-x;
   background-position: top;
   z-index: -2;
 }
@@ -18,7 +19,8 @@ html, body {
   border-bottom: thin solid;
   padding-bottom: 20px;
   opacity: 0.80;
-  filter: alpha(opacity=80); /* For IE8 and earlier */
+  filter: alpha(opacity=80);
+  /* For IE8 and earlier */
 }
 
 #date {
@@ -28,7 +30,8 @@ html, body {
   font-weight: normal;
   letter-spacing: 0.2em;
   opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+  filter: alpha(opacity=60);
+  /* For IE8 and earlier */
 }
 
 #footer {
@@ -39,7 +42,8 @@ html, body {
   background-color: black;
   text-align: center;
   opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
+  filter: alpha(opacity=50);
+  /* For IE8 and earlier */
 }
 
 #line {
@@ -49,14 +53,16 @@ html, body {
   border-bottom: solid white;
   padding: 15px;
   opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
+  filter: alpha(opacity=50);
+  /* For IE8 and earlier */
 }
 
 .navbar {
   position: fixed;
   width: 100%;
   opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+  filter: alpha(opacity=60);
+  /* For IE8 and earlier */
 }
 
 .wrapper {
@@ -66,17 +72,20 @@ html, body {
 span {
   border-radius: 100px;
   opacity: 0.75;
-  filter: alpha(opacity=75); /* For IE8 and earlier */
+  filter: alpha(opacity=75);
+  /* For IE8 and earlier */
 }
 
 #content {
   height: 45em;
-} p {
+}
+
+p {
   max-width: 30em;
   color: black;
   font-family: 'Pt Serif', "Microsoft YaHei", "STHeiti Light", "Montserrat", Georgia, Garamond, Times, serif;
-  letter-spacing:0.1em;
-  text-align:center;
+  letter-spacing: 0.1em;
+  text-align: center;
   margin: 40px auto;
   /*text-transform: lowercase;*/
   line-height: 145%;
@@ -94,7 +103,7 @@ p :hover {
 }
 
 #b-nav {
-  padding-bottom: 5em;
+  padding-bottom: 2em;
   position: fixed;
   width: 100%;
   bottom: 2em;
@@ -116,7 +125,8 @@ p :hover {
   padding: .2em 1em;
   background-color: black;
   opacity: 0.4;
-  filter: alpha(opacity=40); /* For IE8 and earlier */
+  filter: alpha(opacity=40);
+  /* For IE8 and earlier */
 }
 
 .hold {
@@ -154,14 +164,10 @@ p :hover {
   color: black;
 }
 
-@media screen 
- and (max-device-width: 800px) 
-  and (max-device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 2) 
-  and (orientation: portrait) {
-    p {
-      font-size: 1em;
-    }
+@media screen and (max-device-width: 800px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  p {
+    font-size: 1em;
+  }
 }
 
 .fa-twitter {
