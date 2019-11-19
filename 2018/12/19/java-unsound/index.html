@@ -108,16 +108,16 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java wildcard capture 及相关问题">
-<meta property="og:url" content="http://lixiuyu.cc/2018/12/18/java-unsound/index.html">
+<meta property="og:url" content="http://lixiuyu.cc/2018/12/19/java-unsound/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://lixiuyu.cc/2018/12/18/java-unsound/example1.png">
-<meta property="og:updated_time" content="2019-05-25T09:59:27.473Z">
+<meta property="og:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
+<meta property="og:updated_time" content="2019-11-18T19:39:01.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java wildcard capture 及相关问题">
 <meta name="twitter:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
-<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/18/java-unsound/example1.png">
+<meta name="twitter:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
 
 
 
@@ -127,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="http://lixiuyu.cc/2018/12/18/java-unsound/">
+  <link rel="canonical" href="http://lixiuyu.cc/2018/12/19/java-unsound/">
 
 
 
@@ -398,7 +398,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/12/18/java-unsound/">
+    <link itemprop="mainEntityOfPage" href="http://lixiuyu.cc/2018/12/19/java-unsound/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Olórin">
@@ -441,7 +441,7 @@
                 
               
 
-              <time title="Created: 2018-12-18 12:23:03" itemprop="dateCreated datePublished" datetime="2018-12-18T12:23:03-05:00">2018-12-18</time>
+              <time title="Created: 2018-12-19 12:23:03" itemprop="dateCreated datePublished" datetime="2018-12-19T12:23:03-05:00">2018-12-19</time>
             
 
             
@@ -474,7 +474,7 @@
 
           
           
-            <span id="/2018/12/18/java-unsound/" class="leancloud_visitors" data-flag-title="Java wildcard capture 及相关问题">
+            <span id="/2018/12/19/java-unsound/" class="leancloud_visitors" data-flag-title="Java wildcard capture 及相关问题">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -554,7 +554,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Unsound</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Constrain</span>&lt;<span class="title">A</span>, <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span>&gt; </span>&#123;&#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Bind</span>&lt;<span class="title">A</span>&gt; </span>&#123;</span><br><span class="line">    &lt;B extends A&gt;</span><br><span class="line">    <span class="function">A <span class="title">upcast</span><span class="params">(Constrain&lt;A,B&gt; constrain, B b)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> b;  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> &lt;T,U&gt; <span class="function">U <span class="title">coerce</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">    Constrain&lt;U,? <span class="keyword">super</span> T&gt; constrain = <span class="keyword">null</span>;</span><br><span class="line">    Bind&lt;U&gt; bind = <span class="keyword">new</span> Bind&lt;U&gt;();</span><br><span class="line">    <span class="keyword">return</span> bind.upcast(constrain, t);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String zero = Unsound.&lt;Integer,String&gt;coerce(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>为了对以上代码进行 Type-argument inference ，Java 会先收集已知的假设和需要满足的要求，并根据这些限制条件来尝试决定是否存在一个合法的参数。在此例中，一共有以下的假设和需求：</p>
-<img src="/2018/12/18/java-unsound/example1.png" width="460" height="140" align="center">
+<img src="/2018/12/19/java-unsound/example1.png" width="460" height="140" align="center">
 
 <p>首先 <code>Constrain&lt;U, ? super T&gt;</code> 中有一个 wildcard 参数，所以通过 wildcard capture，Java 引入了一个 fresh type variable，Z 。显然，这个 wildcard 有个 explicit constraint，即 T 是 Z 的子类。同时根据 <code>Constraint</code> 的定义 <code>Constrain&lt;A, B extends A&gt;</code> ，这里还有一个 implicit constraint，即 Z 是 U 的子类。由此可得 Assumption a) 和 b) 。接下来 Java 对 <code>bind.upcast(constrain, t)</code> 进行类型检测，此处的 <code>constrain</code> 为 <code>Constrain&lt;U, Z&gt;</code> ，类似地，由 <code>upcast</code>  的定义我们可以知道 B 在句法上等价于 Z ，同时 B 是 U 的子类，得到 c) 和 e) 。同样因为 <code>upcast</code> 的定义，<code>t</code> 的类型应当是 B 的子类，所以 T 是 B 的子类，得到 d) 。</p>
 <p> 由于 c) 的存在，我们可以直接从 a) 和 b) 推出 d) 和 e) 成立。即，explicit constraint 告诉了我们 <code>t</code> 是一个合法参数，而 implicit constraint 使得 <code>bind.upcast</code> 满足要求。因此，使得 <code>coerce</code> 合法的关键在于找到一个具体的 Z ，其满足 <code>Constrain&lt;U, ? super T&gt;</code> 。然而，当 T 不是 U 的子类时，是不可能创造出这样的 <code>Constraint</code> 实例的（本例即是这种情况，Integer 显然 不可能是 String 的子类）。论文在这里引入了一个概念 <em>implicit null</em>，即 “in Java null inhabits <em>every</em> reference type”。所以，尽管不可能实例化 <code>Constrain&lt;U, ? super T&gt;</code> ，某些 “unsound” 的代码仍然可以通过 null 来通过 type check 的 assumption（因为本人对 type theory 知之甚少，也并不是特别理解这个解释，更无法进一步展开，还望各位读者在评论区指教）。因此理论上这段明显 “unsound” 的程序是满足所有需求的，也的确可以通过 javac, version 1.8.0_25 的编译。但其未能通过 Eclipse Compiler for Java, ecj version 3.11.1.v20150902-1521 和 Java 9, javac build 108 的编译，因为这两个更新的编译器首先考虑了 Requirements d) 和 e) ，并未建立 c)，并发现 t 的类型并不是 U 的子类，参数不合法$^1$。</p>
@@ -602,7 +602,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="http://lixiuyu.cc/2018/12/18/java-unsound/" title="Java wildcard capture 及相关问题">http://lixiuyu.cc/2018/12/18/java-unsound/</a>
+    <a href="http://lixiuyu.cc/2018/12/19/java-unsound/" title="Java wildcard capture 及相关问题">http://lixiuyu.cc/2018/12/19/java-unsound/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>

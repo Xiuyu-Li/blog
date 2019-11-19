@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://lixiuyu.cc/2019/11/17/drama-society/</loc>
+    <lastmod>2019-11-19</lastmod>
+  </url>  <url>
+    <loc>http://lixiuyu.cc/2018/12/19/java-unsound/</loc>
+    <lastmod>2019-11-18</lastmod>
+  </url>  <url>
     <loc>http://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
     <lastmod>2019-11-18</lastmod>
   </url>  <url>
@@ -12,9 +18,6 @@
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
     <lastmod>2019-11-18</lastmod>
-  </url>  <url>
-    <loc>http://lixiuyu.cc/2019/11/17/drama-society/</loc>
-    <lastmod>2019-11-17</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
     <lastmod>2019-11-17</lastmod>
@@ -29,9 +32,6 @@
     <lastmod>2019-05-25</lastmod>
   </url>  <url>
     <loc>http://lixiuyu.cc/2018/08/24/TechX-2018/</loc>
-    <lastmod>2019-05-25</lastmod>
-  </url>  <url>
-    <loc>http://lixiuyu.cc/2018/12/18/java-unsound/</loc>
     <lastmod>2019-05-25</lastmod>
   </url>
 </urlset>
