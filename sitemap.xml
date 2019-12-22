@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lixiuyu.cc/2018/08/24/TechX-2018/</loc>
+    
+    <lastmod>2019-12-22T08:57:44.926Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
+    
+    <lastmod>2019-12-22T08:57:05.368Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lixiuyu.cc/2018/01/15/%E5%BA%8F-%E5%89%8D%E8%B7%AF%E6%9C%AA%E7%9F%A5/</loc>
+    
+    <lastmod>2019-12-22T08:56:20.363Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
+    
+    <lastmod>2019-12-22T08:47:15.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
+    
+    <lastmod>2019-12-20T11:22:36.097Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lixiuyu.cc/2018/12/27/CS2112/</loc>
+    
+    <lastmod>2019-12-20T11:20:53.337Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lixiuyu.cc/2019/11/17/drama-society/</loc>
     
     <lastmod>2019-11-19T08:18:09.053Z</lastmod>
@@ -16,37 +58,9 @@
   </url>
   
   <url>
-    <loc>http://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
-    
-    <lastmod>2019-11-18T16:23:15.587Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lixiuyu.cc/2018/12/27/CS2112/</loc>
-    
-    <lastmod>2019-11-18T16:23:07.221Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lixiuyu.cc/2018/01/25/stat/</loc>
     
     <lastmod>2019-11-18T16:22:57.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
-    
-    <lastmod>2019-11-18T16:22:49.269Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lixiuyu.cc/2018/09/02/simple-java-fact/</loc>
-    
-    <lastmod>2019-11-17T22:55:54.547Z</lastmod>
     
   </url>
   
@@ -68,20 +82,6 @@
     <loc>http://lixiuyu.cc/about/index.html</loc>
     
     <lastmod>2019-05-25T10:06:35.007Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lixiuyu.cc/2018/01/15/%E5%BA%8F-%E5%89%8D%E8%B7%AF%E6%9C%AA%E7%9F%A5/</loc>
-    
-    <lastmod>2019-05-25T10:01:43.557Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lixiuyu.cc/2018/08/24/TechX-2018/</loc>
-    
-    <lastmod>2019-05-25T10:00:18.212Z</lastmod>
     
   </url>
   
