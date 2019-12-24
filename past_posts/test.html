@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="你好，欢迎来到我的个人博客。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-23T11:56:23.725Z">
+<meta property="og:updated_time" content="2017-12-23T11:56:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
 <meta name="twitter:description" content="你好，欢迎来到我的个人博客。">
@@ -259,6 +259,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -466,5 +473,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/past_posts/test.html",
+            identifier: "past_posts/test.html",
+            title: "test"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>

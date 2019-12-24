@@ -57,7 +57,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://lixiuyu.cc/2018/08/24/TechX-2018/slogan.jpg">
 <meta property="og:image" content="http://lixiuyu.cc/2018/08/24/TechX-2018/hackathon.jpeg">
-<meta property="og:updated_time" content="2019-12-22T08:57:44.926Z">
+<meta property="og:updated_time" content="2019-12-22T08:57:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TechX 2018总结">
 <meta name="twitter:description" content="时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。   TechX 2018 Slogan">
@@ -362,6 +362,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -618,5 +625,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/2018/08/24/TechX-2018/",
+            identifier: "2018/08/24/TechX-2018/",
+            title: "TechX 2018总结"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>

@@ -57,7 +57,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://lixiuyu.cc/2019/11/17/drama-society/start.png">
 <meta property="og:image" content="http://lixiuyu.cc/2019/11/17/drama-society/end.png">
-<meta property="og:updated_time" content="2019-11-19T08:18:09.053Z">
+<meta property="og:updated_time" content="2019-11-19T08:18:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="演戏“碰壁”之杂感">
 <meta name="twitter:description" content="11.18 更新：在和剧社官方进行一番有意义的交流之后，剧社对本文中指出的一些问题予以认可，并积极地提出了相对应的修改意见。我很赞同和感谢剧社能够持有这样包容开放的精神，这是有助于消除误会，解决问题的正确态度。我也承认出于增强说服力的考虑，本文虽然在对事情经过的叙述和提出的问题与建议整体上秉承公正客观的精神，但也的确在几处地方的描述及比喻有些夸大或不妥（如“一脚踹开”等用词）。总而言之，希望大家都">
@@ -356,6 +356,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -563,5 +570,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/2019/11/17/drama-society/",
+            identifier: "2019/11/17/drama-society/",
+            title: "演戏“碰壁”之杂感"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>

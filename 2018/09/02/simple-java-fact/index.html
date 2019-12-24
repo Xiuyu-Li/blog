@@ -55,7 +55,7 @@
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T11:22:36.097Z">
+<meta property="og:updated_time" content="2019-12-20T11:22:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈 Java String 类参数传递">
 <meta name="twitter:description" content="最近 CS 课正好在学 Java 的参数传递，本以为非常简单的内容却发现有诸多地方之前不甚明白，还是基本功不扎实啊（sigh）。本文内容就是我基础不扎实的佐证。">
@@ -363,6 +363,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -570,5 +577,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/2018/09/02/simple-java-fact/",
+            identifier: "2018/09/02/simple-java-fact/",
+            title: "浅谈 Java String 类参数传递"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>

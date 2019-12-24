@@ -56,7 +56,7 @@
 <meta property="og:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://lixiuyu.cc/2018/05/01/interesting-determinant-question/determinant_3d.png">
-<meta property="og:updated_time" content="2019-05-26T12:01:38.412Z">
+<meta property="og:updated_time" content="2019-05-26T12:01:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道有趣的行列式习题的探究">
 <meta name="twitter:description" content="上周五在世史课上做柯斯特利金的代数学引论第一章的习题时，发现了一道有趣的问题： 证明在三阶行列式展开式中的六项不可能同时为正。 当时我的第一反应是通过分类讨论来证明六项为正的情况不存在，然而暴力枚举三阶行列式9个元素的所有正负性的情况一共有$2^9 = 512$种组合，不可能通过手算得出。于是我便开始认真思考这个问题，并最后探究出了以下几个有趣的方法和结论。">
@@ -435,6 +435,13 @@ Product\ of\ all\ terms\ of\ \det A &= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1)!}\cdot
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -691,5 +698,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/2018/05/01/interesting-determinant-question/",
+            identifier: "2018/05/01/interesting-determinant-question/",
+            title: "一道有趣的行列式习题的探究"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>

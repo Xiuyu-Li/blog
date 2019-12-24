@@ -56,7 +56,7 @@
 <meta property="og:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://lixiuyu.cc/2018/12/19/java-unsound/example1.png">
-<meta property="og:updated_time" content="2019-11-18T19:39:01.151Z">
+<meta property="og:updated_time" content="2019-11-18T19:39:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java wildcard capture 及相关问题">
 <meta name="twitter:description" content="之前 CS 2112 在讲 Java generics 的时候 Professor Kozen 提起过其实 Java 的 type system 是不牢靠的（unsound），并且他的同事 Ross Tate 曾专门为此发了一篇论文。">
@@ -388,6 +388,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -596,5 +603,26 @@ if (document.querySelectorAll('div.pdf').length) {
         pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
   </script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://lixiuyu.cc/2018/12/19/java-unsound/",
+            identifier: "2018/12/19/java-unsound/",
+            title: "Java wildcard capture 及相关问题"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://olorin.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
 </body>
 </html>
