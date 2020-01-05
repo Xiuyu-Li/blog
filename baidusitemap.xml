@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lixiuyu.cc/2019/12/28/continual-learning/</loc>
+    <loc>https://lixiuyu.cc/2019/12/25/MoCo/</loc>
     <lastmod>2020-01-05</lastmod>
   </url>  <url>
     <loc>https://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
+    <lastmod>2020-01-05</lastmod>
+  </url>  <url>
+    <loc>https://lixiuyu.cc/2019/12/28/continual-learning/</loc>
     <lastmod>2020-01-05</lastmod>
   </url>  <url>
     <loc>https://lixiuyu.cc/2019/05/23/rudin/</loc>
@@ -18,9 +21,6 @@
   </url>  <url>
     <loc>https://lixiuyu.cc/2018/05/01/interesting-determinant-question/</loc>
     <lastmod>2019-12-31</lastmod>
-  </url>  <url>
-    <loc>https://lixiuyu.cc/2019/12/25/MoCo/</loc>
-    <lastmod>2019-12-26</lastmod>
   </url>  <url>
     <loc>https://lixiuyu.cc/2018/12/22/dijkstra-mst-proof/</loc>
     <lastmod>2019-12-22</lastmod>

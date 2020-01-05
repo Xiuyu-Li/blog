@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lixiuyu.cc/2019/12/28/continual-learning/</loc>
+    <loc>https://lixiuyu.cc/2019/12/25/MoCo/</loc>
     
-    <lastmod>2020-01-05T10:08:37.793Z</lastmod>
+    <lastmod>2020-01-05T15:08:39.134Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://lixiuyu.cc/2019/05/27/cu-courses-review/</loc>
     
-    <lastmod>2020-01-05T10:04:31.868Z</lastmod>
+    <lastmod>2020-01-05T15:03:20.960Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lixiuyu.cc/2019/12/28/continual-learning/</loc>
+    
+    <lastmod>2020-01-05T10:08:37.793Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://lixiuyu.cc/2018/05/01/interesting-determinant-question/</loc>
     
     <lastmod>2019-12-31T08:36:33.378Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lixiuyu.cc/2019/12/25/MoCo/</loc>
-    
-    <lastmod>2019-12-26T00:39:27.585Z</lastmod>
     
   </url>
   
