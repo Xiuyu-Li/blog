@@ -12,8 +12,8 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /quotes/
 Disallow: /past_posts/
-Disallow: /_posts/cu-courses-review/
-Disallow: /_posts/cu-courses-review.md
+Disallow: /2019/05/27/cu-courses-review/
+Disallow: /2018/01/15/序-前路未知/
 
 Sitemap: http://lixiuyu.cc/sitemap.xml
 Sitemap: http://lixiuyu.cc/baidusitemap.xml
