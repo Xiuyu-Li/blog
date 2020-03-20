@@ -16,62 +16,37 @@
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://lixiuyu.cc').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lixiuyu.cc","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。   TechX 2018 Slogan">
 <meta name="keywords" content="活动">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="TechX 2018总结">
-<meta property="og:url" content="https://lixiuyu.cc/2018/08/24/TechX-2018/index.html">
+<meta property="og:url" content="https://lixiuyu.cc/past_posts/TechX-2018.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。   TechX 2018 Slogan">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://lixiuyu.cc/2018/08/24/TechX-2018/slogan.jpg">
-<meta property="og:image" content="https://lixiuyu.cc/2018/08/24/TechX-2018/hackathon.jpeg">
-<meta property="og:updated_time" content="2020-01-04T10:46:17.799Z">
+<meta property="og:image" content="https://lixiuyu.cc/past_posts/TechX-2018/slogan.jpg">
+<meta property="og:image" content="https://lixiuyu.cc/past_posts/TechX-2018/hackathon.jpeg">
+<meta property="og:updated_time" content="2020-03-20T07:21:47.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TechX 2018总结">
 <meta name="twitter:description" content="时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。   TechX 2018 Slogan">
-<meta name="twitter:image" content="https://lixiuyu.cc/2018/08/24/TechX-2018/slogan.jpg">
+<meta name="twitter:image" content="https://lixiuyu.cc/past_posts/TechX-2018/slogan.jpg">
 
-<link rel="canonical" href="https://lixiuyu.cc/2018/08/24/TechX-2018/">
+<link rel="canonical" href="https://lixiuyu.cc/past_posts/TechX-2018">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
   };
 </script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
@@ -88,7 +63,8 @@
   padding: 1px 4px;
 }
 </style>
-  <title>TechX 2018总结 | Olórin's Blog</title>
+  <title>TechX 2018总结 | Olórin's Blog
+  </title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131374046-1"></script>
     <script>
@@ -145,6 +121,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -156,11 +140,8 @@
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
@@ -218,86 +199,35 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
           <div class="content">
             
 
   <div class="posts-expand">
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://lixiuyu.cc/2018/08/24/TechX-2018/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Olórin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Olórin's Blog">
-    </span>
+    
+    
+    
+    <div class="post-block" lang="en">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          TechX 2018总结
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+<h1 class="post-title" itemprop="name headline">TechX 2018总结
+</h1>
 
-              <time title="Created: 2018-08-24 11:00:00" itemprop="dateCreated datePublished" datetime="2018-08-24T11:00:00-04:00">2018-08-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-            </span>
-
-          
+<div class="post-meta">
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2018/08/24/TechX-2018/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/08/24/TechX-2018/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.6k</span>
-            </span>
 
-        </div>
-      </header>
+</div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <p>时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。</p>
-<img src="/2018/08/24/TechX-2018/slogan.jpg" width="760" height="360" align="center">
+      
+      
+      <div class="post-body">
+          <p>时隔两年，我在高三暑假又一次去上海参加了 TechX 科技峰会，也有了一些新的体会与感触。</p>
+<img src="/past_posts/TechX-2018/slogan.jpg" width="760" height="360" align="center">
 
 <center><font color="#A9A9A9" size="2">TechX 2018 Slogan</font></center>
 
@@ -307,7 +237,7 @@
 <p>我把部分课后习题的代码上传到了 <a href="https://github.com/lxywizard/techx-drl-homework" target="_blank" rel="noopener">Github</a>，感兴趣的读者可以看下，但注释和风格都没有注意，见笑了。</p>
 <p>Seminars 也听了不少，有一些还是比较有意思，比如 Karen 学姐的自然语言处理和一个密码学相关的学术性很强，有不少干货，Intel 工程大赛中国队员的分享也好好膜拜了一波（同个高中的学妹也在里面orz）。诸如华为区块链的讲座就让我有点昏昏欲睡了，聊天机器人和爬虫什么的也是网上看看教程轻易就可以入门，不过考虑到 TechX 也有挺多零基础的学员，激发他们对技术的兴趣这些东西也更加合适一点，就见仁见智，不做评论了。</p>
 <h2 id="关于-Hackathon"><a href="#关于-Hackathon" class="headerlink" title="关于 Hackathon"></a>关于 Hackathon</h2><p>TechX 2018 的 hackathon 策划的还是比较成功的，从一开始就有各种活动帮助大家策划最后的 hackathon project。我这次的项目是一个识别、介绍、推荐、生成不同文化的代表图案纹理的 IOS app，并且苦逼的选择了自己训练模型（毕竟这种奇葩主题怎么会有 pre-trained model…）果然一开始数据量不够，多亏后来在几个组员拼命人工筛选 Google 爬下来质量堪忧的图片（各位组员真的辛苦了！），我也写了不少 python 脚本来批量做数据增强，弄了5个类别，每个类别几千张图，丢到一个去掉全连接层的基于 ImageNet 的 InceptionV3 模型里。在多次调参之后也达到了超过 95 % 的正确率（虽然实验结果有些过拟合了…）。还好最后 IOS app 做的还算比较好看，成功 carry 我们进入十六强。总而言之这次 hackathon 只能说差强人意，最大的收获就是迁移学习应用和一些调参的技巧了（捂脸）。</p>
-<img src="/2018/08/24/TechX-2018/hackathon.jpeg" width="760" height="360" align="center">
+<img src="/past_posts/TechX-2018/hackathon.jpeg" width="760" height="360" align="center">
 
 <center><font color="#A9A9A9" size="2">hackathon project “纹” demo</font></center>
 
@@ -315,62 +245,16 @@
 <h2 id="一点感想"><a href="#一点感想" class="headerlink" title="一点感想"></a>一点感想</h2><p>TechX 是一个充满理想主义的地方，人们可以在这里感受到对科技的最纯粹的热爱，这一点是令我、也是令很多人非常意外的。相对很多所谓的“高水平”夏校而言，TechX 说不上 selective 参加的人水平也良莠不齐，然而它就是可以营造出这种大家都抛开面子，无论问题简单与否，都积极不耻下问；无论 idea 是否看上去 naive，都能放上台面上来讨论的开放的氛围，这些都是我们以往很少能看见的。关于这点，我也在知乎上写了一个<a href="https://www.zhihu.com/question/60409263/answer/464998561" target="_blank" rel="noopener">非常感性的答案</a>（想看感想的话这个答案干货比此文多得多）。</p>
 <p>现在过去了这么久也可以更为理性的审视 TechX，当然创立 TechX 的初衷是否真的如同所宣传的那样理想化我们也不得而知，我也并没有因为 TechX 而整个人就变得理想主义起来。但 TechX 的经历确实给了我相当大的感触，因此这个活动也给了我一个审视自己未来道路的契机，在理想和现实之间到底如何抉择。无论如何，不管在 TechX 之外大家是怎么样的，如果各位心中尚有着对纯粹交流科技的渴望，都尽管可以来参加，因为至少在 TechX 的十天里，确实能够给大家一个相当完美的理想主义氛围。</p>
 
-    </div>
-
-    
-    
-    <div class="post-widgets">
-      <div id="needsharebutton-postbottom">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
       </div>
+      
+      
+      
     </div>
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:  </strong>Olórin
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link: </strong>
-    <a href="https://lixiuyu.cc/2018/08/24/TechX-2018/" title="TechX 2018总结">https://lixiuyu.cc/2018/08/24/TechX-2018/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
-  </li>
-</ul>
-</div>
-
-
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/活动/" rel="tag"><i class="fa fa-tag"></i> 活动</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2018/05/01/interesting-determinant-question/" rel="prev" title="一道有趣的行列式习题">
-      <i class="fa fa-chevron-left"></i> 一道有趣的行列式习题
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2018/09/02/simple-java-fact/" rel="next" title="浅谈 Java String 类参数传递">
-      浅谈 Java String 类参数传递 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
   </div>
 
 
@@ -380,7 +264,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -439,7 +323,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -452,7 +336,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -469,9 +353,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/lxywizard/" title="Instagram → https://www.instagram.com/lxywizard/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -491,6 +372,8 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
@@ -503,12 +386,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">57k</span>
+    <span title="Symbols count total">55k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -549,23 +432,24 @@
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes: 0,
-          toolbar: 0,
-          statusbar: 0,
-          pagemode: 'thumbs',
-          view: 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -575,50 +459,55 @@ if (document.querySelectorAll('div.pdf').length) {
 
   
       
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
@@ -644,20 +533,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: false,
-      notify: true,
-      appId: 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
-      appKey: '0k1nR84iNMGB7UybpzKILJCO',
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
+      appKey     : '0k1nR84iNMGB7UybpzKILJCO',
       placeholder: "Feel free to leave comments!",
-      avatar: 'identicon',
-      meta: guest,
-      pageSize: '10' || 10,
-      visitor: false,
-      lang: '' || 'zh-cn',
-      path: location.pathname,
-      recordIP: false,
-      serverURLs: ''
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
     });
   }, window.Valine);
 });

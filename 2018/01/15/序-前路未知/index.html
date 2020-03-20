@@ -16,51 +16,25 @@
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://lixiuyu.cc').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lixiuyu.cc","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-  <meta name="description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》   今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
+  <meta name="description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》              今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="序-前路未知">
 <meta property="og:url" content="https://lixiuyu.cc/2018/01/15/序-前路未知/index.html">
 <meta property="og:site_name" content="Olórin&#39;s Blog">
-<meta property="og:description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》   今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
+<meta property="og:description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》              今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lixiuyu.cc/2018/01/15/序-前路未知/Pit.jpeg">
 <meta property="og:image" content="https://lixiuyu.cc/2018/01/15/序-前路未知/elder.png">
 <meta property="og:updated_time" content="2020-01-05T08:24:25.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序-前路未知">
-<meta name="twitter:description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》   今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
+<meta name="twitter:description" content="尽吾志也而不能至者，可以无悔矣  王安石 《游褒禅山记》              今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。   8/12/2017 16:42 EST in Pittsburgh">
 <meta name="twitter:image" content="https://lixiuyu.cc/2018/01/15/序-前路未知/Pit.jpeg">
 
 <link rel="canonical" href="https://lixiuyu.cc/2018/01/15/序-前路未知/">
@@ -70,8 +44,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
@@ -145,6 +120,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -156,11 +139,8 @@
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
@@ -258,9 +238,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
+                  <a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
                 </span>
             </span>
 
@@ -273,7 +251,7 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2018/01/15/序-前路未知/#comments" itemprop="discussionUrl">
+    <a title="valine" href="/2018/01/15/序-前路未知/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2018/01/15/序-前路未知/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -296,8 +274,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote class="blockquote-center"><p>尽吾志也而不能至者，可以无悔矣 <br><br> 王安石 《游褒禅山记》</p>
-</blockquote>
+        <blockquote class="blockquote-center">
+            <p>尽吾志也而不能至者，可以无悔矣 <br><br> 王安石 《游褒禅山记》</p>
+
+          </blockquote>
 
 <p>今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。</p>
  <img src="/2018/01/15/序-前路未知/Pit.jpeg" width="700" height="480" alt="" align="center">
@@ -358,6 +338,25 @@
 </ul>
 </div>
 
+        
+
+  <div class="followme">
+    <p>Feel free to subscribe with RSS!</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           
@@ -392,7 +391,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -450,7 +449,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -463,7 +462,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -480,9 +479,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/lxywizard/" title="Instagram → https://www.instagram.com/lxywizard/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -502,6 +498,8 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
@@ -514,12 +512,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">57k</span>
+    <span title="Symbols count total">55k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -560,23 +558,24 @@
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes: 0,
-          toolbar: 0,
-          statusbar: 0,
-          pagemode: 'thumbs',
-          view: 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -607,20 +606,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: false,
-      notify: true,
-      appId: 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
-      appKey: '0k1nR84iNMGB7UybpzKILJCO',
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
+      appKey     : '0k1nR84iNMGB7UybpzKILJCO',
       placeholder: "Feel free to leave comments!",
-      avatar: 'identicon',
-      meta: guest,
-      pageSize: '10' || 10,
-      visitor: false,
-      lang: '' || 'zh-cn',
-      path: location.pathname,
-      recordIP: false,
-      serverURLs: ''
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
     });
   }, window.Valine);
 });

@@ -16,36 +16,10 @@
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://lixiuyu.cc').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lixiuyu.cc","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="CS 2112 是我在康村上的第一门 CS 课，叫做 Object-Oriented Design and Data Structures - Honors。">
 <meta name="keywords" content="Cornell,Course Review">
@@ -55,7 +29,7 @@
 <meta property="og:site_name" content="Olórin&#39;s Blog">
 <meta property="og:description" content="CS 2112 是我在康村上的第一门 CS 课，叫做 Object-Oriented Design and Data Structures - Honors。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-06T10:25:08.359Z">
+<meta property="og:updated_time" content="2020-03-20T07:24:29.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cornell CS 2112 Review">
 <meta name="twitter:description" content="CS 2112 是我在康村上的第一门 CS 课，叫做 Object-Oriented Design and Data Structures - Honors。">
@@ -67,8 +41,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
@@ -142,6 +117,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -153,11 +136,8 @@
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
@@ -255,9 +235,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
+                  <a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
                 </span>
             </span>
 
@@ -270,7 +248,7 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2018/12/27/CS2112/#comments" itemprop="discussionUrl">
+    <a title="valine" href="/2018/12/27/CS2112/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2018/12/27/CS2112/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -281,7 +259,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.8k</span>
+              <span>1.7k</span>
             </span>
 
         </div>
@@ -293,7 +271,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>CS 2112 是我在康村上的第一门 CS 课，叫做 <strong>Object-Oriented Design and Data Structures - Honors</strong>。<a id="more"></a>这门课在康村也是臭名昭著，据说是所有本科 CS 课中作业第二多的（似乎仅次于 Compilers，如果不是欢迎指正），每个 project 大概要花 <strong>10-30 小时</strong>的时间写代码，是我这学期无（chi）法（xu）睡（tuo）觉（fa）的罪魁祸首。我们有一本推荐教材 <em>Data Structures and Problem Solving Using Java, 3rd edition</em>，但从来没有用过 :P 主要是看 <a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/index.html" target="_blank" rel="noopener">course notes</a>，个人觉得写的还不错。</p>
+        <p>CS 2112 是我在康村上的第一门 CS 课，叫做 <strong>Object-Oriented Design and Data Structures - Honors</strong>。<a id="more"></a>这门课工作量很大，每个 project 大概要花 <strong>10-30 小时</strong>的时间写代码，是我这学期无（chi）法（xu）睡（tuo）觉（fa）的罪魁祸首。我们有一本推荐教材 <em>Data Structures and Problem Solving Using Java, 3rd edition</em>，但从来没有用过 :P 主要是看 <a href="http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/index.html" target="_blank" rel="noopener">course notes</a>，个人觉得写的还不错。</p>
 <p>这门课虽然名字叫面向对象和数据结构，但其实内容涉及了计算机科学的方方面面，从 Java 基础讲起，再到哈希表、二叉树、排序查找等经典数据结构和算法，之后就开始走偏（?），依次讲了语法分析、设计模式、GUI 设计、并发和同步等内容，最后回归到图论和平衡二叉树。除了平时的 lectures 之外，每周还有由 TA 主持的 recitations 和 labs 帮助我们巩固和拓展知识并动手实践。recitations 和 labs 的质量时好时坏，坏的时候几乎是对 lectures 的重复，令人昏昏欲睡；好的时候内容还是比较有趣，比如 recitations 有讲过有限状态机、3SAT、最小生成树，labs 有让我们练习过正则表达式。</p>
 <p>注重广度固然是个优点，但必然也会导致课堂深度的缺失。然而，2112 的精髓——作业——却“弥补”了这一点。举个例子，九月份的某次作业要求在禁止使用 java.util 的情况下实现诸如哈希表、prefix tree 等数据结构，并且其中有要自己实现队列来实现十一月份才讲的 BFS。后来还有几乎零基础手撸的某个 course 自创语言的 parser，GUI 和 client-server。最后四次作业是一个大 project，总共写了约10000行代码。<strong>可以说是作业才让这门课够得上 “honor” 的名头</strong>。</p>
 <p>总得来说比起很多其他学校的 CS 入门课注重打好坚实的基础，2112 则是浅尝辄止地在课堂上讲一大堆东西给你，并在作业把只会理论的你往“水”里一丢，让你自己学会游泳。好处是除了数据结构之外还涉猎了很多其他 CS 领域的相关知识，同时获得了海量的实践机会。坏处是很多东西都得靠自学囫囵吞枣，为了完成作业“知其然而不知其所以然”，学得并不扎实与愉快。这门课也远远达不到 staff 所吹嘘的可以到工业界当 Java 程序员的地步，不要说诸如 ConcurrentHashMap 等较细的知识点没讲，类加载机制、垃圾回收、内存分配等每个 Java 程序员都必须要掌握的 JVM 相关知识更是一字未提。同时，这门课作业压力较大，性价比不高。这样的“软件工程”课值不值得上就见仁见智了，个人觉得如果兴趣更多偏向于理论方面其实可以选择不上，把时间省下来去上更多更深的数学课（当然大神是可以兼顾的）。</p>
@@ -326,6 +304,25 @@
   </li>
 </ul>
 </div>
+
+        
+
+  <div class="followme">
+    <p>Feel free to subscribe with RSS!</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
 
 
       <footer class="post-footer">
@@ -365,7 +362,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -423,7 +420,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -436,7 +433,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -453,9 +450,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/lxywizard/" title="Instagram → https://www.instagram.com/lxywizard/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -475,6 +469,8 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
@@ -487,12 +483,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">57k</span>
+    <span title="Symbols count total">55k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -533,23 +529,24 @@
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes: 0,
-          toolbar: 0,
-          statusbar: 0,
-          pagemode: 'thumbs',
-          view: 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -580,20 +577,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: false,
-      notify: true,
-      appId: 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
-      appKey: '0k1nR84iNMGB7UybpzKILJCO',
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
+      appKey     : '0k1nR84iNMGB7UybpzKILJCO',
       placeholder: "Feel free to leave comments!",
-      avatar: 'identicon',
-      meta: guest,
-      pageSize: '10' || 10,
-      visitor: false,
-      lang: '' || 'zh-cn',
-      path: location.pathname,
-      recordIP: false,
-      serverURLs: ''
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
     });
   }, window.Valine);
 });

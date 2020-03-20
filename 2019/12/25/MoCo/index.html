@@ -16,36 +16,10 @@
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://lixiuyu.cc').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lixiuyu.cc","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true,"dimmer":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="上个月 Kaiming He 发了一篇关于无监督表示学习的文章 Momentum Contrast for Unsupervised Visual Representation Learning，提出的方法在多个 detection/segmentation 的下游任务上取得了非常好的结果，用文章的原话说甚至是 “the gap between unsupervised and supervise">
 <meta name="keywords" content="Computer Vision,Machine Learning,Paper Review,Representation Learning">
@@ -67,8 +41,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
@@ -142,6 +117,14 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
   <div class="site-meta">
 
     <div>
@@ -153,11 +136,8 @@
     </div>
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
@@ -255,9 +235,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
-                    <span itemprop="name">Computer Science</span>
-                  </a>
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
                 </span>
             </span>
 
@@ -270,7 +248,7 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/12/25/MoCo/#comments" itemprop="discussionUrl">
+    <a title="valine" href="/2019/12/25/MoCo/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2019/12/25/MoCo/" itemprop="commentCount"></span>
     </a>
   </span>
@@ -301,7 +279,7 @@
 <p>此处 $q$ 是一个 instance 通过编码器后的 query 表示，$k_{+}$ 表示相匹配的 key，通常是另一个具有相同语义的 instance 的编码（此处可以是同一张图片不同的 data augmentation），而分母中的 $k_i$ 均是不匹配的 key。该损失函数在不同 instance 编码后差异越大，相同 instance 编码后差异越小时函数值越小。这样预训练好的编码器可以提取图片的 representations，通过微调迁移到 detection/segmentation 等各种下游任务上。</p>
 <p>本文主要贡献即是对于字典的更新提出了 MoCo 这一方法，通过 momentum 的机制平滑更新生成字典的编码器，既避免了 end-to-end 方法受制于显存大小在作 contrastive training 时无法 scale 影响 performance，也解决了 memory bank 线下字典过时的劣势，很好地平衡了字典大小和质量的 trade off。正是此方法使在超大数据集上做这样的预训练成为了可能，而 Kaiming 团队也对 MoCo 预训练模型提取的表征针对多个下游任务作了迁移学习相关实验，取得非常好的结果。具体细节参见 paper 和我演讲的 slide。</p>
 <p>本人对 representation learning 了解不多，也就不再此更深入地分析了。除了以上提到的文献，大家如有兴趣也可以参考这个<a href="https://www.zhihu.com/question/355779873" target="_blank" rel="noopener">知乎问题</a>，最上面的几个回答都质量挺高，有一定 insight。总而言之此文的贡献还是非常有突破性的，为 CV 任务也能像 NLP 的 BERT 一样采用一套通用的 backbone 提取特征并运用到所有下游任务上迈出了重要的一步。不过正如某个<a href="https://www.zhihu.com/question/355779873/answer/895625711" target="_blank" rel="noopener">知乎回答</a>提到一样，我也认为负样本选取的随机性使得仅仅增大数据集的量级所带来的信息增益有限，如何更好地选取信息量大的样本可以是一个将来的研究方向，或许能结合聚类、active learning 中的方法着手。</p>
-<h3 id="Presentation-Slide"><a href="#Presentation-Slide" class="headerlink" title="Presentation Slide"></a>Presentation Slide</h3><div class="pdf" target="https://lxywizard.github.io/files/CUVL_Reading_Group_11_23.pdf" height=""></div>
+<h3 id="Presentation-Slide"><a href="#Presentation-Slide" class="headerlink" title="Presentation Slide"></a>Presentation Slide</h3><div class="pdfobject-container" data-target="https://lxywizard.github.io/files/CUVL_Reading_Group_11_23.pdf" data-height="500px"></div>
 
     </div>
 
@@ -330,6 +308,25 @@
   </li>
 </ul>
 </div>
+
+        
+
+  <div class="followme">
+    <p>Feel free to subscribe with RSS!</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
 
 
       <footer class="post-footer">
@@ -371,7 +368,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -430,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -443,7 +440,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -460,9 +457,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/lxywizard/" title="Instagram → https://www.instagram.com/lxywizard/" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -482,6 +476,8 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
@@ -494,12 +490,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">57k</span>
+    <span title="Symbols count total">55k</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.0
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
   </div>
 
         
@@ -540,23 +536,24 @@
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes: 0,
-          toolbar: 0,
-          statusbar: 0,
-          pagemode: 'thumbs',
-          view: 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -566,50 +563,55 @@ if (document.querySelectorAll('div.pdf').length) {
 
   
       
-<script type="text/x-mathjax-config">
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
 <script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
     
@@ -635,20 +637,20 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       return GUEST.includes(item);
     });
     new Valine({
-      el: '#valine-comments',
-      verify: false,
-      notify: true,
-      appId: 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
-      appKey: '0k1nR84iNMGB7UybpzKILJCO',
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'N2GfOW6tXjapYUad6sioMbyM-MdYXbMMI',
+      appKey     : '0k1nR84iNMGB7UybpzKILJCO',
       placeholder: "Feel free to leave comments!",
-      avatar: 'identicon',
-      meta: guest,
-      pageSize: '10' || 10,
-      visitor: false,
-      lang: '' || 'zh-cn',
-      path: location.pathname,
-      recordIP: false,
-      serverURLs: ''
+      avatar     : 'identicon',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
     });
   }, window.Valine);
 });
