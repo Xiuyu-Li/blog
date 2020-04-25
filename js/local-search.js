@@ -191,7 +191,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (keywords.length === 1 && keywords[0] === '') {
       resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
     } else if (resultItems.length === 0) {
-      resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>';
+      resultContent.innerHTML = '<div id="no-result"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((resultLeft, resultRight) => {
         if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -201,12 +201,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         return resultRight.id - resultLeft.id;
       });
-      let searchResultList = '<ul class="search-result-list">';
-      resultItems.forEach(result => {
-        searchResultList += result.item;
-      });
-      searchResultList += '</ul>';
-      resultContent.innerHTML = searchResultList;
+      resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
       window.pjax && window.pjax.refresh(resultContent);
     }
   };
@@ -233,6 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         // Remove loading animation
         document.getElementById('no-result').innerHTML = '<i class="fa fa-search fa-5x"></i>';
+        inputEventFunction();
       });
   };
 

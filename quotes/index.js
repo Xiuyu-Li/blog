@@ -57,8 +57,8 @@ var quotes = ["\“莫听穿林打叶声，何妨吟啸且徐行。\”<br><br>�
   "\“既自以心为形役，奚惆怅而独悲？<br>悟已往之不谏，知来者之可追。<br>实迷途其未远，觉今是而昨非。<br>舟遥遥以轻飏，风飘飘而吹衣。<br>问征夫以前路，恨晨光之熹微。\”<br><br>—— 陶渊明 《归去来辞》",
   // "\“龙能大能小，能升能隐；大则兴云吐雾，小则隐介藏形；升则飞腾于宇宙之间，隐则潜伏于波涛之内。方今春深，龙乘时变化，犹人得志而纵横四海。龙之为物，可比世之英雄。...夫英雄者，胸怀大志，腹有良谋，有包藏宇宙之机，吞吐天地之志者也。\”<br><br>—— 曹孟德 <em>煮酒论英雄</em>",
   "\“Young man, in mathematics you don't understand things. You just get used to them.\”<br><br>— John von Neumann",
-  "\“夫人之相与，俯仰一世。或取诸怀抱，悟言一室之内；或因寄所托，放浪形骸之外。虽趣舍万殊，静躁不同，当其欣于所遇，暂得于己，快然自足，曾不知老之将至；及其所之既倦，情随事迁，感慨系之矣。向之所欣，俯仰之间，已为陈迹，犹不能不以之兴怀，况修短随化，终期于尽。古人云，“死生亦大矣。”岂不痛哉。\”<br><br>—— 王羲之 《兰亭集序》",
-  "\"In the temple of science are many mansions, and various indeed are they that dwell therein and the motives that have led them thither. Many take to science out of a joyful sense of superior intellectual power; science is their own special sport to which they look for vivid experience and the satisfaction of ambition; many others are to be found in the temple who have offered the products of their brains on this altar for purely utilitarian purposes...if the types we have just expelled were the only types there were, the temple would never have come to be, any more than a forest can grow which consists of nothing but creepers.\"<br>- Albert Einstein <em>'Principles of Research' - for Max Planck's 60th birthday</em>".fontsize(4),
+  // "\“夫人之相与，俯仰一世。或取诸怀抱，悟言一室之内；或因寄所托，放浪形骸之外。虽趣舍万殊，静躁不同，当其欣于所遇，暂得于己，快然自足，曾不知老之将至；及其所之既倦，情随事迁，感慨系之矣。向之所欣，俯仰之间，已为陈迹，犹不能不以之兴怀，况修短随化，终期于尽。古人云，“死生亦大矣。”岂不痛哉。\”<br><br>—— 王羲之 《兰亭集序》",
+  "\"If we knew what it was we were doing, it would not be called research, would it?\"<br><br>— Albert Einstein ",
   "\“平时则放荡冶游，考试则熟读讲义，不问学问之有无，惟争分数之多寡。试验既终，书籍束之高阁，毫不过问。敷衍三、四年，潦草塞责，文凭到手，即可借此活动于社会，岂非与求学初衷大相背驰乎？光阴虚度，学问毫无，是自误也。\”<br><br>—— 蔡元培 1917年1月9日就任北大校长时的演讲"
 ];
 
