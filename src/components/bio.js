@@ -14,7 +14,7 @@ import { rhythm } from "../utils/typography"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/mustang.png/" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
@@ -29,6 +29,8 @@ const Bio = () => {
           }
           social {
             twitter
+            github
+            zhihu
           }
         }
       }
@@ -57,10 +59,24 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        Written by <strong>{author.name}</strong>{author.summary}. You can follow him on 
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+        <a target='_blank' rel='noopener noreferrer'
+         href={`https://twitter.com/${social.twitter}`}>
+         Twitter
+        </a>
+        ,
+        {` `}
+        <a target='_blank' rel='noopener noreferrer'
+         href={`https://github.com/${social.github}`}>
+         Github
+        </a>
+        {` `}
+        or
+        {` `}
+        <a target='_blank' rel='noopener noreferrer'
+         href={`https://www.zhihu.com/people/${social.zhihu}`}>
+         知乎
         </a>
       </p>
     </div>
