@@ -13,6 +13,7 @@ module.exports = {
       zhihu: 'skywalker-41',
     },
   },
+  pathPrefix: "/blog",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
