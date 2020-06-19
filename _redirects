@@ -1,0 +1,5 @@
+Redirect subdomain to primary domain's subfolder
+https://blog.xiuyuli.com/* https://xiuyuli.com/blog/:splat 301!
+
+# Redirect default Netlify subdomain to primary domain's subfolder
+https://xiuyu-li.netlify.app/* https://xiuyuli.com/blog/:splat 301!
