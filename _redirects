@@ -1,4 +1,4 @@
-Redirect subdomain to primary domain's subfolder
+# Redirect subdomain to primary domain's subfolder
 https://blog.xiuyuli.com/* https://xiuyuli.com/blog/:splat 301!
 
 # Redirect default Netlify subdomain to primary domain's subfolder
