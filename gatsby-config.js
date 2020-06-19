@@ -6,14 +6,13 @@ module.exports = {
       summary: `, an undergraduate interested in ML sys / ML security & privacy living in Ithaca`,
     },
     description: `Drink deep, or taste not the Pierian Spring.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://blog.xiuyuli.com/`,
     social: {
       twitter: `xiuyu_l`,
       github: 'Xiuyu-Li',
       zhihu: 'skywalker-41',
     },
   },
-  pathPrefix: "/blog",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
