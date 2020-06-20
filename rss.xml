@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Xiu's Blog]]></title><description><![CDATA[Drink deep, or taste not the Pierian Spring.]]></description><link>https://blog.xiuyuli.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 19 Jun 2020 18:47:11 GMT</lastBuildDate><item><title><![CDATA[连续学习介绍]]></title><description><![CDATA[…]]></description><link>https://blog.xiuyuli.com/continue-learning/</link><guid isPermaLink="false">https://blog.xiuyuli.com/continue-learning/</guid><pubDate>Sat, 28 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;概述&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Xiu's Blog]]></title><description><![CDATA[Drink deep, or taste not the Pierian Spring.]]></description><link>https://blog.xiuyuli.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 20 Jun 2020 21:34:19 GMT</lastBuildDate><item><title><![CDATA[连续学习介绍]]></title><description><![CDATA[…]]></description><link>https://blog.xiuyuli.com/continue-learning/</link><guid isPermaLink="false">https://blog.xiuyuli.com/continue-learning/</guid><pubDate>Sat, 28 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;概述&lt;/h3&gt;
 &lt;p&gt;尽管近年来深度学习在很多单项任务上取得了相当或超过人类水平的成绩，这些深度学习模型都是为固定的任务所设计，无法动态地根据环境而更新。这意味着每当有来自新的分布的数据输入的时候，此类模型都需要同时在整个历史数据上重新进行训练。显然，在持续变化的现实情境中，进行这种数量级的训练是不现实的。&lt;/p&gt;
 &lt;p&gt;如果在加入来自新分布的数据时不在旧数据上做上述的重新训练，那么这些针对单一任务的模型很可能会在最近输入的数据上发生过拟合。这种现象被称为&lt;strong&gt;灾难性遗忘 (catastrophic forgetting)&lt;/strong&gt;。如果数据本身就存在分布漂移，同样也会发生灾难性遗忘。事实上，灾难性遗忘是深度学习模型所面临的一个更基本的问题的结果：&lt;strong&gt;“stability-plasticity” dilemma&lt;/strong&gt;。此处 plasticity 指的是模型融合新的知识的能力，而 stability 即为模型在学习新知识的同时保持就知识的能力。&lt;/p&gt;
 &lt;p&gt;连续学习 (Continual Learning or Lifelong Learning)，即是一个模型在一个连续序列不同任务上学习的能力。该序列中的新任务通常与旧任务相关联。连续学习旨在防止模型的灾难性遗忘，能够在有效学习新任务的同时维持在历史任务上的表现。连续学习是一个模型适应快速变化的现实情景的关键，对于实现真正的人工智能十分重要。&lt;/p&gt;
@@ -16,7 +16,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png&quot;
+    href=&quot;/blog/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -29,10 +29,10 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;split mnist&quot;
         title=&quot;split mnist&quot;
-        src=&quot;/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png&quot;
-        srcset=&quot;/static/bee820e5597cc45c13adf9becb01afff/12f09/split_mnist.png 148w,
-/static/bee820e5597cc45c13adf9becb01afff/e4a3f/split_mnist.png 295w,
-/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png 553w&quot;
+        src=&quot;/blog/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png&quot;
+        srcset=&quot;/blog/static/bee820e5597cc45c13adf9becb01afff/12f09/split_mnist.png 148w,
+/blog/static/bee820e5597cc45c13adf9becb01afff/e4a3f/split_mnist.png 295w,
+/blog/static/bee820e5597cc45c13adf9becb01afff/74cfa/split_mnist.png 553w&quot;
         sizes=&quot;(max-width: 553px) 100vw, 553px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -47,7 +47,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png&quot;
+    href=&quot;/blog/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -60,10 +60,10 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;3 scenarios&quot;
         title=&quot;3 scenarios&quot;
-        src=&quot;/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png&quot;
-        srcset=&quot;/static/03216a82b6738ccb0ec34595c18afbd5/12f09/3_scenarios.png 148w,
-/static/03216a82b6738ccb0ec34595c18afbd5/e4a3f/3_scenarios.png 295w,
-/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png 424w&quot;
+        src=&quot;/blog/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png&quot;
+        srcset=&quot;/blog/static/03216a82b6738ccb0ec34595c18afbd5/12f09/3_scenarios.png 148w,
+/blog/static/03216a82b6738ccb0ec34595c18afbd5/e4a3f/3_scenarios.png 295w,
+/blog/static/03216a82b6738ccb0ec34595c18afbd5/1cfa9/3_scenarios.png 424w&quot;
         sizes=&quot;(max-width: 424px) 100vw, 424px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -85,10 +85,10 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;venn&quot;
         title=&quot;venn&quot;
-        src=&quot;/static/0622b91fb2873d5740ed9742a330c1a9/a58fe/venn.png&quot;
-        srcset=&quot;/static/0622b91fb2873d5740ed9742a330c1a9/12f09/venn.png 148w,
-/static/0622b91fb2873d5740ed9742a330c1a9/e4a3f/venn.png 295w,
-/static/0622b91fb2873d5740ed9742a330c1a9/a58fe/venn.png 548w&quot;
+        src=&quot;/blog/static/0622b91fb2873d5740ed9742a330c1a9/a58fe/venn.png&quot;
+        srcset=&quot;/blog/static/0622b91fb2873d5740ed9742a330c1a9/12f09/venn.png 148w,
+/blog/static/0622b91fb2873d5740ed9742a330c1a9/e4a3f/venn.png 295w,
+/blog/static/0622b91fb2873d5740ed9742a330c1a9/a58fe/venn.png 548w&quot;
         sizes=&quot;(max-width: 548px) 100vw, 548px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -108,7 +108,7 @@ without Forgetting (LwF) 和 Elastic Weight Consolidation (EWC) 等。LwF 通过
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b89dd371212b74c443b750492a6411df/8ce52/tree.png&quot;
+    href=&quot;/blog/static/b89dd371212b74c443b750492a6411df/8ce52/tree.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -121,11 +121,11 @@ without Forgetting (LwF) 和 Elastic Weight Consolidation (EWC) 等。LwF 通过
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;tree&quot;
         title=&quot;tree&quot;
-        src=&quot;/static/b89dd371212b74c443b750492a6411df/fcda8/tree.png&quot;
-        srcset=&quot;/static/b89dd371212b74c443b750492a6411df/12f09/tree.png 148w,
-/static/b89dd371212b74c443b750492a6411df/e4a3f/tree.png 295w,
-/static/b89dd371212b74c443b750492a6411df/fcda8/tree.png 590w,
-/static/b89dd371212b74c443b750492a6411df/8ce52/tree.png 681w&quot;
+        src=&quot;/blog/static/b89dd371212b74c443b750492a6411df/fcda8/tree.png&quot;
+        srcset=&quot;/blog/static/b89dd371212b74c443b750492a6411df/12f09/tree.png 148w,
+/blog/static/b89dd371212b74c443b750492a6411df/e4a3f/tree.png 295w,
+/blog/static/b89dd371212b74c443b750492a6411df/fcda8/tree.png 590w,
+/blog/static/b89dd371212b74c443b750492a6411df/8ce52/tree.png 681w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -395,12 +395,12 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;p&gt;Dijkstra’s algorithm 是一个可以解决 &lt;strong&gt;single-source shortest path&lt;/strong&gt; 问题的经典算法，本质上是对广度优先搜索（BFS）的一个推广，只是把 BFS 维护的 &lt;strong&gt;stack&lt;/strong&gt; 换成了 &lt;strong&gt;priority queue&lt;/strong&gt; 。鉴于这个算法知名度太高，大家对其都已十分熟悉，这里直接上基于数学归纳法的证明。&lt;/p&gt;
 &lt;p&gt;我们规定 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;G&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;G&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 为算法所应用的图，&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是源点，&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;l(u, v)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.16666666666666666em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是从点 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;u&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 到 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;v&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;v&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的边的长度，&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;V&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.22222em;&quot;&gt;V&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是图中所有的点的集合，那么 Dijkstra’s algorithm 的过程如下所示：&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/1048d63e68d75b4b11119a02369fd4f6/1fbe8/dijkstra.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/1048d63e68d75b4b11119a02369fd4f6/1fbe8/dijkstra.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 28.37837837837838%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAAeUlEQVQY053PSQoFIQwEUO9/UFEbB0TBAa2mAsJf9jdQmI2PlHLOwXuPUgp675I5J9Za4Oy9JV9HEUwpYYyB1pqE+0H+wQQ0xoBorVUuYwjeooqAtVZqn+o5Z3l/a38G+YmVtdZ4ngcxRnmJXoFn4UW8kFgIQeAb8AUwR9hFUgr76gAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;dijkstra&quot; title=&quot;dijkstra&quot; src=&quot;/static/1048d63e68d75b4b11119a02369fd4f6/fcda8/dijkstra.png&quot; srcset=&quot;/static/1048d63e68d75b4b11119a02369fd4f6/12f09/dijkstra.png 148w,
-/static/1048d63e68d75b4b11119a02369fd4f6/e4a3f/dijkstra.png 295w,
-/static/1048d63e68d75b4b11119a02369fd4f6/fcda8/dijkstra.png 590w,
-/static/1048d63e68d75b4b11119a02369fd4f6/1fbe8/dijkstra.png 757w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;dijkstra&quot; title=&quot;dijkstra&quot; src=&quot;/blog/static/1048d63e68d75b4b11119a02369fd4f6/fcda8/dijkstra.png&quot; srcset=&quot;/blog/static/1048d63e68d75b4b11119a02369fd4f6/12f09/dijkstra.png 148w,
+/blog/static/1048d63e68d75b4b11119a02369fd4f6/e4a3f/dijkstra.png 295w,
+/blog/static/1048d63e68d75b4b11119a02369fd4f6/fcda8/dijkstra.png 590w,
+/blog/static/1048d63e68d75b4b11119a02369fd4f6/1fbe8/dijkstra.png 757w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=#A9A9A9 size=2.5&gt;Dijkstra&apos;s algorithm&lt;/font&gt;&lt;/center&gt;
@@ -422,12 +422,12 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;h2&gt;Minimum Spanning Tree&lt;/h2&gt;
 &lt;p&gt;最小生成树指的是一副联通加权无向图中权值最小的一棵生成树，而寻找最小生成树（MST）也是图论中非常经典的问题。&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/2aeac2924edd8c48dccaa908c8de44a8/e4c9a/mst_example.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/2aeac2924edd8c48dccaa908c8de44a8/e4c9a/mst_example.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABt0lEQVQ4y3WU18oCQQyF9/0fwlcQLxQUBS9EbBe79o4FsYC91/x8gRnG8g8MO5M5Sc5Jop446/V66f48f2I+vy7O+wV8Pp8WsFwuZT6fy3Q6lf1+/29QG9C9uIBeryftdltCoZBkMhmpVqsSjUY1GfvxeHwpsgzdh9PpJI1GQ3zfl/V6rbZsNiuDwUCTLBYLuV6vijPLVeRxIdjtdlODH/jKiHW/39URqZvNRiaTiTSbTevc7XZlOBy+1dLW8HK5qIwgCGS1Wmmgw+GgiTjzTlCYk+h8PivbYrEox+NRbcoQKUYejjAAgAN3voAJTMJEIqFYU6J+v//G2qOLnU5HWq2WpFIpicViVi6sRqORpNNpKx/WbM4k3u12WuO3priy6/W6FAoFlc2CIQrK5bJst1vFENwEIChErGQekELhjRHHUqmk8ig6I8M5EomovEqloqyYTerI3TTGM92h28ggON3M5XISDoclmUyqIw2BHfVj12o1TWo6j59laOjDMh6PK6PZbKYgRoMamk66M5fP55X519iYgDjAxNhgxIIRXcZGYJrCGo/HOuzucH/9lj8n/9cfxH94bH9jNSyVopjz8gAAAABJRU5ErkJggg==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;mst example&quot; title=&quot;mst example&quot; src=&quot;/static/2aeac2924edd8c48dccaa908c8de44a8/fcda8/mst_example.png&quot; srcset=&quot;/static/2aeac2924edd8c48dccaa908c8de44a8/12f09/mst_example.png 148w,
-/static/2aeac2924edd8c48dccaa908c8de44a8/e4a3f/mst_example.png 295w,
-/static/2aeac2924edd8c48dccaa908c8de44a8/fcda8/mst_example.png 590w,
-/static/2aeac2924edd8c48dccaa908c8de44a8/e4c9a/mst_example.png 591w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;mst example&quot; title=&quot;mst example&quot; src=&quot;/blog/static/2aeac2924edd8c48dccaa908c8de44a8/fcda8/mst_example.png&quot; srcset=&quot;/blog/static/2aeac2924edd8c48dccaa908c8de44a8/12f09/mst_example.png 148w,
+/blog/static/2aeac2924edd8c48dccaa908c8de44a8/e4a3f/mst_example.png 295w,
+/blog/static/2aeac2924edd8c48dccaa908c8de44a8/fcda8/mst_example.png 590w,
+/blog/static/2aeac2924edd8c48dccaa908c8de44a8/e4c9a/mst_example.png 591w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=#A9A9A9 size=2.5&gt;A minimum spanning tree of a graph&lt;/font&gt;&lt;/center&gt;
@@ -481,11 +481,11 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Case 1:&lt;/em&gt; 如果 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;e&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的两个顶点都在同一颗 blue tree 中，对某个 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;e&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 所在的圈应用 red rule ，使得 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;e&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 被染为红色&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 497px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 79.72972972972973%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAAB7ElEQVQ4y41UW5KbMBDcMyZ/yfmSytqJbcDYgHkJIR7eypk602MPhcveqnx0SYyGVk9rpLdxHDEMwwMYm6ZJx/8Bcy3/zQgM13lC51q0bYsQwhP6vkfXdQuccyjLC+q6EjFCaApD6HXMqoDt/owizx9+NJCQxN57NLJp1znsoxTxMReVd0ImJMkR74cScdbD+fCyHOaZKo4UwPmPXQPfD5isZE6y/IKfu1pLnucbAdesxFbV3BSqTbLJ0HfYxjWyMsh/t/zFwyCLRdXjPWq1/JckK6+973C+OPw+dguZHoqVQunTOGB3OCIviocTN9i3k01C77CNSpkH9c7yldDKGscJlZ5YraaviRTM9VTsEZ0a2TyReHjIeSBkgCMPwUrmmh3OEDyyS4NfkUNaeGziFlUbMH+m0PxaK2OMaknOLtgm8h0m/P2YUDtpscQ9e0gSekisvbI5Lfiz2yM5V6omz87i+4CP66SHUq5UKqH1Fom1NFkwVRZX9eIfyTebja6NcoiNqNxE9Z1QFJKAi4QRkYSj9qg1Nj26XuFPJ5y+f0MrOfynKHIcovjWJZKnfZimKbIs06CpWt9VBeO0Rgjjr1/02lE5YZsvj0NZlgpTZo+Agd/q6V1p3zQvX53Fw/V9/QzrXhzn+enJM4X/AK9IF8iYp2vKAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;kruskal red&quot; title=&quot;kruskal red&quot; src=&quot;/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png&quot; srcset=&quot;/static/4c976d911a2f2696156931eed01647b5/12f09/kruskal_red.png 148w,
-/static/4c976d911a2f2696156931eed01647b5/e4a3f/kruskal_red.png 295w,
-/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png 497w&quot; sizes=&quot;(max-width: 497px) 100vw, 497px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;kruskal red&quot; title=&quot;kruskal red&quot; src=&quot;/blog/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png&quot; srcset=&quot;/blog/static/4c976d911a2f2696156931eed01647b5/12f09/kruskal_red.png 148w,
+/blog/static/4c976d911a2f2696156931eed01647b5/e4a3f/kruskal_red.png 295w,
+/blog/static/4c976d911a2f2696156931eed01647b5/15d25/kruskal_red.png 497w&quot; sizes=&quot;(max-width: 497px) 100vw, 497px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=#A9A9A9 size=2.5&gt;Case 1&lt;/font&gt;&lt;/center&gt;
@@ -493,11 +493,11 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Case 2:&lt;/em&gt; 否则应用 blue rule 到一个由所有 blue tree 顶点的形成的割中，使得 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;e&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.43056em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 被染成蓝色 &lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 497px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 79.72972972972973%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACD0lEQVQ4y41UW5KbMBDkmDlATpDf3Ca12YrXu8Y8FpuXQC8QePdMnRnZYo3tVOWja0AatXp6BqJhGHCNcRzhnPPxf8C5IZ/PR9eb8zRCyh5938NaewetNZRSC6SUaJsaQrREduaImNVa49mL2mAbF6jranUwwBizEHddD60kdvt3ZO8lqbwo5IQ0y7HZN0iPBkrbh+VwXlDFkQ/3vcTvnYCx41fJzFwcazzHAh8nh+nKD1bEBGwBR373PlOONQoviUDZWm9V8N8rHKzGoaFys56emUR5klBmSA7QWqGoJF5zvSK7lHwmcG7AW5yjrCq/OU3TiiQcknyJltgmrbfHXfYCouDNQBvcsa4T/j3L0oUokBlSZo1GnAvESU7r9i5nIQyRmyC6DpuXrS/Xq6U1tuVY03qikJeaIo2XGpbuLoR8KMyX1oYaM2GXt/j245cfCz8i1M1NKshjTSQWnzNV01nyUN17eCbSvos8nKfZITt0+P7zmZIdmrbFbvuGYn/AiXx2tGbnE+Z5ogsUhByogqsuMyF3lJWeZ27waqu68ZewakX7c7qH2/yBi3dwSYK57+gL0dQcQQ38KjtiMga/BKUc3e1g8+yxl6R4PB4wvG7RPz1hHyc+fyk5yzKUZbka4PBFLOD1AL6UqlHURONFqLWHFc1d0zQLEZd+i4d/mmXY3WpOo+uy/oXbX9wjhLy/JrgWpvg4KVwAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;kruskal blue&quot; title=&quot;kruskal blue&quot; src=&quot;/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png&quot; srcset=&quot;/static/03bb4f1f84727e3791a9cce02519e9e4/12f09/kruskal_blue.png 148w,
-/static/03bb4f1f84727e3791a9cce02519e9e4/e4a3f/kruskal_blue.png 295w,
-/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png 497w&quot; sizes=&quot;(max-width: 497px) 100vw, 497px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;kruskal blue&quot; title=&quot;kruskal blue&quot; src=&quot;/blog/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png&quot; srcset=&quot;/blog/static/03bb4f1f84727e3791a9cce02519e9e4/12f09/kruskal_blue.png 148w,
+/blog/static/03bb4f1f84727e3791a9cce02519e9e4/e4a3f/kruskal_blue.png 295w,
+/blog/static/03bb4f1f84727e3791a9cce02519e9e4/15d25/kruskal_blue.png 497w&quot; sizes=&quot;(max-width: 497px) 100vw, 497px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=#A9A9A9 size=2.5&gt;Case 2&lt;/font&gt;&lt;/center&gt; 
@@ -510,11 +510,11 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;li&gt;
 &lt;p&gt;对由 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;S&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.05764em;&quot;&gt;S&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 形成的割应用 blue rule&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 536px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 72.97297297297297%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACQklEQVQ4y5WTW2/aQBCF8///R9WkUURI2ioJxvYuvkIIgtIHBITQ0BAgpNzvcLozsMaR+tKRhrXx+POZ2bMnOMRiscBoPMZkMsZ4PEK/3+fUsd1u/5m73Q6bzYaT4oR+Hh8fEQQ+ctkApnCRSgsI24YQgqFUvFwuOVerFSddz+dzFvLr+RmdTmcPpOJcLgvDtHHxVeL0UiBlOsiGAaSUqFQqiAepWq/XDI3W1UI92Sm1CkiSf5ZLuLhKIfE9g4f7EI6TgZFOIwxDuK6LbrfLMK2QoBR75Qv87o4wmq6OLddqNViWjdOkhCU8BqYV0PM8Vklrr9djRQTbqJyrVul+t93g0qqiWOkcgYPBAK6C2NLD+ZWF0HcUdJ8E05nL5ZDP5xEo5fn8PQqFB7y+dqJxULfcMsWPcpmhdwbNUqgZ+rxRBPJ9n9NR7TsZicB3YdoObm7vUK1WD7PdHRVSG7PZDMVSCbZt4frWUe0LuAoWHqAE9z2HQefXEl+uJAzDRPvlJVLHCvWwtRfr9TqruzEkPiUEj4HuDZMgAmdJcoHL/9GHJpNJBIwUxi1A8f7+B6ViAaYl8TlhIvnNxBkpsj32KsGEkGg0GrzT2uAfgKRSu12rbj41lHUCpFRrNAopLLXabKVmsxlZR8OilglI7R69tWTF+r7ff8OzOg2Npye0Wi0Mh0NWRXXT6RTtdvujQipYHHylYey3Qzvxs6zPLtVTLW0mGT8C0kM6yzTc+FmNn1laNVyv+kPxiFqOb/v/hn5Pv/sXNmJYC5HkX0EAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;prim&quot; title=&quot;prim&quot; src=&quot;/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png&quot; srcset=&quot;/static/65c67a7fc2c587cb7d0dbe121fba95ea/12f09/prim.png 148w,
-/static/65c67a7fc2c587cb7d0dbe121fba95ea/e4a3f/prim.png 295w,
-/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png 536w&quot; sizes=&quot;(max-width: 536px) 100vw, 536px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;prim&quot; title=&quot;prim&quot; src=&quot;/blog/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png&quot; srcset=&quot;/blog/static/65c67a7fc2c587cb7d0dbe121fba95ea/12f09/prim.png 148w,
+/blog/static/65c67a7fc2c587cb7d0dbe121fba95ea/e4a3f/prim.png 295w,
+/blog/static/65c67a7fc2c587cb7d0dbe121fba95ea/2d920/prim.png 536w&quot; sizes=&quot;(max-width: 536px) 100vw, 536px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=#A9A9A9 size=2.5&gt;Prim&apos;s algorithm&lt;/font&gt;&lt;/center&gt; 
@@ -581,11 +581,11 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;为了对以上代码进行 Type-argument inference ，Java 会先收集已知的假设和需要满足的要求，并根据这些限制条件来尝试决定是否存在一个合法的参数。在此例中，一共有以下的假设和需求：&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 433px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 30.405405405405407%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAA70lEQVQY002R6QqDQAyE9/0fT6i3Itb7vsU/pv1SWroQsmZnJpNo9n2XaZqkbVupqkqKopB1XeU4Dtm2Tc7zlK7rpCxLzcMwSF3XGt9vOE3TyDzPYgAiliSJOI4jtm0rcHo/9n2vzXizLEtznucSBIFGmqYq5rqueJ6nd0OnOI7F930tEpBohGPEEaJRFEUqBB4ROGEYKof6x2FV/ooAueN4HMeP07dDxnlmT22wLIuugQyGYGzWdN+3mCzLtNvDfvxc4hoQIxOMgkuwEBH5Cl7XJf/HsHhIdCfjiho/ix8DASKueSPjmKasBiwHd8QL6NG/DBpTAxcAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;example1&quot; title=&quot;example1&quot; src=&quot;/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png&quot; srcset=&quot;/static/2328275f5df8ba6f45131d0bf40b0e58/12f09/example1.png 148w,
-/static/2328275f5df8ba6f45131d0bf40b0e58/e4a3f/example1.png 295w,
-/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png 433w&quot; sizes=&quot;(max-width: 433px) 100vw, 433px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;example1&quot; title=&quot;example1&quot; src=&quot;/blog/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png&quot; srcset=&quot;/blog/static/2328275f5df8ba6f45131d0bf40b0e58/12f09/example1.png 148w,
+/blog/static/2328275f5df8ba6f45131d0bf40b0e58/e4a3f/example1.png 295w,
+/blog/static/2328275f5df8ba6f45131d0bf40b0e58/55fc0/example1.png 433w&quot; sizes=&quot;(max-width: 433px) 100vw, 433px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;p&gt;首先 &lt;code class=&quot;language-text&quot;&gt;Constrain&amp;lt;U, ? super T&amp;gt;&lt;/code&gt; 中有一个 wildcard 参数，所以通过 wildcard capture，Java 引入了一个 fresh type variable，Z 。显然，这个 wildcard 有个 explicit constraint，即 T 是 Z 的子类。同时根据 &lt;code class=&quot;language-text&quot;&gt;Constraint&lt;/code&gt; 的定义 &lt;code class=&quot;language-text&quot;&gt;Constrain&amp;lt;A, B extends A&amp;gt;&lt;/code&gt; ，这里还有一个 implicit constraint，即 Z 是 U 的子类。由此可得 Assumption a) 和 b) 。接下来 Java 对 &lt;code class=&quot;language-text&quot;&gt;bind.upcast(constrain, t)&lt;/code&gt; 进行类型检测，此处的 &lt;code class=&quot;language-text&quot;&gt;constrain&lt;/code&gt; 为 &lt;code class=&quot;language-text&quot;&gt;Constrain&amp;lt;U, Z&amp;gt;&lt;/code&gt; ，类似地，由 &lt;code class=&quot;language-text&quot;&gt;upcast&lt;/code&gt;  的定义我们可以知道 B 在句法上等价于 Z ，同时 B 是 U 的子类，得到 c) 和 e) 。同样因为 &lt;code class=&quot;language-text&quot;&gt;upcast&lt;/code&gt; 的定义，&lt;code class=&quot;language-text&quot;&gt;t&lt;/code&gt; 的类型应当是 B 的子类，所以 T 是 B 的子类，得到 d) 。&lt;/p&gt;
@@ -794,7 +794,7 @@ Product\ of\ all\ terms\ of\ \det A &amp;amp;= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png&quot;
+    href=&quot;/blog/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -807,10 +807,10 @@ Product\ of\ all\ terms\ of\ \det A &amp;amp;= a_{11}^{(n-1)!}\cdot a_{12}^{(n-1
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;determinant 3d&quot;
         title=&quot;determinant 3d&quot;
-        src=&quot;/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png&quot;
-        srcset=&quot;/static/45ed25c0802d8e2f28605b3b5cf792f6/12f09/determinant_3d.png 148w,
-/static/45ed25c0802d8e2f28605b3b5cf792f6/e4a3f/determinant_3d.png 295w,
-/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png 453w&quot;
+        src=&quot;/blog/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png&quot;
+        srcset=&quot;/blog/static/45ed25c0802d8e2f28605b3b5cf792f6/12f09/determinant_3d.png 148w,
+/blog/static/45ed25c0802d8e2f28605b3b5cf792f6/e4a3f/determinant_3d.png 295w,
+/blog/static/45ed25c0802d8e2f28605b3b5cf792f6/2108e/determinant_3d.png 453w&quot;
         sizes=&quot;(max-width: 453px) 100vw, 453px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -886,7 +886,7 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/675cf2676b142aefcb4a9f3b7d067a4f/2e195/mean.png&quot;
+    href=&quot;/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/2e195/mean.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -899,11 +899,11 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;mean&quot;
         title=&quot;mean&quot;
-        src=&quot;/static/675cf2676b142aefcb4a9f3b7d067a4f/fcda8/mean.png&quot;
-        srcset=&quot;/static/675cf2676b142aefcb4a9f3b7d067a4f/12f09/mean.png 148w,
-/static/675cf2676b142aefcb4a9f3b7d067a4f/e4a3f/mean.png 295w,
-/static/675cf2676b142aefcb4a9f3b7d067a4f/fcda8/mean.png 590w,
-/static/675cf2676b142aefcb4a9f3b7d067a4f/2e195/mean.png 782w&quot;
+        src=&quot;/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/fcda8/mean.png&quot;
+        srcset=&quot;/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/12f09/mean.png 148w,
+/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/e4a3f/mean.png 295w,
+/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/fcda8/mean.png 590w,
+/blog/static/675cf2676b142aefcb4a9f3b7d067a4f/2e195/mean.png 782w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -918,7 +918,7 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
+    href=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -931,9 +931,9 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;kd&quot;
         title=&quot;kd&quot;
-        src=&quot;/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
-        srcset=&quot;/static/60c37086b7316d002b8ec71067b059e4/a80bd/kd.jpg 148w,
-/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg 258w&quot;
+        src=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
+        srcset=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/a80bd/kd.jpg 148w,
+/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg 258w&quot;
         sizes=&quot;(max-width: 258px) 100vw, 258px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -947,7 +947,7 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg&quot;
+    href=&quot;/blog/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -960,9 +960,9 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;gl&quot;
         title=&quot;gl&quot;
-        src=&quot;/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg&quot;
-        srcset=&quot;/static/276bf98212e939f22e53d31878e3558c/a80bd/gl.jpg 148w,
-/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg 161w&quot;
+        src=&quot;/blog/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg&quot;
+        srcset=&quot;/blog/static/276bf98212e939f22e53d31878e3558c/a80bd/gl.jpg 148w,
+/blog/static/276bf98212e939f22e53d31878e3558c/70dce/gl.jpg 161w&quot;
         sizes=&quot;(max-width: 161px) 100vw, 161px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1113,7 +1113,7 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
+    href=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1126,9 +1126,9 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;kd&quot;
         title=&quot;kd&quot;
-        src=&quot;/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
-        srcset=&quot;/static/60c37086b7316d002b8ec71067b059e4/a80bd/kd.jpg 148w,
-/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg 258w&quot;
+        src=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg&quot;
+        srcset=&quot;/blog/static/60c37086b7316d002b8ec71067b059e4/a80bd/kd.jpg 148w,
+/blog/static/60c37086b7316d002b8ec71067b059e4/53f89/kd.jpg 258w&quot;
         sizes=&quot;(max-width: 258px) 100vw, 258px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
@@ -1147,14 +1147,14 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
 &lt;/blockquote&gt;
 &lt;p&gt;今天是一月十二日，距离2017年已经过去了十二天。趁着记忆还算清晰，我想自己确实有必要为这特别的一年写点什么。&lt;/p&gt;
 &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/2dd0f0df8183485c10a21395a82661cd/644c5/Pit.jpg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/blog/static/2dd0f0df8183485c10a21395a82661cd/644c5/Pit.jpg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
     &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIFBv/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAGq2eapvEAP/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAIRExASFP/aAAgBAQABBQLYnF7l7R0uf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAAxARAhof/aAAgBAQAGPwK2bI+H/8QAGRAAAwEBAQAAAAAAAAAAAAAAAAERIVGB/9oACAEBAAE/IUIZELPFmqFZ9Dqo/9oADAMBAAIAAwAAABA03//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxCaj//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPxC4r//EAB0QAQADAAEFAAAAAAAAAAAAAAEAESExQVFxscH/2gAIAQEAAT8QKtlKKt/YlZU7AL7qOpw2hW9OJVgk8p//2Q==&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;Pit&quot; title=&quot;Pit&quot; src=&quot;/static/2dd0f0df8183485c10a21395a82661cd/1c72d/Pit.jpg&quot; srcset=&quot;/static/2dd0f0df8183485c10a21395a82661cd/a80bd/Pit.jpg 148w,
-/static/2dd0f0df8183485c10a21395a82661cd/1c91a/Pit.jpg 295w,
-/static/2dd0f0df8183485c10a21395a82661cd/1c72d/Pit.jpg 590w,
-/static/2dd0f0df8183485c10a21395a82661cd/a8a14/Pit.jpg 885w,
-/static/2dd0f0df8183485c10a21395a82661cd/fbd2c/Pit.jpg 1180w,
-/static/2dd0f0df8183485c10a21395a82661cd/644c5/Pit.jpg 1440w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;Pit&quot; title=&quot;Pit&quot; src=&quot;/blog/static/2dd0f0df8183485c10a21395a82661cd/1c72d/Pit.jpg&quot; srcset=&quot;/blog/static/2dd0f0df8183485c10a21395a82661cd/a80bd/Pit.jpg 148w,
+/blog/static/2dd0f0df8183485c10a21395a82661cd/1c91a/Pit.jpg 295w,
+/blog/static/2dd0f0df8183485c10a21395a82661cd/1c72d/Pit.jpg 590w,
+/blog/static/2dd0f0df8183485c10a21395a82661cd/a8a14/Pit.jpg 885w,
+/blog/static/2dd0f0df8183485c10a21395a82661cd/fbd2c/Pit.jpg 1180w,
+/blog/static/2dd0f0df8183485c10a21395a82661cd/644c5/Pit.jpg 1440w&quot; sizes=&quot;(max-width: 590px) 100vw, 590px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 &lt;center&gt;&lt;font color=&quot;#A9A9A9&quot; size=&quot;2&quot;&gt;8/12/2017 16:42 EST in Pittsburgh&lt;/font&gt;&lt;/center&gt;
@@ -1179,7 +1179,7 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/c469a229bc620947f199f8d22cab62ef/cec12/elder.png&quot;
+    href=&quot;/blog/static/c469a229bc620947f199f8d22cab62ef/cec12/elder.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1192,13 +1192,13 @@ M834 80h400000v40h-400000z&apos;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;elder&quot;
         title=&quot;elder&quot;
-        src=&quot;/static/c469a229bc620947f199f8d22cab62ef/fcda8/elder.png&quot;
-        srcset=&quot;/static/c469a229bc620947f199f8d22cab62ef/12f09/elder.png 148w,
-/static/c469a229bc620947f199f8d22cab62ef/e4a3f/elder.png 295w,
-/static/c469a229bc620947f199f8d22cab62ef/fcda8/elder.png 590w,
-/static/c469a229bc620947f199f8d22cab62ef/efc66/elder.png 885w,
-/static/c469a229bc620947f199f8d22cab62ef/c83ae/elder.png 1180w,
-/static/c469a229bc620947f199f8d22cab62ef/cec12/elder.png 1187w&quot;
+        src=&quot;/blog/static/c469a229bc620947f199f8d22cab62ef/fcda8/elder.png&quot;
+        srcset=&quot;/blog/static/c469a229bc620947f199f8d22cab62ef/12f09/elder.png 148w,
+/blog/static/c469a229bc620947f199f8d22cab62ef/e4a3f/elder.png 295w,
+/blog/static/c469a229bc620947f199f8d22cab62ef/fcda8/elder.png 590w,
+/blog/static/c469a229bc620947f199f8d22cab62ef/efc66/elder.png 885w,
+/blog/static/c469a229bc620947f199f8d22cab62ef/c83ae/elder.png 1180w,
+/blog/static/c469a229bc620947f199f8d22cab62ef/cec12/elder.png 1187w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
