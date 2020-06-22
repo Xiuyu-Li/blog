@@ -6,13 +6,14 @@ module.exports = {
       summary: `, an undergraduate interested in ML sys / ML security & privacy living in Ithaca`,
     },
     description: `Drink deep, or taste not the Pierian Spring.`,
-    siteUrl: `https://blog.xiuyuli.com/`,
+    siteUrl: `https://www.xiuyuli.com`,
     social: {
       twitter: `xiuyu_l`,
       github: 'Xiuyu-Li',
       zhihu: 'skywalker-41',
     },
   },
+  pathPrefix: `/blog`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -65,7 +66,60 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Xiu's Blog RSS Feed",
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

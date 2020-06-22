@@ -1,2 +1,9 @@
+Sitemap: https://www.xiuyuli.com/blog/sitemap.xml
+
 User-agent: *
-Disallow:
+Disallow: https://www.xiuyuli.com/blog/cu-courses-review/
+Disallow: https://www.xiuyuli.com/blog/cs2112/
+Disallow: https://www.xiuyuli.com/blog/my-2017/
+
+User-agent: Googlebot-Image
+Disallow: /

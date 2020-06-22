@@ -16,6 +16,7 @@
     "gatsby-plugin-offline": "^3.2.7",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.9",
+    "gatsby-plugin-sitemap": "^2.4.5",
     "gatsby-plugin-typography": "^2.5.2",
     "gatsby-remark-copy-linked-files": "^2.3.3",
     "gatsby-remark-images": "^3.3.8",
@@ -53,12 +54,13 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "build-prefix": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
+    "deploy": "bash build.sh && gh-pages -d public -b gh-pages"
   }
 }
