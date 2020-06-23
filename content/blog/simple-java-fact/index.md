@@ -53,4 +53,4 @@ print(e == f)
 
 `a == b` 显然正确，不多提。`e == f` 也是正确的，看来 Python 编译器也使用了 `constant folding` 进行优化。然而奇怪的是，`c == d` 居然也是正确的？难道 Python 对于 String 的储存机制有什么特别之处？但我在运行 `id(c)` 和 `id(d)` 之后发现 c 和 d 的地址并不相同。原来 Python 中对于 String 的 `==`  其实是比较两个 String 的值是否相同，相当于 Java 的 `.equals()`，实在是坑爹。在运行 `print(c is d)` 之后，果然得到了 `false` 的结果。
 
-这个文章可以说是非常 trivial 了，权当茶余饭后巩固知识的小科普一篇。
+这个文章可以说是非常 trivial 了，权当茶余饭后随记一篇。
