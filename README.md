@@ -7,7 +7,7 @@ This is my own blog built with `Gatsby`.
 
 - 2017: https://github.com/Xiuyu-Li/blog/tree/archive-hexo
 
-## Get Startred
+## Get Started
 
 ```bash
 # Run dev server at localhost
