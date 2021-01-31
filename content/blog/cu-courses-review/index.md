@@ -8,7 +8,7 @@ description: "本文是我在 Cornell 就读期间所上过课程的一个记录
 每当想要了解某门感兴趣的课程时，近可询问上过课的学长学姐，远则登录 [CU Reviews](www.cureviews.org)，[Cornell CS Wiki](https://cornellcswiki.gitlab.io/) 或 reddit 一类网站进行一番查询，可以采用的途径不可谓不多，写这篇文章似乎是有些多余了。然而，这些网站上的 reviews 基本都是由素不相识的人写作的，部分还存在内容过时的问题，读起来难免会有种过于千篇一律而又不够可信的感觉。我便萌生了撰写一个结合亲身经历和个人观点的课程记录的想法。
 
 ---
-## Fall 2021
+## Fall 2020
 
 本学期主要拿来满足 requirements 和做 research 了，认真上的课就只有以下两门。
 
